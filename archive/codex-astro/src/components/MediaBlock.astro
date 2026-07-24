@@ -1,0 +1,49 @@
+---
+import { localAsset } from "../data/portfolio";
+
+interface Props {
+  media: {
+    type?: string | null;
+    url?: string | null;
+    croppedImageUrl?: string | null;
+    width?: string | number | null;
+    height?: string | number | null;
+  };
+  alt: string;
+  eager?: boolean;
+}
+
+const { media, alt, eager = false } = Astro.props;
+const sourceUrl = media?.croppedImageUrl || media?.url || "";
+const url =
+  media?.type === "Video" || media?.type === "Media"
+    ? sourceUrl
+    : localAsset(sourceUrl);
+const isEmbed = media?.type === "Video" || media?.type === "Media";
+const width = Number(media?.width) || undefined;
+const height = Number(media?.height) || undefined;
+---
+
+{
+  url && isEmbed ? (
+    <div class="embed-frame">
+      <iframe
+        src={url}
+        title={alt}
+        loading="lazy"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen
+      />
+    </div>
+  ) : url ? (
+    <img
+      src={url}
+      alt={alt}
+      width={width}
+      height={height}
+      loading={eager ? "eager" : "lazy"}
+      fetchpriority={eager ? "high" : "auto"}
+      decoding="async"
+    />
+  ) : null
+}

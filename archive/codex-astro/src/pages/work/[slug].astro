@@ -1,0 +1,34 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import RelatedProjects from "../../components/RelatedProjects.astro";
+import SectionRenderer from "../../components/SectionRenderer.astro";
+import { getProject, projects } from "../../data/portfolio";
+
+export function getStaticPaths() {
+  return projects.map((project) => ({
+    params: { slug: project.slug }
+  }));
+}
+
+const project = getProject(Astro.params.slug!);
+
+if (!project) {
+  return Astro.redirect("/404");
+}
+---
+
+<BaseLayout
+  title={`${project.title} — Janna Safran`}
+  description={project.description}
+  image={project.socialImage}
+  pageClass="case-study-page"
+>
+  <article class="case-study">
+    {
+      project.sections.map((section: any) => (
+        <SectionRenderer section={section} projectTitle={project.title} />
+      ))
+    }
+  </article>
+  <RelatedProjects currentSlug={project.slug} />
+</BaseLayout>

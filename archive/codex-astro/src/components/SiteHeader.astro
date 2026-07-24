@@ -1,0 +1,34 @@
+---
+const { pathname } = Astro.url;
+
+const isHome = pathname === "/";
+const isAbout = pathname === "/about" || pathname === "/about/";
+---
+
+<header class="site-header">
+  <div class="site-header__inner shell">
+    <a class="wordmark" href="/" aria-label="Janna Safran, home">
+      Janna Safran
+    </a>
+
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="/" aria-current={isHome ? "page" : undefined}>Home</a>
+      <a href="/about/" aria-current={isAbout ? "page" : undefined}>About</a>
+      <a class="contact-link" href="mailto:janna.safran@gmail.com">
+        Contact me
+        <span aria-hidden="true">↗</span>
+      </a>
+    </nav>
+
+    <details class="mobile-nav">
+      <summary aria-label="Open navigation">
+        <span></span><span></span><span></span>
+      </summary>
+      <nav aria-label="Mobile navigation">
+        <a href="/" aria-current={isHome ? "page" : undefined}>Home</a>
+        <a href="/about/" aria-current={isAbout ? "page" : undefined}>About</a>
+        <a href="mailto:janna.safran@gmail.com">Contact me</a>
+      </nav>
+    </details>
+  </div>
+</header>

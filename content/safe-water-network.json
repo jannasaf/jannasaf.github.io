@@ -1,0 +1,831 @@
+{
+  "slug": "safe-water-network",
+  "route": "/work/safe-water-network",
+  "source_url": "https://uxfol.io/p/7a0815b4/bcec2b9d",
+  "blocks": [
+    {
+      "type": "mainheader",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 1,
+          "text": "Redesigning the Digital Giving Experience at Safe Water Network"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "How user research and a redesigned funnel reduced abandonment by 63% and turned one-time givers into engaged donors."
+        }
+      ],
+      "images": [
+        {
+          "src": "assets/img/safe-water-network-01.png",
+          "alt": null
+        }
+      ]
+    },
+    {
+      "type": "columns",
+      "columns": [
+        {
+          "text": [
+            {
+              "kind": "heading",
+              "level": 3,
+              "text": "Overview"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "Safe Water Network (SWN) is an international nonprofit organization working to provide reliable access to safe water across Ghana and India. As part of the fundraising and communications team, I led the redesign of the organization's digital giving funnel. The existing donation experience required donors to navigate multiple pages before reaching the donation form, complete extensive data entry upfront, and received minimal reinforcement after making a gift."
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "The goal of this project was to improve the donor experience, reduce friction throughout the giving journey, and increase donation conversion rates while strengthening donor engagement and stewardship."
+            }
+          ],
+          "images": []
+        },
+        {
+          "text": [
+            {
+              "kind": "heading",
+              "level": 3,
+              "text": "Role"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "Lead UX designer"
+            },
+            {
+              "kind": "heading",
+              "level": 3,
+              "text": "Team"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "Solo lead + WeGive Customer Success Manager & 2 engineers"
+            },
+            {
+              "kind": "heading",
+              "level": 3,
+              "text": "Timeline"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "June - September 2023"
+            }
+          ],
+          "images": []
+        }
+      ],
+      "text": [],
+      "images": []
+    },
+    {
+      "type": "process",
+      "steps": [
+        {
+          "n": 1,
+          "label": "Research & Discovery"
+        },
+        {
+          "n": 2,
+          "label": "User Journey"
+        },
+        {
+          "n": 3,
+          "label": "Design"
+        },
+        {
+          "n": 4,
+          "label": "Usability Testing"
+        },
+        {
+          "n": 5,
+          "label": "Business Impact"
+        }
+      ],
+      "text": [],
+      "images": []
+    },
+    {
+      "type": "textandmedia",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "text": "Research & Discovery"
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "text": "Mixed-Method Donor Research"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Before redesigning the donation experience, I conducted a mixed-methods research effort to understand donor behavior, identify friction points, and uncover opportunities to improve conversion and long-term engagement."
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Research inputs included:"
+        },
+        {
+          "kind": "li",
+          "level": null,
+          "text": "Eight years of donor and fundraising data"
+        },
+        {
+          "kind": "li",
+          "level": null,
+          "text": "Interviews with current and lapsed donors"
+        },
+        {
+          "kind": "li",
+          "level": null,
+          "text": "Competitive analysis of peer nonprofit giving experiences"
+        },
+        {
+          "kind": "li",
+          "level": null,
+          "text": "Audit of existing digital giving funnel"
+        },
+        {
+          "kind": "li",
+          "level": null,
+          "text": "Usability testing of the existing donation flow"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "The research revealed recurring themes around donor trust, perceived effort, donation psychology, and post-donation engagement. These findings directly informed the redesigned information architecture, giving flow, stewardship experience, and donor communications strategy."
+        }
+      ],
+      "images": [
+        {
+          "src": "assets/img/safe-water-network-02.png",
+          "alt": null
+        }
+      ]
+    },
+    {
+      "type": "columns",
+      "columns": [
+        {
+          "text": [
+            {
+              "kind": "p",
+              "level": null,
+              "text": "FINDING 1"
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "text": "Donors Couldn't See Their Impact"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "The donation experience felt transactional rather than mission-driven. Donors struggled to understand where their money was going, who it was helping, and what made Safe Water Network different from other nonprofits. Beyond a tax receipt, donors had few opportunities to engage with the organization, making the donation experience a critical moment to build trust, communicate impact, and strengthen long-term donor relationships."
+            }
+          ],
+          "images": []
+        },
+        {
+          "text": [
+            {
+              "kind": "p",
+              "level": null,
+              "text": "FINDING 2"
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "text": "Donation Amounts Created Friction"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "The original donation page promoted giving levels of $100+, which felt inaccessible to many donors. Interviews revealed that smaller contributions felt \"not enough\", creating a psychological barrier that prevent some supporters from giving at all."
+            }
+          ],
+          "images": []
+        },
+        {
+          "text": [
+            {
+              "kind": "p",
+              "level": null,
+              "text": "FINDING 3"
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "text": "Supporters Wanted to Fundraise"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "Current donors, families, and younger supporters expressed interest in raising money through birthdays, events, in memoriam, and peer-to-peer campaigns. Competitive research showed that leading nonprofit organizations actively promoted peer fundraising, creating additional revenue streams with minimal staff involvement."
+            }
+          ],
+          "images": []
+        },
+        {
+          "text": [
+            {
+              "kind": "p",
+              "level": null,
+              "text": "FINDING 4"
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "text": "Returning Donors Were Treated Like First-Time Donors"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "Returning donors were required to re-enter payment information for every gift. This unnecessary friction made repeat giving more difficult than it needed to be and created avoidable barriers to donor retention."
+            }
+          ],
+          "images": []
+        }
+      ],
+      "text": [],
+      "images": []
+    },
+    {
+      "type": "textandmedia",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 3,
+          "text": "Experience Audit"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Rather than jumping directly into redesign, I evaluated the existing donation experience to understand where donor needs and business goals were misaligned. Combined with donor research, I identified key issues around trust, impact clarity, suggested giving levels, and form friction."
+        }
+      ],
+      "images": [
+        {
+          "src": "assets/img/safe-water-network-03.png",
+          "alt": null
+        }
+      ]
+    },
+    {
+      "type": "textandmedia",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "text": "User Journey"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Mapping the end-to-end donation experience revealed that the primary issue wasn't a single interaction — it was the overall journey. While the existing experience processed donations, it treated giving as a one-time transaction rather than the beginning of a long-term donor relationship."
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Research showed that donors needed different experiences depending on where they were in their giving journey. First-time donors needed trust and context before being asked to give, while returning donors expected a faster path that recognized their prior relationship with the organization."
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "The redesigned journey shifted the focus from collecting a donation to cultivating a donor. Each interaction was designed to build trust, reduce friction, or strengthen engagement after a gift was made. This journey map became the blueprint for the redesigned information architecture, checkout flow, donor segmentation, and post-donation experience."
+        }
+      ],
+      "images": [
+        {
+          "src": "assets/img/safe-water-network-04.png",
+          "alt": null
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "text": "Design"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "I guided the redesign by putting myself in the donor's shoes and asking what questions they needed answered at each stage of the journey. Those questions became the structure for the rebuild, ensuring each design decision reduced uncertainty, built trust, or created a clearer path for continued engagement."
+        }
+      ],
+      "images": []
+    },
+    {
+      "type": "textandmedia",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 3,
+          "text": "Can I Trust This Organization? Why Should I Donate Here?"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "The original experience sent donors directly do a third-party form with limited organizational context and a long upfront request for information."
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "I redesigned the landing page to bring the giving experience onto SWN's branded platform, lead with gratitude, and introduce the organization's model before the ask — helping donors understand who they were supporting and why their gift to SWN mattered."
+        }
+      ],
+      "images": [
+        {
+          "src": "assets/img/safe-water-network-05.webp",
+          "alt": "Image gallery item"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 3,
+          "text": "What Impact Am I Making?"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "The original experience presented donation amounts as numbers, leaving donors to infer what their contribution could actually support."
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "I translated each suggested gift into a concrete outcome — from funding a water quality test to helping keep a girl in school — so donors could evaluate their contribution through the impact it could create."
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "A/B testing compared impact narratives across water safety, healthcare, education, household stability, and livelihoods to understand which messages most influenced donor engagement and giving behavior."
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Examples:"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "$5 — Water Quality Test: Funds one water quality test, keeping 100,000 people safe"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "$25 — A Year in School: Helps one girl stay in school for a year by freeing up the hours spent walking for water."
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "$50 — Water for a Home and a Livelihood: Helps a local business owner provide safe services to their community for a year"
+        }
+      ],
+      "images": []
+    },
+    {
+      "type": "textandmedia",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 3,
+          "text": "How Do I Want to Give?"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Research showed that donors brought different motivations and priorities to giving, yet the original experience offered a single, undifferentiated path."
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "I introduced more intentional giving choices, allowing donors to make an unrestricted gift, support a specific campaign or country program, choose their giving frequency, or give in honor or memory of someone. Rather than forcing every donor through the same transaction, the redesigned experience created space for donors to shape the meaning and direction of their gift."
+        }
+      ],
+      "images": [
+        {
+          "src": "assets/img/safe-water-network-06.18_AM-7d75cc2b-8b3f-4ce4-a8fb-8fe453fc4",
+          "alt": "Image gallery item"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 3,
+          "text": "Why Are You Asking for This Information?"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "The original form asked for too much at once, creating cognitive load, personal-information fatigue, and payment friction at the stage where most donors abandoned the flow."
+        }
+      ],
+      "images": []
+    },
+    {
+      "type": "columns",
+      "columns": [
+        {
+          "text": [
+            {
+              "kind": "heading",
+              "level": 4,
+              "text": "Request Only What's Needed"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "Personal information was separated from payment details, reducing the amount of information donors had to process at one time."
+            }
+          ],
+          "images": [
+            {
+              "src": "assets/img/safe-water-network-07.56_AM-6a9a01f7-a54e-4048-98de-46b9ca512",
+              "alt": "Image gallery item"
+            }
+          ]
+        },
+        {
+          "text": [
+            {
+              "kind": "heading",
+              "level": 4,
+              "text": "Make Payment Faster"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "Digital and saved payment options created a quicker path through checkout, particularly for returning donors"
+            }
+          ],
+          "images": [
+            {
+              "src": "assets/img/safe-water-network-08.webp",
+              "alt": "Image gallery item"
+            }
+          ]
+        },
+        {
+          "text": [
+            {
+              "kind": "heading",
+              "level": 4,
+              "text": "Confirm with Transparency"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "Donors could review their gift amount, campaign designation, payment details, privacy choices, processing-fee coverage, and final total before submitting."
+            }
+          ],
+          "images": [
+            {
+              "src": "assets/img/safe-water-network-09.24_AM-d006c11b-b0da-4410-b16e-91889a03f",
+              "alt": "Image gallery item"
+            }
+          ]
+        }
+      ],
+      "text": [],
+      "images": []
+    },
+    {
+      "type": "textandmedia",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 3,
+          "text": "What Happens After I Donate?"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "The original journey ended with a generic confirmation message."
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "I redesigned the post-donation moment as a human thank-you, featuring a video of community members across Ghana and India acknowledging the donor's gift. From there, donors were invited to learn more about SWN's work or continue into their profile, turning confirmation into the first step of continued engagement."
+        }
+      ],
+      "images": [
+        {
+          "src": "assets/img/safe-water-network-10.08_AM-511996f7-4126-4163-b22c-57d63d00b",
+          "alt": null
+        }
+      ]
+    },
+    {
+      "type": "textandmedia",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 3,
+          "text": "How Do I Stay Connected After Giving?"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "I designed a donor profile to extend the relationship beyond the donation itself. The profile brought together giving history, impact updates, fundraising tools, and self-service account management so donors could understand their impact, stay connected, and continue engaging with SWN over time."
+        }
+      ],
+      "images": [
+        {
+          "src": "assets/img/safe-water-network-11.webp",
+          "alt": null
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "text": "Usability Testing"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "I created a fully-functional, high-fidelity prototype of the new donor journey. I tested the redesigned donor journey across four iterative rounds with 87 participants, including current, lapsed, and former donors, staff, interview participants, and new users. Each round was followed by rapid design adjustments before testing with a new group, helping evaluate not only usability, but how design choices influenced giving decisions, emotional connection, and continued engagement."
+        }
+      ],
+      "images": []
+    },
+    {
+      "type": "cards",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 4,
+          "text": "Impact Needed to Be Immediate, Concrete and Decision-Relevant"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "What We Learned: Participants responded best to short, tangible outcomes they could understand instantly like Water Quality Test."
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Iteration: I shortened impact copy, prioritized clear outcome-based hooks, and moved more complex narratives into deeper story content where additional context could be provided."
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "text": "Emotional Connection Created Momentum"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "What We Learned: The community thank-you video generated the strongest emotional response across testing. Participants described it as \"personal\", \"touching\", and \"humanizing\", and many wanted to learn more about the people featured."
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Iteration: The strong positive response directly shaped the community impact stories embedded in the donor profile. The video became a gateway to deeper engagement, carrying the curiosity and emotional connection it created into the broader donor relationship."
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "text": "Friction Was About Trust and Control"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "What We Learned: Participants valued the guided checkout, saved payment options, and clear review step. Recurring giving by default did not create the confusion I was worried about initially."
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Iterations: I kept the guided flow, retained recurring giving as the initial selection, added giving frequency to the final confirmation summary, and centralized common donor needs, like tax statements and staff messaging, in the donor profile."
+        }
+      ],
+      "images": []
+    },
+    {
+      "type": "text",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "text": "Business Impact"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Within six months of launching the redesigned donor journey, online donations increased by 30% and donor engagement rose by 35%. The new experience also broadened Safe Water Network's donor base, surfacing an unexpected user group: parents using the profiles, badges, and fundraising tools to introduce children to philanthropy. The redesign also supported younger donors, such as college students and early professionals, by making giving more accessible, personal, and socially sharable. The peer-to-peer fundraising tools created a new acquisition and advocacy channel for Safe Water Network .In the first six months, donors launched 11 fundraisers on behalf of the organization, raising $80k+ through their own networks."
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Strategic value: Donor behavior data helped shaped five-year goals across fundraising, brand development, marketing, communications, and thought leadership. Together, these outcomes showed that the redesign did more than improve checkout - it helped turn donors into repeat supporters, advocates, and community champions."
+        }
+      ],
+      "images": []
+    },
+    {
+      "type": "columns",
+      "columns": [
+        {
+          "text": [
+            {
+              "kind": "heading",
+              "level": 1,
+              "text": "+30%"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "Online donations Increase in 6 months"
+            }
+          ],
+          "images": []
+        },
+        {
+          "text": [
+            {
+              "kind": "heading",
+              "level": 1,
+              "text": "+35%"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "Donor engagement Increase in 6 months"
+            }
+          ],
+          "images": []
+        },
+        {
+          "text": [
+            {
+              "kind": "heading",
+              "level": 1,
+              "text": "12"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "Peer-to-peer fundraisers launched New donor advocacy channel"
+            }
+          ],
+          "images": []
+        },
+        {
+          "text": [
+            {
+              "kind": "heading",
+              "level": 1,
+              "text": "$80k+"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "Raised through donor-led fundraisers Within first 6 months"
+            }
+          ],
+          "images": []
+        }
+      ],
+      "text": [],
+      "images": []
+    },
+    {
+      "type": "columns",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "text": "Learnings"
+        },
+        {
+          "kind": "li",
+          "level": null,
+          "text": "UX strategy starts with the full relationship, not a single touchpoint: Looking across the full donor journey revealed opportunities to build trust, clarify impact, and create reasons for donors to stay engaged post-donation."
+        },
+        {
+          "kind": "li",
+          "level": null,
+          "text": "Reducing friction can mean adding context- the redesign added steps, but each one reduced uncertainty and helped donors feel more confident in their decision."
+        },
+        {
+          "kind": "li",
+          "level": null,
+          "text": "Existing data can reveal new strategic opportunities: Donor feedback was already showing up across analytics, emails, support requests, and past interactions. Synthesizing those sources revealed insights that shaped fundraising, brand positioning, thought leadership, and long-term strategy."
+        }
+      ],
+      "images": []
+    },
+    {
+      "type": "textandmedia",
+      "text": [
+        {
+          "kind": "p",
+          "level": null,
+          "text": "See the live site"
+        }
+      ],
+      "images": [
+        {
+          "src": "assets/img/safe-water-network-12.33_PM-919eee11-0b5f-452e-8283-05f77dd1a5",
+          "alt": null
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 3,
+          "text": "Read more of my case studies"
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "text": "Reducing Project Setup Time Through Workflow Automation"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Adolescent Health Initiative, Michigan Medicine"
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "text": "Building an AI-Powered Pre-Booking Communications & Intelligence Platform for Boutique Hotels"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Independent Venture · 2026"
+        }
+      ],
+      "images": [
+        {
+          "src": "assets/img/home-07.webp",
+          "alt": null
+        },
+        {
+          "src": "assets/img/home-01.webp",
+          "alt": null
+        },
+        {
+          "src": "assets/img/home-02.webp",
+          "alt": null
+        },
+        {
+          "src": "assets/img/home-03.webp",
+          "alt": null
+        },
+        {
+          "src": "assets/img/home-04.webp",
+          "alt": null
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 3,
+          "text": "Let’s connect!"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "I'm currently exploring opportunities in UX research, product strategy, journey design, and early-stage product work. Based in California and open to relocation."
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "janna.safran@gmail.com"
+        }
+      ],
+      "images": []
+    }
+  ]
+}

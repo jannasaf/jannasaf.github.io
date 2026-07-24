@@ -1,0 +1,1855 @@
+{
+  "site": {
+    "name": "Janna Safran",
+    "email": "janna.safran@gmail.com",
+    "title": "UX Researcher & Product Strategist",
+    "hero": "<p><span style=\"color: var(--paletteColor1);\"><strong>Hello, I'm Janna!</strong></span></p><h1>I'm a <span style=\"color: var(--paletteColor2);\">systems-minded </span><span style=\"color: var(--paletteColor1);\">UX researcher</span> and product strategist who turns complex needs into clear product direction, <span style=\"color: var(--paletteColor2);\">from early</span> <span style=\"color: var(--paletteColor2);\">discovery through launch</span>.</h1>",
+    "footer": "<h3><span style=\"color: var(--paletteColor1);\">Let’s connect!</span></h3><p><span style=\"color: var(--paletteColor1);\">I'm currently exploring opportunities in UX research, product strategy, journey design, and early-stage product work. Based in California and open to relocation.</span></p><p><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"mailto:janna.safran@gmail.com\"><span style=\"color: var(--paletteColor1);\">janna.safran@gmail.com</span></a></p>",
+    "linkedin": "https://www.linkedin.com/in/janna-safran/"
+  },
+  "pages": [
+    {
+      "name": "Home",
+      "shortId": "home",
+      "sections": [
+        {
+          "type": "Text",
+          "index": 0,
+          "title": null,
+          "subtitle": null,
+          "text": "<h3>Selected Projects</h3><p>Explore my selected projects, showcasing my dedication to turning research insights into product strategy and creating experiences people love to use.</p>",
+          "media": null,
+          "contentSettings": null,
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "ProjectGrid",
+          "index": 2,
+          "title": null,
+          "subtitle": null,
+          "text": null,
+          "media": null,
+          "contentSettings": null,
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        }
+      ]
+    },
+    {
+      "name": "About",
+      "shortId": "d54c8b16",
+      "sections": [
+        {
+          "type": "TextAndMedia",
+          "index": 0,
+          "title": null,
+          "subtitle": null,
+          "text": "<h1>Hello!</h1><p>I'm a UX researcher and product strategist who turns complex needs into clear, thoughtful product direction. My work spans research, strategy, prototyping, and implementation, with a focus on creating products that genuinely reflect how people think, behave, and make decisions.</p><p>My background in public health shapes the way I approach product work. It taught me to look beyond individual pain points, understand the systems around them, and use qualitative and quantitative insights to make informed decisions. I now bring that same human-centered, systems-minded approach to products across health, hospitality, travel, social impact, and emerging technology.</p><p>I'm always open to thoughtful conversations about UX research, product strategy, and building products that people love. </p>",
+          "media": {
+            "type": "Image",
+            "url": "https://uxfolio-prod.s3.us-east-1.amazonaws.com/uploads/processed/6a419f6afa8b4c01d54c538f/project/6a41a002fa8b4c01d54c8b16/section-media/WhiteTop_Park3-7ffb9fef-86fc-4b88-a2ad-0b5cf807cb09.webp",
+            "croppedImageUrl": null,
+            "caption": null,
+            "displayMode": "medium",
+            "width": "4096",
+            "height": "4096"
+          },
+          "contentSettings": {
+            "showText": true,
+            "showMedia": true,
+            "flipped": false,
+            "legacyInsetTextBox": null
+          },
+          "cta": {
+            "show": false,
+            "url": "https://www.linkedin.com/in/janna-safran/",
+            "title": "LinkedIn",
+            "position": null,
+            "type": "primary",
+            "actionType": "open-link",
+            "showIcon": true
+          },
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "TextAndMedia",
+          "index": 2,
+          "title": null,
+          "subtitle": null,
+          "text": "<h3>Education</h3><p>2020 - 2022 · Columbia University · Master of Public Health (MPH)</p><p>2015 - 2018 · Dickinson College · Sociology (B.A.)</p>",
+          "media": {
+            "type": "Image",
+            "url": "/example_project_images/empty-image-and-text-image.jpg",
+            "croppedImageUrl": null,
+            "caption": null,
+            "displayMode": "small",
+            "width": null,
+            "height": null
+          },
+          "contentSettings": {
+            "showText": true,
+            "showMedia": false,
+            "flipped": false,
+            "legacyInsetTextBox": null
+          },
+          "cta": {
+            "show": false,
+            "url": "https://www.linkedin.com/in/janna-safran/",
+            "title": "Let's Connect",
+            "position": null,
+            "type": "primary",
+            "actionType": "open-link",
+            "showIcon": true
+          },
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "shortId": "d54c8b60",
+      "name": "Building an AI-Powered Pre-Booking Communications & Intelligence Platform for Boutique Hotels",
+      "subtitle": "Independent Venture · 2026",
+      "labels": [
+        "AI",
+        "0 -> 1",
+        "Entrepreneurship"
+      ],
+      "thumbnailImages": [
+        "https://uxfolio-prod.s3.us-east-1.amazonaws.com/6a419f6afa8b4c01d54c538f/6a41a002fa8b4c01d54c8b60/pVaCvGI1MYRLjOrg.webp",
+        "https://uxfolio-prod.s3.us-east-1.amazonaws.com/6a419f6afa8b4c01d54c538f/6a41a002fa8b4c01d54c8b60/uGac3YCwChuhrvnY.webp",
+        "https://uxfolio-prod.s3.us-east-1.amazonaws.com/6a419f6afa8b4c01d54c538f/6a41a002fa8b4c01d54c8b60/8620k6hSJEvTeKWz.webp",
+        "https://uxfolio-prod.s3.us-east-1.amazonaws.com/6a419f6afa8b4c01d54c538f/6a41a002fa8b4c01d54c8b60/hXTb05ayJdl8rPr7.webp"
+      ],
+      "socialTitle": "Concierj: AI-powered pre-booking guest communications & intelligence product for boutique properties",
+      "socialDescription": "AI-powered pre-booking guest communications & intelligence product for boutique properties. 0 -> 1 solo build. ",
+      "socialImage": "https://uxfolio-prod.s3.us-east-1.amazonaws.com/uploads/processed/6a419f6afa8b4c01d54c538f/project/6a41a002fa8b4c01d54c8b60/social-share/Screenshot_2026-07-18_at_2.30.52_PM-c030da17-6614-4de3-a99a-7fc480f30062.webp",
+      "sections": [
+        {
+          "type": "MainHeader",
+          "index": 0,
+          "title": "<h1>Concierj</h1>",
+          "subtitle": "<p>AI-powered pre-booking guest communications &amp; intelligence product for boutique properties — 0 → 1 solo build</p>",
+          "text": null,
+          "media": {
+            "type": "Image",
+            "url": "https://uxfolio-prod.s3.us-east-1.amazonaws.com/6a419f6afa8b4c01d54c538f/6a41a002fa8b4c01d54c8b60/yNWTGYuaeDO7SrRC.png",
+            "croppedImageUrl": null,
+            "caption": null,
+            "displayMode": null,
+            "width": "2936",
+            "height": "1588"
+          },
+          "contentSettings": {
+            "showText": null,
+            "showMedia": true,
+            "flipped": false,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "Columns",
+          "index": 1,
+          "title": null,
+          "subtitle": null,
+          "text": null,
+          "media": null,
+          "contentSettings": {
+            "showText": true,
+            "showMedia": false,
+            "flipped": false,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [
+            {
+              "text": "<h3>Overview</h3><p>Boutique hotels are losing potential guests before they ever book — not because of price or availability, but because of a gap in the pre-booking experience. No guided consideration stage exists, no system to answer questions in real time, qualify fit, or move an interested guest towards a booking decision. I built Concierj to solve that and become a property's personal travel agent - capturing interested guests and guiding them to booking.</p><p>AI-powered guest communication &amp; intelligence product, solo build in 12 weeks, from concept to live launch.</p><p>I saw a gap and harnessed this opportunity to not only solve the gap, but to challenge myself to learn and deploy an AI product.</p>",
+              "media": {
+                "type": "Image",
+                "url": null,
+                "croppedImageUrl": null,
+                "caption": null,
+                "displayMode": null,
+                "width": null,
+                "height": null
+              }
+            },
+            {
+              "text": "<h4>Role</h4><p>Founder &amp; Product Lead</p><h4>Team</h4><p>Solo build</p><h4>Timeline</h4><p>Apr - June 2026 (12 weeks)</p>",
+              "media": {
+                "type": "Image",
+                "url": null,
+                "croppedImageUrl": null,
+                "caption": null,
+                "displayMode": null,
+                "width": null,
+                "height": null
+              }
+            }
+          ],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "Columns",
+          "index": 2,
+          "title": null,
+          "subtitle": null,
+          "text": null,
+          "media": null,
+          "contentSettings": {
+            "showText": true,
+            "showMedia": true,
+            "flipped": false,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [
+            {
+              "text": "<p></p>",
+              "media": {
+                "type": "Image",
+                "url": "https://uxfolio-prod.s3.us-east-1.amazonaws.com/6a419f6afa8b4c01d54c538f/6a41a002fa8b4c01d54c8b60/aQ1nz88e88RVNhWK.png",
+                "croppedImageUrl": null,
+                "caption": null,
+                "displayMode": null,
+                "width": "1900",
+                "height": "776"
+              }
+            }
+          ],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "Process",
+          "index": 4,
+          "title": null,
+          "subtitle": null,
+          "text": null,
+          "media": null,
+          "contentSettings": null,
+          "cta": null,
+          "columns": [],
+          "processItems": [
+            {
+              "sectionIndex": 5,
+              "name": "Research"
+            },
+            {
+              "sectionIndex": 7,
+              "name": "Conceptual Design"
+            },
+            {
+              "sectionIndex": 13,
+              "name": "What I Built & Why"
+            },
+            {
+              "sectionIndex": 22,
+              "name": "Usability Testing"
+            },
+            {
+              "sectionIndex": 33,
+              "name": "Prototype"
+            }
+          ],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "Text",
+          "index": 5,
+          "title": null,
+          "subtitle": null,
+          "text": "<h3>01 - Research</h3><p>My research is rooted in human-centered design with the belief that end users should be included in all aspects of the process and product design. I conducted 59 interviews across four stakeholder groups - boutique hotel owners, front desk staff, guests, and travel agents to understand where the pre-booking breakdown actually happened and for whom. I wasn't looking to validate a solution; I was looking for the truth about the problem.</p><p>Alongside primary research, I analyzed the competitive landscape, assessed the total addressable market for AI-powered hospitality tools, and identified which data points would be most significant to track across the chatbot and the guest intelligence report.</p>",
+          "media": null,
+          "contentSettings": null,
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "Cards",
+          "index": 6,
+          "title": null,
+          "subtitle": null,
+          "text": null,
+          "media": null,
+          "contentSettings": null,
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [
+            "<p>Key insight 1: Hotel Owners</p><h4>Owners wanted it handled for them — no more tools to manage. Overwhelmed by repetitive queries and after-hour inquiries.</h4>",
+            "<p>Key insight 2: Front Desk Staff</p><h4>Missed and duplicated responses across shifts were a systemic problem, not a staffing one. Overwhelmed by repetitive queries, wanted lead capture segmentation.</h4>",
+            "<p>Key insight 3: Guests</p><h4>Unanswered pre-booking questions led to a different property. Wanted instant pre-booking answers and trip guidance.</h4>",
+            "<p>Key insight 4: Travel Agents</p><h4>Needed more information on property qualifications and policies for group trip planning. Can't always rely on 1:1 relationships to grow business.</h4>",
+            "<h3>Card title</h3><p>Add your text here.</p>",
+            "<h3>Card title</h3><p>Add your text here.</p>"
+          ],
+          "galleryItems": []
+        },
+        {
+          "type": "TextAndMedia",
+          "index": 7,
+          "title": null,
+          "subtitle": null,
+          "text": "<h3>02 - Conceptual Design</h3><p>Research identified a missing consideration stage between website visit and booking. The next step was defining how guests would move through that experience, what information would be collected, and when human intervention was necessary.</p><p>As part of the architecture process, I evaluated multiple technical approaches and refined the solution to a streamlined Botpress and Claude stack, eliminating unnecessary complexity identified during the research phase. The resulting user flows, system architecture, business rules, and data requirements served as the blueprint for development of the functional prototype.</p>",
+          "media": {
+            "type": "Image",
+            "url": "https://uxfolio-prod.s3.us-east-1.amazonaws.com/6a419f6afa8b4c01d54c538f/6a41a002fa8b4c01d54c8b60/T4QiiIzrAJFGvDWv.png",
+            "croppedImageUrl": "https://uxfolio-prod.s3.us-east-1.amazonaws.com/6a419f6afa8b4c01d54c538f/6a41a002fa8b4c01d54c8b60/FVL4kSHD8pkPlwbH.png",
+            "caption": null,
+            "displayMode": "medium",
+            "width": "1508",
+            "height": "1370"
+          },
+          "contentSettings": {
+            "showText": true,
+            "showMedia": false,
+            "flipped": true,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "TextAndMedia",
+          "index": 8,
+          "title": null,
+          "subtitle": null,
+          "text": "<h2>The Guest Journey Map</h2><p>Following stakeholder and user interviews, I created a guest journey map to better understand how prospective guests navigate a hotel website during the decision-making process. The exercise helped further identify moments of friction, information gaps, and drop-off points within the traditional booking funnel, while revealing opportunities where Concierj could provide meaningful support.</p><p>One key insight emerged immediately: high purchase intent exists before booking, but guests often lack guidance during the consideration stage.<strong> </strong>As they compare accommodations and experiences and search for specific information, decision fatigue causes them to abandon the booking process altogether.</p><p><strong>Key design decision: </strong>Built guided prompt bubbles that surface common guest questions and next steps. This approach reduces cognitive load, accelerates information discovery, and gently steers a guests towards information they are most likely seeking, creating a more intuitive and effective pre-booking experience.</p><p></p>",
+          "media": {
+            "type": "Image",
+            "url": "https://uxfolio-prod.s3.us-east-1.amazonaws.com/6a419f6afa8b4c01d54c538f/6a41a002fa8b4c01d54c8b60/L0O7FeM8gQEID9Wv.png",
+            "croppedImageUrl": "https://uxfolio-prod.s3.us-east-1.amazonaws.com/6a419f6afa8b4c01d54c538f/6a41a002fa8b4c01d54c8b60/kb8n8950SloPhUHX.png",
+            "caption": null,
+            "displayMode": "large",
+            "width": "1508",
+            "height": "1206"
+          },
+          "contentSettings": {
+            "showText": true,
+            "showMedia": true,
+            "flipped": true,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "TextAndMedia",
+          "index": 9,
+          "title": null,
+          "subtitle": null,
+          "text": "<h2>Feature Map</h2><p>I synthesized findings into a feature map to prioritize and define the MVP, identifying the ore capabilities needed to support guests during the hotel consideration stage while minimizing operational burden of staff.</p><h4>Research didn't just inform the product, it changed it...4 times throughout the product build.</h4>",
+          "media": {
+            "type": "Image",
+            "url": "https://uxfolio-prod.s3.us-east-1.amazonaws.com/6a419f6afa8b4c01d54c538f/6a41a002fa8b4c01d54c8b60/qf2m2kFYv1ICIHDB.png",
+            "croppedImageUrl": null,
+            "caption": null,
+            "displayMode": "large",
+            "width": "2202",
+            "height": "1528"
+          },
+          "contentSettings": {
+            "showText": true,
+            "showMedia": true,
+            "flipped": true,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "TextAndMedia",
+          "index": 10,
+          "title": null,
+          "subtitle": null,
+          "text": "<h3>Low-Fidelity Systems Design</h3><p>I began the systems design process with low-fidelity sketches to determine how different guest segments should be identified and routed through the experience, including lead qualification, escalation pathways, and human handoff triggers.</p><p>I designed end-to-end user journeys and conversation flows, mapping how prospective guests move from initial questions to booking decisions or human hand off via lead capture or escalation.</p>",
+          "media": {
+            "type": "Image",
+            "url": "https://uxfolio-prod.s3.us-east-1.amazonaws.com/6a419f6afa8b4c01d54c538f/6a41a002fa8b4c01d54c8b60/59gUiJqj9xSdSFC4.png",
+            "croppedImageUrl": null,
+            "caption": null,
+            "displayMode": "small",
+            "width": "2052",
+            "height": "1368"
+          },
+          "contentSettings": {
+            "showText": true,
+            "showMedia": true,
+            "flipped": true,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "TextAndMedia",
+          "index": 13,
+          "title": null,
+          "subtitle": null,
+          "text": "<h3>03 - What I Built and Why</h3><p>Rather than building a simple FAQ chatbot, my goal was to create a system that could actively guide guests through the pre-booking journey while providing value to hotel staff behind the scenes. Each component was intentionally designed to support one of Concerj's three core pillars:</p>",
+          "media": {
+            "type": "Image",
+            "url": "/example_project_images/gallery_sample/gallery-sample-tall-01.jpg",
+            "croppedImageUrl": null,
+            "caption": null,
+            "displayMode": null,
+            "width": null,
+            "height": null
+          },
+          "contentSettings": {
+            "showText": true,
+            "showMedia": false,
+            "flipped": true,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "Cards",
+          "index": 14,
+          "title": null,
+          "subtitle": null,
+          "text": null,
+          "media": null,
+          "contentSettings": null,
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [
+            "<h3>Guests</h3><p>Confident booking decisions:</p><ul><li><p>Personalized recommendations</p></li><li><p>Reduced decision fatigue</p></li><li><p>Guided trip planning</p></li></ul>",
+            "<h3>Staff</h3><p>Human attention where it matters</p><ul><li><p>Lead capture</p></li><li><p>Smart escalations</p></li><li><p>Conversation summaries</p></li></ul>",
+            "<h3>Hotel Leadership</h3><p>Actionable guest intelligence</p><ul><li><p>Inquiry trends</p></li><li><p>Guest preferences</p></li><li><p>Operational insights</p></li></ul>"
+          ],
+          "galleryItems": []
+        },
+        {
+          "type": "TextAndMedia",
+          "index": 15,
+          "title": null,
+          "subtitle": null,
+          "text": "<h3>Conversational Workflow Architecture</h3><p><strong>What I built: </strong>Standard nodes (after hours, guest feedback, new v. returning guests) and autonomous node (decision tree for room &amp; experience recommendations, lead capture, escalation paths).</p><p><strong>Why: </strong>Interviews revealed guests wanted guidance, not FAQ answers. Needed a system that could handle common inquiries, escalate high-intent guests, and build on conversation.</p><p><strong>Key design decision: </strong>The autonomous node handles 98% of the service, proactively guiding guests through trip planning using personalized recommendations and suggested conversation paths, while simultaneously capturing guest intelligence.</p>",
+          "media": {
+            "type": "Image",
+            "url": "https://uxfolio-prod.s3.us-east-1.amazonaws.com/6a419f6afa8b4c01d54c538f/6a41a002fa8b4c01d54c8b60/HJ8cSxCOMlUwHiCm.png",
+            "croppedImageUrl": null,
+            "caption": null,
+            "displayMode": "large",
+            "width": "2576",
+            "height": "808"
+          },
+          "contentSettings": {
+            "showText": true,
+            "showMedia": true,
+            "flipped": false,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "TextAndMedia",
+          "index": 16,
+          "title": null,
+          "subtitle": null,
+          "text": "<h3>Knowledge Base Design</h3><p><strong>What I built: </strong>Structured hotel information repository including room data, amenities, dining, policies, and local experiences.</p><p><strong>Why: </strong>AI quality is only as good as the information available and the guidelines in place to prevent hallucination. Early testing showed generic responses reduced trust.</p><p><strong>Key design decision: </strong>Organize content around guest-decison making rather than internal hotel departments to improve AI-response time and reduce token usage.</p>",
+          "media": {
+            "type": "Image",
+            "url": "/example_project_images/empty-image-and-text-image.jpg",
+            "croppedImageUrl": null,
+            "caption": null,
+            "displayMode": "large",
+            "width": "1500",
+            "height": "1125"
+          },
+          "contentSettings": {
+            "showText": true,
+            "showMedia": false,
+            "flipped": true,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "TextAndMedia",
+          "index": 17,
+          "title": null,
+          "subtitle": null,
+          "text": "<h3>Human Handoff &amp; Email Notifications</h3><p><strong>What I built: </strong>Automated staff alerts, conversation summaries, and guest contact information.</p><p><strong>Why: </strong>Hotels don't need more conversations — they need visibility into the conversations that matter.</p><p><strong>Key design decision: </strong>Deliver actionable context rather than raw chat transcripts.</p>",
+          "media": {
+            "type": "Image",
+            "url": "https://uxfolio-prod.s3.us-east-1.amazonaws.com/6a419f6afa8b4c01d54c538f/6a41a002fa8b4c01d54c8b60/o3A5LB1onYLHFPuU.png",
+            "croppedImageUrl": null,
+            "caption": null,
+            "displayMode": "large",
+            "width": "988",
+            "height": "794"
+          },
+          "contentSettings": {
+            "showText": true,
+            "showMedia": true,
+            "flipped": false,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "TextAndMedia",
+          "index": 18,
+          "title": null,
+          "subtitle": null,
+          "text": "<h3>Guest Intelligence Report</h3><p><strong>What I built: </strong>Inquiry trend reporting, guest behavior insights, common questions, conversion indicators, and recommendations.</p><p><strong>Why: </strong>Every guest conversation contains market research. Boutique hotels rarely capture or analyze that data.</p><p><strong>Key design decision: </strong>Transform individual conversations into operational insights.</p>",
+          "media": {
+            "type": "Media",
+            "url": "https://docs.google.com/presentation/d/e/2PACX-1vSnlzg0YkIBRDGp8UwMoQ_eTUliKnhDwkO_y669rnkYVKkUz6k0jijtwVyAJ5sFQikv2PSFrHaSYvpG/pubembed?start=false&loop=false&delayms=3000",
+            "croppedImageUrl": null,
+            "caption": null,
+            "displayMode": "medium",
+            "width": "",
+            "height": ""
+          },
+          "contentSettings": {
+            "showText": true,
+            "showMedia": true,
+            "flipped": true,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "Text",
+          "index": 22,
+          "title": null,
+          "subtitle": null,
+          "text": "<h3>04 - Usability testing</h3><p>I created a fully-functional, high-fidelity prototype of Concierj using Botpress. Throughout development, Concierj was iteratively tested through <strong>hundreds of real-world conversations </strong>and simulated guest scenarios across family members, friends, advisors, and prospective users. Testing ranged from structured booking scenarios to exploratory sessions designed to uncover edge cases, identify failure points, and evaluate the overall guest experience.</p><h4><strong>Finding #1: Guests weren't simply booking a hotel room </strong>— they were planning an expeirence.</h4><p>During testing, I explored several approaches to helping guests begin their journey. While each improved information discovery, testing revealed that guests weren't simply looking for answers — they were looking for confidence in their booking decision. The final solution balanced both information retrieval and personalized guidance.</p>",
+          "media": null,
+          "contentSettings": null,
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "Columns",
+          "index": 24,
+          "title": null,
+          "subtitle": null,
+          "text": null,
+          "media": null,
+          "contentSettings": {
+            "showText": true,
+            "showMedia": true,
+            "flipped": false,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [
+            {
+              "text": "<p><strong>Iteration 1: Lead with Intent</strong></p><p>The first iteration asked guests to self-identity their trip to mirror the kind of curated qualification a hotel concierge would do in-person. In testing, the approach surfaced a gap: travelers booking family trips, group travel, or simple logistics didn't see themselves in any option, and even guests with clear trip types, felt boxed into a single narrative before they'd had a chance to ask their actual question.</p>",
+              "media": {
+                "type": "Image",
+                "url": "https://uxfolio-prod.s3.us-east-1.amazonaws.com/6a419f6afa8b4c01d54c538f/6a41a002fa8b4c01d54c8b60/6G3xZ5FPyXpjgf0e.png",
+                "croppedImageUrl": null,
+                "caption": null,
+                "displayMode": "medium",
+                "width": "622",
+                "height": "1062"
+              }
+            },
+            {
+              "text": "<p><strong>Iteration 2: Lead with Information</strong></p><p>Next, I replaced the prompts with broader category bubbles - closer to a standard FAQ menu. Guests responded well to the directness: questions got answered fast, with no guesswork about where to click. But the format introduced its own friction. Without any framing around intent, guests comparing rooms or experiences across categories ran into decision fatigue.</p>",
+              "media": {
+                "type": "Image",
+                "url": "https://uxfolio-prod.s3.us-east-1.amazonaws.com/6a419f6afa8b4c01d54c538f/6a41a002fa8b4c01d54c8b60/W5EBc3dk6oIvGUh0.png",
+                "croppedImageUrl": null,
+                "caption": null,
+                "displayMode": "medium",
+                "width": "620",
+                "height": "1046"
+              }
+            },
+            {
+              "text": "<p><strong>Solution: Lead With Guidance</strong></p><p>The winning decision combined the strengths of both: low-friction categories for guests who just needed information, alongside a new <strong>\"Plan My Stay\"</strong> option for guests who wanted guidance. Plan My Stay opens with a simple prompt - tell me about your trip - and the bot responds with a personalized, story-driven recommendation: specific rooms, activities, and special touches tailored to what the guest shared, helping them picture themselves at the property before any logistics enter the conversation. From there, guests naturally move into the practical questions already sold on the stay. <strong>Engagement jumped noticeably after the change, and Plan My Stay is now a core, defining feature of the Concierj experience.</strong></p>",
+              "media": {
+                "type": "Image",
+                "url": "https://uxfolio-prod.s3.us-east-1.amazonaws.com/6a419f6afa8b4c01d54c538f/6a41a002fa8b4c01d54c8b60/Q39Bk33NU3AXaZQ1.png",
+                "croppedImageUrl": null,
+                "caption": null,
+                "displayMode": null,
+                "width": "614",
+                "height": "1054"
+              }
+            }
+          ],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "Text",
+          "index": 25,
+          "title": null,
+          "subtitle": null,
+          "text": "<h3>Finding #2: Different Situations Require Different Summaries</h3><p>Early versions of the summaries were accurate but inconsistent. Some included too much detail, creating noise, while others omitted important context needed for follow-up. Through iterative testing and refinement, i developed specialized summary frameworks for different conversation outcomes, ensuring hotel staff received concise, actionable information tailored to the next step required.</p><p><strong>Key insight:</strong> The most useful summary depends on what action the hotel needs to take.</p>",
+          "media": null,
+          "contentSettings": null,
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "Gallery",
+          "index": 26,
+          "title": null,
+          "subtitle": null,
+          "text": null,
+          "media": null,
+          "contentSettings": null,
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": [
+            {
+              "type": "Image",
+              "url": "https://uxfolio-prod.s3.us-east-1.amazonaws.com/6a419f6afa8b4c01d54c538f/6a41a002fa8b4c01d54c8b60/ZKYuIfLlmy1M01Bf.png",
+              "croppedImageUrl": null,
+              "caption": null,
+              "displayMode": "large",
+              "width": "418",
+              "height": "388"
+            },
+            {
+              "type": "Image",
+              "url": "https://uxfolio-prod.s3.us-east-1.amazonaws.com/6a419f6afa8b4c01d54c538f/6a41a002fa8b4c01d54c8b60/2ZKIs0SYozc9069b.png",
+              "croppedImageUrl": null,
+              "caption": null,
+              "displayMode": "large",
+              "width": "441",
+              "height": "350"
+            }
+          ]
+        },
+        {
+          "type": "Text",
+          "index": 27,
+          "title": null,
+          "subtitle": null,
+          "text": "<h3>Finding #3: Real Guests Don't Follow Happy Paths</h3><p>While the chatbot performed well during expected booking scenarios, testing revealed that users rarely follow ideal conversation paths. Participants frequently asked unexpected questions, changed topics mid-conversation, or interacted with the assistant in ways that differed from the designed workflow.</p><p>One of the most significant issues emerged when users opened the chatbot and immediately asked a question that was out of the assistant's scope. Rather than gracefully recovering, the assistant became trapped in an error state failed to continue the conversation, and failed to trigger the escalation workflow.</p><p>To improve resilience, I redesigned the conversation routing logic and introduced fallback handling throughout the workflow. When a question cannot be answered through predefined paths, the assistant now routes to an autonomous AI node capable of determining the best next action.</p><p>Additional refinements included:</p><ul><li><p>Expanding fallback handling</p></li><li><p>Improved autonomous node instructions</p></li><li><p>Enhanced escalation logic</p></li><li><p>Dedicated \"on failure\" routing paths</p></li></ul><p>The assistant become significantly more resilient, reducing dead ends and ensuring guests could continue receiving support even when the conversations moved outside predefined workflows. By introducing dedicated fallback and escalation pathways, the system was able to recover gracefully from uncertainty while minimalizing the likelihood of inaccurate or hallucinated responses.</p><p><strong>Additional Iterations:</strong></p><ul><li><p>Increased chatbot visibility through proactive welcome messages, notification indicators, and sound cues.</p></li><li><p>Refined widget sizing and placement to improve discoverability across user groups.</p></li><li><p>Adjusted onboarding copy based on user feedback.</p></li></ul>",
+          "media": null,
+          "contentSettings": null,
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "TextAndMedia",
+          "index": 33,
+          "title": null,
+          "subtitle": null,
+          "text": "<h3>05 - Prototype &amp; Next Steps</h3><p>The workflows and user journeys were initially designed in Figma before being implemented as a fully functional prototype in Botpress. Claude was used to generate and refine the custom code required throughout development, enabling rapid iteration and testing. The prototype underwent hundreds of conversational interactions and usability testing sessions, allowing me to continuously refine the guest experience, staff workflows, AI instructions, and conversation routing logic.</p><p>The result is a fully functional, AI-powered pre-booking guest communication system capable of guiding guests through the consideration stage, escalating high-value opportunities to staff, and transforming guest conversations into actionable intelligence.</p>",
+          "media": {
+            "type": "Video",
+            "url": "https://player.vimeo.com/video/1204372781?autoplay=0&muted=0&loop=0",
+            "croppedImageUrl": null,
+            "caption": null,
+            "displayMode": "large",
+            "width": null,
+            "height": null
+          },
+          "contentSettings": {
+            "showText": true,
+            "showMedia": true,
+            "flipped": false,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "Columns",
+          "index": 35,
+          "title": null,
+          "subtitle": null,
+          "text": null,
+          "media": null,
+          "contentSettings": {
+            "showText": true,
+            "showMedia": false,
+            "flipped": false,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [
+            {
+              "text": "<h3>Learnings</h3><ol><li><p><strong>The Real Problem is Rarely the Stated Problems:</strong> Research revealed a mismatch between what hotels were providing and what guests actually needed. It's important to say flexible in idea generation and to include the end users from the start.</p></li><li><p><strong>Speed Is a Design Tool: </strong>Building with Claude dramatically shortened the time between idea and prototype. The faster I could put a working experience in front of the users, the faster I could identify flawed assumptions, unconver edge cases, and iterate on the experience. Rapid prototyping allowed me to spend less time speculating and more time learning from real interactions.</p></li><li><p><strong>Designing AI Means Designing Human Workflows: </strong>This project reinforced that successful AI products must be designed around the people receiving the output as much as the people interacting with the system. Human workflows, handoffs, and decision-making processes are critical parts of the overall experience.</p></li><li><p><strong>Building a Product Requires More Than Design: </strong>What began as a simple side project evolved into a full-scale entrepreneurial venture. Beyond UX design, I found myself learning market positioning, product strategy, implementation decisions, technical constraints, and business viability. The experience reinforced that successful products are built through equal parts design, adaptability, and persistence.</p></li></ol>",
+              "media": {
+                "type": "Image",
+                "url": null,
+                "croppedImageUrl": null,
+                "caption": null,
+                "displayMode": null,
+                "width": null,
+                "height": null
+              }
+            }
+          ],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "TextAndMedia",
+          "index": 36,
+          "title": null,
+          "subtitle": null,
+          "text": "<h3>The product is ready, so...what's next?</h3>",
+          "media": {
+            "type": "Image",
+            "url": "https://uxfolio-prod.s3.us-east-1.amazonaws.com/6a419f6afa8b4c01d54c538f/6a41a002fa8b4c01d54c8b60/NeImke5mi5IFGTjc.png",
+            "croppedImageUrl": null,
+            "caption": null,
+            "displayMode": "large",
+            "width": "2236",
+            "height": "896"
+          },
+          "contentSettings": {
+            "showText": true,
+            "showMedia": true,
+            "flipped": true,
+            "legacyInsetTextBox": null
+          },
+          "cta": {
+            "show": true,
+            "url": "https://www.concierj.co/demo",
+            "title": "Explore the Demo",
+            "position": null,
+            "type": "primary",
+            "actionType": "open-link",
+            "showIcon": false
+          },
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        }
+      ]
+    },
+    {
+      "shortId": "bcec2b9d",
+      "name": "Redesigning the Digital Giving Experience to Reduce Donor Abandonment",
+      "subtitle": "Safe Water Network",
+      "labels": [
+        "UX Research",
+        "UX/UI Design",
+        "B2C"
+      ],
+      "thumbnailImages": [
+        "https://uxfolio-prod.s3.us-east-1.amazonaws.com/6a419f6afa8b4c01d54c538f/6a443785e431ab6fbcec2b9d/PuOYxLvfYLveO5lM.webp",
+        "https://uxfolio-prod.s3.us-east-1.amazonaws.com/6a419f6afa8b4c01d54c538f/6a443785e431ab6fbcec2b9d/cRw7GZ2FIxR04a92.webp"
+      ],
+      "socialTitle": "Case study title",
+      "socialDescription": "Add a subtitle that captures the essence of the project",
+      "socialImage": null,
+      "sections": [
+        {
+          "type": "MainHeader",
+          "index": 0,
+          "title": "<h1>Redesigning the Digital Giving Experience at Safe Water Network</h1>",
+          "subtitle": "<p>How user research and a redesigned funnel reduced abandonment by 63% and turned one-time givers into engaged donors.</p>",
+          "text": null,
+          "media": {
+            "type": "Image",
+            "url": "https://uxfolio-prod.s3.us-east-1.amazonaws.com/6a419f6afa8b4c01d54c538f/6a443785e431ab6fbcec2b9d/V5uBG13xm3A4NNzc.png",
+            "croppedImageUrl": null,
+            "caption": null,
+            "displayMode": null,
+            "width": "1460",
+            "height": "1046"
+          },
+          "contentSettings": {
+            "showText": null,
+            "showMedia": true,
+            "flipped": false,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "Columns",
+          "index": 1,
+          "title": null,
+          "subtitle": null,
+          "text": null,
+          "media": null,
+          "contentSettings": {
+            "showText": true,
+            "showMedia": false,
+            "flipped": false,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [
+            {
+              "text": "<h3>Overview</h3><p>Safe Water Network (SWN) is an international nonprofit organization working to provide reliable access to safe water across Ghana and India. As part of the fundraising and communications team, I led the redesign of the organization's digital giving funnel. The existing donation experience required donors to navigate multiple pages before reaching the donation form, complete extensive data entry upfront, and received minimal reinforcement after making a gift.</p><p>The goal of this project was to improve the donor experience, reduce friction throughout the giving journey, and increase donation conversion rates while strengthening donor engagement and stewardship.</p>",
+              "media": {
+                "type": "Image",
+                "url": null,
+                "croppedImageUrl": null,
+                "caption": null,
+                "displayMode": null,
+                "width": null,
+                "height": null
+              }
+            },
+            {
+              "text": "<h3>Role</h3><p>Lead UX designer</p><h3>Team</h3><p>Solo lead + WeGive Customer Success Manager &amp; 2 engineers</p><h3>Timeline</h3><p>June - September 2023</p>",
+              "media": {
+                "type": "Image",
+                "url": null,
+                "croppedImageUrl": null,
+                "caption": null,
+                "displayMode": null,
+                "width": null,
+                "height": null
+              }
+            }
+          ],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "Process",
+          "index": 2,
+          "title": null,
+          "subtitle": null,
+          "text": null,
+          "media": null,
+          "contentSettings": null,
+          "cta": null,
+          "columns": [],
+          "processItems": [
+            {
+              "sectionIndex": 4,
+              "name": "Research & Discovery"
+            },
+            {
+              "sectionIndex": 7,
+              "name": "User Journey"
+            },
+            {
+              "sectionIndex": 13,
+              "name": "Design"
+            },
+            {
+              "sectionIndex": 28,
+              "name": "Usability Testing"
+            },
+            {
+              "sectionIndex": 39,
+              "name": "Business Impact"
+            }
+          ],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "TextAndMedia",
+          "index": 4,
+          "title": null,
+          "subtitle": null,
+          "text": "<h2>Research &amp; Discovery</h2><h3>Mixed-Method Donor Research</h3><p>Before redesigning the donation experience, I conducted a mixed-methods research effort to understand donor behavior, identify friction points, and uncover opportunities to improve conversion and long-term engagement.</p><p>Research inputs included:</p><ul><li><p>Eight years of donor and fundraising data</p></li><li><p>Interviews with current and lapsed donors</p></li><li><p>Competitive analysis of peer nonprofit giving experiences</p></li><li><p>Audit of existing digital giving funnel</p></li><li><p>Usability testing of the existing donation flow</p></li></ul><p>The research revealed recurring themes around donor trust, perceived effort, donation psychology, and post-donation engagement. These findings directly informed the redesigned information architecture, giving flow, stewardship experience, and donor communications strategy.</p>",
+          "media": {
+            "type": "Image",
+            "url": "https://uxfolio-prod.s3.us-east-1.amazonaws.com/6a419f6afa8b4c01d54c538f/6a443785e431ab6fbcec2b9d/U0IRnaEoU5lPbSXV.png",
+            "croppedImageUrl": null,
+            "caption": null,
+            "displayMode": "medium",
+            "width": "880",
+            "height": "502"
+          },
+          "contentSettings": {
+            "showText": true,
+            "showMedia": true,
+            "flipped": false,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "Columns",
+          "index": 5,
+          "title": null,
+          "subtitle": null,
+          "text": null,
+          "media": null,
+          "contentSettings": {
+            "showText": true,
+            "showMedia": false,
+            "flipped": false,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [
+            {
+              "text": "<p>FINDING 1</p><h4>Donors Couldn't See Their Impact</h4><p>The donation experience felt transactional rather than mission-driven. Donors struggled to understand where their money was going, who it was helping, and what made Safe Water Network different from other nonprofits. Beyond a tax receipt, donors had few opportunities to engage with the organization, making the donation experience a critical moment to build trust, communicate impact, and strengthen long-term donor relationships.</p>",
+              "media": {
+                "type": "Image",
+                "url": null,
+                "croppedImageUrl": null,
+                "caption": null,
+                "displayMode": null,
+                "width": null,
+                "height": null
+              }
+            },
+            {
+              "text": "<p>FINDING 2</p><h4>Donation Amounts Created Friction</h4><p>The original donation page promoted giving levels of $100+, which felt inaccessible to many donors. Interviews revealed that smaller contributions felt \"not enough\", creating a psychological barrier that prevent some supporters from giving at all.</p>",
+              "media": {
+                "type": "Image",
+                "url": null,
+                "croppedImageUrl": null,
+                "caption": null,
+                "displayMode": null,
+                "width": null,
+                "height": null
+              }
+            },
+            {
+              "text": "<p>FINDING 3</p><h4>Supporters Wanted to Fundraise</h4><p>Current donors, families, and younger supporters expressed interest in raising money through birthdays, events, in memoriam, and peer-to-peer campaigns. Competitive research showed that leading nonprofit organizations actively promoted peer fundraising, creating additional revenue streams with minimal staff involvement.</p>",
+              "media": {
+                "type": "Image",
+                "url": null,
+                "croppedImageUrl": null,
+                "caption": null,
+                "displayMode": null,
+                "width": null,
+                "height": null
+              }
+            },
+            {
+              "text": "<p>FINDING 4</p><h4>Returning Donors Were Treated Like First-Time Donors</h4><p>Returning donors were required to re-enter payment information for every gift. This unnecessary friction made repeat giving more difficult than it needed to be and created avoidable barriers to donor retention.</p>",
+              "media": {
+                "type": "Image",
+                "url": null,
+                "croppedImageUrl": null,
+                "caption": null,
+                "displayMode": null,
+                "width": "100%",
+                "height": null
+              }
+            }
+          ],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "TextAndMedia",
+          "index": 6,
+          "title": null,
+          "subtitle": null,
+          "text": "<h3>Experience Audit</h3><p>Rather than jumping directly into redesign, I evaluated the existing donation experience to understand where donor needs and business goals were misaligned. Combined with donor research, I identified key issues around trust, impact clarity, suggested giving levels, and form friction.</p>",
+          "media": {
+            "type": "Image",
+            "url": "https://uxfolio-prod.s3.us-east-1.amazonaws.com/6a419f6afa8b4c01d54c538f/6a443785e431ab6fbcec2b9d/EwYCqjnv5NZ00Ksk.png",
+            "croppedImageUrl": "https://uxfolio-prod.s3.us-east-1.amazonaws.com/6a419f6afa8b4c01d54c538f/6a443785e431ab6fbcec2b9d/cCSO9bLZITnVKoDK.png",
+            "caption": null,
+            "displayMode": "large",
+            "width": "2304",
+            "height": "1315"
+          },
+          "contentSettings": {
+            "showText": true,
+            "showMedia": true,
+            "flipped": false,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "TextAndMedia",
+          "index": 7,
+          "title": null,
+          "subtitle": null,
+          "text": "<h2>User Journey</h2><p>Mapping the end-to-end donation experience revealed that the primary issue wasn't a single interaction — it was the overall journey. While the existing experience processed donations, it treated giving as a one-time transaction rather than the beginning of a long-term donor relationship.</p><p>Research showed that donors needed different experiences depending on where they were in their giving journey. First-time donors needed trust and context before being asked to give, while returning donors expected a faster path that recognized their prior relationship with the organization.</p><p>The redesigned journey shifted the focus from collecting a donation to cultivating a donor. Each interaction was designed to build trust, reduce friction, or strengthen engagement after a gift was made. This journey map became the blueprint for the redesigned information architecture, checkout flow, donor segmentation, and post-donation experience.</p>",
+          "media": {
+            "type": "Image",
+            "url": "https://uxfolio-prod.s3.us-east-1.amazonaws.com/6a419f6afa8b4c01d54c538f/6a443785e431ab6fbcec2b9d/hLPJvi54RgIVFnau.png",
+            "croppedImageUrl": null,
+            "caption": null,
+            "displayMode": "medium",
+            "width": "880",
+            "height": "942"
+          },
+          "contentSettings": {
+            "showText": true,
+            "showMedia": true,
+            "flipped": false,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "TextAndMedia",
+          "index": 13,
+          "title": null,
+          "subtitle": null,
+          "text": "<h2>Design</h2><p>I guided the redesign by putting myself in the donor's shoes and asking what questions they needed answered at each stage of the journey. Those questions became the structure for the rebuild, ensuring each design decision reduced uncertainty, built trust, or created a clearer path for continued engagement.</p>",
+          "media": {
+            "type": "Image",
+            "url": "/example_project_images/gallery_sample/gallery-sample-tall-01.jpg",
+            "croppedImageUrl": null,
+            "caption": null,
+            "displayMode": null,
+            "width": "532",
+            "height": "2886"
+          },
+          "contentSettings": {
+            "showText": true,
+            "showMedia": false,
+            "flipped": true,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "TextAndMedia",
+          "index": 14,
+          "title": null,
+          "subtitle": null,
+          "text": "<h3>Can I Trust This Organization? Why Should I Donate Here?</h3><p>The original experience sent donors directly do a third-party form with limited organizational context and a long upfront request for information.</p><p>I redesigned the landing page to bring the giving experience onto SWN's branded platform, lead with gratitude, and introduce the organization's model before the ask — helping donors understand who they were supporting and why their gift to SWN mattered.</p>",
+          "media": {
+            "type": "Image",
+            "url": "https://uxfolio-prod.s3.us-east-1.amazonaws.com/uploads/processed/6a419f6afa8b4c01d54c538f/project/6a443785e431ab6fbcec2b9d/section-media/IMG_8115-e57f8c3d-57db-41ff-8e1a-d322b896166f.webp",
+            "croppedImageUrl": null,
+            "caption": null,
+            "displayMode": null,
+            "width": "1179",
+            "height": "2556"
+          },
+          "contentSettings": {
+            "showText": true,
+            "showMedia": true,
+            "flipped": false,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "TextAndMedia",
+          "index": 15,
+          "title": null,
+          "subtitle": null,
+          "text": "<h3>What Impact Am I Making?</h3><p>The original experience presented donation amounts as numbers, leaving donors to infer what their contribution could actually support.</p><p>I translated each suggested gift into a concrete outcome — from funding a water quality test to helping keep a girl in school — so donors could evaluate their contribution through the impact it could create.</p><p>A/B testing compared impact narratives across water safety, healthcare, education, household stability, and livelihoods to understand which messages most influenced donor engagement and giving behavior.</p><p>Examples:</p><p><strong>$5 </strong>— <strong>Water Quality Test:</strong> Funds one water quality test, keeping 100,000 people safe</p><p><strong>$25 </strong>— <strong>A Year in School: </strong>Helps one girl stay in school for a year by freeing up the hours spent walking for water.</p><p><strong>$50 </strong>— <strong>Water for a Home and a Livelihood:</strong> Helps a local business owner provide safe services to their community for a year</p>",
+          "media": {
+            "type": "Image",
+            "url": "https://uxfolio-prod.s3.us-east-1.amazonaws.com/uploads/processed/6a419f6afa8b4c01d54c538f/project/6a443785e431ab6fbcec2b9d/section-media/IMG_8117_2-76c69d6f-bf96-49a0-9282-4f3a26a70e68.webp",
+            "croppedImageUrl": null,
+            "caption": null,
+            "displayMode": null,
+            "width": "1179",
+            "height": "2556"
+          },
+          "contentSettings": {
+            "showText": true,
+            "showMedia": false,
+            "flipped": true,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "TextAndMedia",
+          "index": 16,
+          "title": null,
+          "subtitle": null,
+          "text": "<h3>How Do I Want to Give?</h3><p>Research showed that donors brought different motivations and priorities to giving, yet the original experience offered a single, undifferentiated path.</p><p>I introduced more intentional giving choices, allowing donors to make an unrestricted gift, support a specific campaign or country program, choose their giving frequency, or give in honor or memory of someone. Rather than forcing every donor through the same transaction, the redesigned experience created space for donors to shape the meaning and direction of their gift.</p>",
+          "media": {
+            "type": "Image",
+            "url": "https://uxfolio-prod.s3.us-east-1.amazonaws.com/uploads/processed/6a419f6afa8b4c01d54c538f/project/6a443785e431ab6fbcec2b9d/section-media/Screenshot_2026-07-08_at_11.37.18_AM-7d75cc2b-8b3f-4ce4-a8fb-8fe453fc4d53.webp",
+            "croppedImageUrl": null,
+            "caption": null,
+            "displayMode": null,
+            "width": "702",
+            "height": "1282"
+          },
+          "contentSettings": {
+            "showText": true,
+            "showMedia": true,
+            "flipped": false,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "Text",
+          "index": 17,
+          "title": null,
+          "subtitle": null,
+          "text": "<h3>Why Are You Asking for This Information?</h3><p>The original form asked for too much at once, creating cognitive load, personal-information fatigue, and payment friction at the stage where most donors abandoned the flow.</p>",
+          "media": null,
+          "contentSettings": null,
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "Columns",
+          "index": 21,
+          "title": null,
+          "subtitle": null,
+          "text": null,
+          "media": null,
+          "contentSettings": {
+            "showText": true,
+            "showMedia": true,
+            "flipped": false,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [
+            {
+              "text": "<h4>Request Only What's Needed</h4><p>Personal information was separated from payment details, reducing the amount of information donors had to process at one time.</p>",
+              "media": {
+                "type": "Image",
+                "url": "https://uxfolio-prod.s3.us-east-1.amazonaws.com/uploads/processed/6a419f6afa8b4c01d54c538f/project/6a443785e431ab6fbcec2b9d/section-media/Screenshot_2026-07-08_at_11.43.56_AM-6a9a01f7-a54e-4048-98de-46b9ca512aa1.webp",
+                "croppedImageUrl": null,
+                "caption": null,
+                "displayMode": null,
+                "width": "696",
+                "height": "1514"
+              }
+            },
+            {
+              "text": "<h4>Make Payment Faster</h4><p>Digital and saved payment options created a quicker path through checkout, particularly for returning donors</p>",
+              "media": {
+                "type": "Image",
+                "url": "https://uxfolio-prod.s3.us-east-1.amazonaws.com/uploads/processed/6a419f6afa8b4c01d54c538f/project/6a443785e431ab6fbcec2b9d/section-media/IMG_8120_2-991dd5e8-6359-4258-a562-96718ff0ff46.webp",
+                "croppedImageUrl": null,
+                "caption": null,
+                "displayMode": null,
+                "width": "1179",
+                "height": "2556"
+              }
+            },
+            {
+              "text": "<h4>Confirm with Transparency</h4><p>Donors could review their gift amount, campaign designation, payment details, privacy choices, processing-fee coverage, and final total before submitting.</p>",
+              "media": {
+                "type": "Image",
+                "url": "https://uxfolio-prod.s3.us-east-1.amazonaws.com/uploads/processed/6a419f6afa8b4c01d54c538f/project/6a443785e431ab6fbcec2b9d/section-media/Screenshot_2026-07-08_at_11.44.24_AM-d006c11b-b0da-4410-b16e-91889a03febb.webp",
+                "croppedImageUrl": null,
+                "caption": null,
+                "displayMode": null,
+                "width": "686",
+                "height": "1510"
+              }
+            }
+          ],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "TextAndMedia",
+          "index": 22,
+          "title": null,
+          "subtitle": null,
+          "text": "<h3>What Happens After I Donate?</h3><p>The original journey ended with a generic confirmation message.</p><p>I redesigned the post-donation moment as a human thank-you, featuring a video of community members across Ghana and India acknowledging the donor's gift. From there, donors were invited to learn more about SWN's work or continue into their profile, turning confirmation into the first step of continued engagement.</p>",
+          "media": {
+            "type": "Image",
+            "url": "https://uxfolio-prod.s3.us-east-1.amazonaws.com/uploads/processed/6a419f6afa8b4c01d54c538f/project/6a443785e431ab6fbcec2b9d/section-media/Screenshot_2026-07-08_at_11.56.08_AM-511996f7-4126-4163-b22c-57d63d00b08e.webp",
+            "croppedImageUrl": null,
+            "caption": null,
+            "displayMode": "large",
+            "width": "873",
+            "height": "611"
+          },
+          "contentSettings": {
+            "showText": true,
+            "showMedia": true,
+            "flipped": false,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "TextAndMedia",
+          "index": 27,
+          "title": null,
+          "subtitle": null,
+          "text": "<h3>How Do I Stay Connected After Giving?</h3><p>I designed a donor profile to extend the relationship beyond the donation itself. The profile brought together giving history, impact updates, fundraising tools, and self-service account management so donors could understand their impact, stay connected, and continue engaging with SWN over time.</p>",
+          "media": {
+            "type": "Image",
+            "url": "https://uxfolio-prod.s3.us-east-1.amazonaws.com/uploads/processed/6a419f6afa8b4c01d54c538f/project/6a443785e431ab6fbcec2b9d/section-media/01_1-603fc673-cc9f-4189-83b7-544de208a38d.webp",
+            "croppedImageUrl": null,
+            "caption": null,
+            "displayMode": "medium",
+            "width": "2304",
+            "height": "1728"
+          },
+          "contentSettings": {
+            "showText": true,
+            "showMedia": true,
+            "flipped": false,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "Text",
+          "index": 28,
+          "title": null,
+          "subtitle": null,
+          "text": "<h2>Usability Testing</h2><p>I created a fully-functional, high-fidelity prototype of the new donor journey. I tested the redesigned donor journey across four iterative rounds with 87 participants, including current, lapsed, and former donors, staff, interview participants, and new users. Each round was followed by rapid design adjustments before testing with a new group, helping evaluate not only usability, but how design choices influenced giving decisions, emotional connection, and continued engagement.</p>",
+          "media": null,
+          "contentSettings": null,
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "Cards",
+          "index": 31,
+          "title": null,
+          "subtitle": null,
+          "text": null,
+          "media": null,
+          "contentSettings": null,
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [
+            "<h4>Impact Needed to Be Immediate, Concrete and Decision-Relevant</h4><p><strong>What We Learned: </strong>Participants responded best to short, tangible outcomes they could understand instantly like <em>Water Quality Test.</em></p><p><strong>Iteration: </strong>I shortened impact copy, prioritized clear outcome-based hooks, and moved more complex narratives into deeper story content where additional context could be provided.</p>",
+            "<h4>Emotional Connection Created Momentum</h4><p><strong>What We Learned: </strong>The community thank-you video generated the strongest emotional response across testing. Participants described it as <em>\"personal\", \"touching\", and \"humanizing\", </em>and many wanted to learn more about the people featured.</p><p><strong>Iteration: </strong>The strong positive response directly shaped the community impact stories embedded in the donor profile. The video became a gateway to deeper engagement, carrying the curiosity and emotional connection it created into the broader donor relationship.</p>",
+            "<h4>Friction Was About Trust and Control</h4><p><strong>What We Learned: </strong>Participants valued the guided checkout, saved payment options, and clear review step. Recurring giving by default did not create the confusion I was worried about initially.</p><p><strong>Iterations: </strong>I kept the guided flow, retained recurring giving as the initial selection, added giving frequency to the final confirmation summary, and centralized common donor needs, like tax statements and staff messaging, in the donor profile.</p>",
+            "<h3>Gamification Required Careful Calibration </h3><p><strong>What We Learned: </strong>Donors responded positively to badges, but testing surfaced questions about visibility, attainability, and what recognition should mean in a mission-driven context. Participants asked what happened after earning all five badges, while early badge concepts rewarded low effort setup actions that did not necessarily represent meaningful donor engagement. </p><p><strong>Iterations: </strong>Across badge-system tests, I explored public versus private recognition, one-time versus tiered milestones, and behaivor-based versus impact-based achievements. Ultimately, I kept badges private and moved away from rewarding routine setup actions. The challenge became designing milestones that could remain meaningful across a broad donor base, from. young first-time supporters to long-term major donors. </p><p><strong><em>Unexpected insight:</em></strong> Parents saw badges as.a way to introduce children to philanthropy. </p>",
+            "<h3>Card title</h3><p>Add your text here.</p>",
+            "<h3>Card title</h3><p>Add your text here.</p>"
+          ],
+          "galleryItems": []
+        },
+        {
+          "type": "Text",
+          "index": 39,
+          "title": null,
+          "subtitle": null,
+          "text": "<h2>Business Impact</h2><p>Within six months of launching the redesigned donor journey, online donations increased by 30% and donor engagement rose by 35%. The new experience also broadened Safe Water Network's donor base, surfacing an unexpected user group: parents using the profiles, badges, and fundraising tools to introduce children to philanthropy. The redesign also supported younger donors, such as college students and early professionals, by making giving more accessible, personal, and socially sharable. The peer-to-peer fundraising tools created a new acquisition and advocacy channel for Safe Water Network .In the first six months, donors launched 11 fundraisers on behalf of the organization, raising $80k+ through their own networks.</p><p><strong>Strategic value: </strong>Donor behavior data helped shaped five-year goals across fundraising, brand development, marketing, communications, and thought leadership. Together, these outcomes showed that the redesign did more than improve checkout - it helped turn donors into repeat supporters, advocates, and community champions.</p>",
+          "media": null,
+          "contentSettings": null,
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "Columns",
+          "index": 40,
+          "title": null,
+          "subtitle": null,
+          "text": null,
+          "media": null,
+          "contentSettings": {
+            "showText": true,
+            "showMedia": false,
+            "flipped": false,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [
+            {
+              "text": "<h1>+30%</h1><p>Online donations<br><em>Increase in 6 months</em></p>",
+              "media": {
+                "type": "Image",
+                "url": null,
+                "croppedImageUrl": null,
+                "caption": null,
+                "displayMode": null,
+                "width": null,
+                "height": null
+              }
+            },
+            {
+              "text": "<h1>+35%</h1><p>Donor engagement<br><em>Increase in 6 months</em></p>",
+              "media": {
+                "type": "Image",
+                "url": null,
+                "croppedImageUrl": null,
+                "caption": null,
+                "displayMode": null,
+                "width": null,
+                "height": null
+              }
+            },
+            {
+              "text": "<h1>12</h1><p>Peer-to-peer fundraisers launched<br><em>New donor advocacy channel</em></p>",
+              "media": {
+                "type": "Image",
+                "url": null,
+                "croppedImageUrl": null,
+                "caption": null,
+                "displayMode": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "text": "<h1>$80k+</h1><p>Raised through donor-led fundraisers<br><em>Within first 6 months</em></p>",
+              "media": {
+                "type": "Image",
+                "url": null,
+                "croppedImageUrl": null,
+                "caption": null,
+                "displayMode": null,
+                "width": null,
+                "height": null
+              }
+            }
+          ],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "Columns",
+          "index": 41,
+          "title": null,
+          "subtitle": null,
+          "text": null,
+          "media": null,
+          "contentSettings": {
+            "showText": true,
+            "showMedia": false,
+            "flipped": false,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [
+            {
+              "text": "<h2>Learnings</h2><ol><li><p><strong>UX strategy starts with the full relationship, not a single touchpoint: </strong>Looking across the full donor journey revealed opportunities to build trust, clarify impact, and create reasons for donors to stay engaged post-donation.</p></li><li><p><strong>Reducing friction can mean adding context-</strong> the redesign added steps, but each one reduced uncertainty and helped donors feel more confident in their decision.</p></li><li><p><strong>Existing data can reveal new strategic opportunities: </strong>Donor feedback was already showing up across analytics, emails, support requests, and past interactions. Synthesizing those sources revealed insights that shaped fundraising, brand positioning, thought leadership, and long-term strategy.</p></li></ol>",
+              "media": {
+                "type": "Image",
+                "url": null,
+                "croppedImageUrl": null,
+                "caption": null,
+                "displayMode": null,
+                "width": null,
+                "height": null
+              }
+            }
+          ],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "TextAndMedia",
+          "index": 42,
+          "title": null,
+          "subtitle": null,
+          "text": "<p></p>",
+          "media": {
+            "type": "Image",
+            "url": "https://uxfolio-prod.s3.us-east-1.amazonaws.com/uploads/processed/6a419f6afa8b4c01d54c538f/project/6a443785e431ab6fbcec2b9d/section-media/Screenshot_2026-07-12_at_3.53.33_PM-919eee11-0b5f-452e-8283-05f77dd1a5fd.webp",
+            "croppedImageUrl": null,
+            "caption": null,
+            "displayMode": "medium",
+            "width": "1846",
+            "height": "1338"
+          },
+          "contentSettings": {
+            "showText": true,
+            "showMedia": true,
+            "flipped": true,
+            "legacyInsetTextBox": null
+          },
+          "cta": {
+            "show": true,
+            "url": "https://donate.safewaternetwork.org/safe-water-network/checkout/donor-portal-checkout-182?_ga=2.231268063.1939611796.1783896732-1614087194.1782505860",
+            "title": "See the live site",
+            "position": null,
+            "type": "primary",
+            "actionType": "open-link",
+            "showIcon": true
+          },
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        }
+      ]
+    },
+    {
+      "shortId": "d97079f4",
+      "name": null,
+      "subtitle": "Adolescent Health Initiative, Michigan Medicine",
+      "labels": [
+        "Operational UX",
+        "Systems Design",
+        "Internal Tools"
+      ],
+      "thumbnailImages": [
+        "https://uxfolio-prod.s3.us-east-1.amazonaws.com/6a419f6afa8b4c01d54c538f/6a553a060b1c9655d97079f4/o9NCIfAok2sdUfcw.webp"
+      ],
+      "socialTitle": "Case study title",
+      "socialDescription": "Add a subtitle that captures the essence of the project",
+      "socialImage": null,
+      "sections": [
+        {
+          "type": "MainHeader",
+          "index": 0,
+          "title": "<h1>Reducing Project Setup Time Through Workflow Automation</h1>",
+          "subtitle": "<p>Eliminating setup friction and streamlining internal workflows with a single click. </p>",
+          "text": null,
+          "media": {
+            "type": "Image",
+            "url": "https://uxfolio-prod.s3.us-east-1.amazonaws.com/uploads/processed/6a419f6afa8b4c01d54c538f/project/6a553a060b1c9655d97079f4/section-media/Screenshot_2026-07-13_at_2.48.17_PM-9c97bee6-6c90-44b1-9ec1-e4dfa06fe6e6.webp",
+            "croppedImageUrl": null,
+            "caption": null,
+            "displayMode": null,
+            "width": "1171",
+            "height": "540"
+          },
+          "contentSettings": {
+            "showText": null,
+            "showMedia": true,
+            "flipped": false,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "Columns",
+          "index": 1,
+          "title": null,
+          "subtitle": null,
+          "text": null,
+          "media": null,
+          "contentSettings": {
+            "showText": true,
+            "showMedia": false,
+            "flipped": false,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [
+            {
+              "text": "<h3>Overview</h3><p>As part of a broader redesign of the Adolescent Health Initiative's internal tools and workflows, i redesigned how the Training &amp; Events team created and managed project plans for webinars, single-day and multi-day conferences.</p><p>The existing process required staff to manually adapt a generic task list, calculate deadlines, assign ownership, add instructions, and upload the completed plan into Asana for every new initiative.</p><p>I replaced it with an automated system that generated complete project plans, individual task lists, and notifications with a single click — reducing setup time from <em>two hours to under two minutes</em>.</p>",
+              "media": {
+                "type": "Image",
+                "url": null,
+                "croppedImageUrl": null,
+                "caption": null,
+                "displayMode": null,
+                "width": null,
+                "height": null
+              }
+            },
+            {
+              "text": "<h3>AHI Role</h3><p>Program Manager</p><h3>Project Role</h3><p>Lead UX Designer &amp; Builder</p><h3>Timeline</h3><p>Oct 2025 - Jan 2026 (16 weeks)</p>",
+              "media": {
+                "type": "Image",
+                "url": null,
+                "croppedImageUrl": null,
+                "caption": null,
+                "displayMode": null,
+                "width": null,
+                "height": null
+              }
+            }
+          ],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "TextAndMedia",
+          "index": 4,
+          "title": null,
+          "subtitle": null,
+          "text": "<h2>Discovery &amp; Workflow Mapping</h2><p>I spoke with team members involved in planning and delivering training initiatives to understand how projects were created, assigned, updated, and monitored. I also mapped cross-team dependencies, including marketing, partnerships, speaker preparation, and continuing education requirements.</p><p>The workflow revealed repeated manual reconstruction: staff adapted a generic checklist, recalculated deadlines, reassessed ownership, and communicated updates individually for every event.</p><p>The process took approximately 2 hours per event and created several points of failure. Manual entry increased risk of errors, and any change required tasks and status updates to be revised separately.</p><p>The team needed a faster, more reliable way to create initiative-specific project plans while keeping deadlines, responsibilities, and communication aligned.</p>",
+          "media": {
+            "type": "Image",
+            "url": "https://uxfolio-prod.s3.us-east-1.amazonaws.com/uploads/processed/6a419f6afa8b4c01d54c538f/project/6a553a060b1c9655d97079f4/section-media/ChatGPT_Image_Jul_13_2026_01_06_00_PM-31c4ea25-4437-4ba2-b717-4374de7e1d33.webp",
+            "croppedImageUrl": null,
+            "caption": null,
+            "displayMode": "medium",
+            "width": "1492",
+            "height": "1054"
+          },
+          "contentSettings": {
+            "showText": true,
+            "showMedia": true,
+            "flipped": false,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "Columns",
+          "index": 6,
+          "title": null,
+          "subtitle": null,
+          "text": null,
+          "media": null,
+          "contentSettings": {
+            "showText": true,
+            "showMedia": false,
+            "flipped": false,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [
+            {
+              "text": "<p>FINDING 1</p><h4>Event Dates Drove the Entire Workflow</h4><p>Most tasks were due a specific number of days before or after an event. Yet staff manually calculated and entered every deadline, creating unnecessary work &amp; increasing risk of errors when dates changed.</p><p><span style=\"color: var(--paletteColor2);\"><strong>Design Response: Anchor the Workflow to the Event Date</strong></span></p><ul><li><p>Deadlines should calculate automatically based on how many days before or after each task was due.</p></li><li><p>If the event changed, the full timeline should adjust automatically.</p></li></ul><p></p>",
+              "media": {
+                "type": "Image",
+                "url": null,
+                "croppedImageUrl": null,
+                "caption": null,
+                "displayMode": null,
+                "width": null,
+                "height": null
+              }
+            },
+            {
+              "text": "<p>FINDING 2</p><h4>Same Data Needed to Serve Different People</h4><p>Event leads needed a full project view, individual team members needed personal to-do lists, and supporting teams needed visibility into relevant tasks and handoffs. The data needed to stay connected while adapting to each user's role.</p><p><strong>Design Response: Create One Source of Truth with Role-Specific Views</strong></p><ul><li><p>The same task data should power the full project tracker, individual to-do lists, and cross-team views without requiring duplicate entry.</p></li></ul>",
+              "media": {
+                "type": "Image",
+                "url": null,
+                "croppedImageUrl": null,
+                "caption": null,
+                "displayMode": null,
+                "width": null,
+                "height": null
+              }
+            },
+            {
+              "text": "<p>FINDING 3</p><h4>Limited Visibility Created Bottlenecks</h4><p>Team members could not easily see the full event pipeline, understand what had been completed, or identify where work was delayed. This led to frequent status check-ins, slowed handoffs, and made it difficult to plan ahead for other work.</p><p><strong>Design Response: Make Status Visible</strong></p><ul><li><p>The system should surface progress, ownership changes, approaching deadlines, and overdue work automatically so teams can plan ahead and respond before bottlenecks form</p></li></ul>",
+              "media": {
+                "type": "Image",
+                "url": null,
+                "croppedImageUrl": null,
+                "caption": null,
+                "displayMode": null,
+                "width": null,
+                "height": null
+              }
+            }
+          ],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "TextAndMedia",
+          "index": 8,
+          "title": null,
+          "subtitle": null,
+          "text": "<h2>Designing the New Workflow</h2><h3>Project Control Table</h3><p>Each event type was given its own workspace within the broader organizational redesign.</p><p>Each event type began with a control table containing only the essential project information. The \"Tasks Created?\" field acts as a safeguard, preventing users from accidentally generating the same project twice.</p>",
+          "media": {
+            "type": "Image",
+            "url": "https://uxfolio-prod.s3.us-east-1.amazonaws.com/uploads/processed/6a419f6afa8b4c01d54c538f/project/6a553a060b1c9655d97079f4/section-media/Screenshot_2026-07-13_at_1.53.23_PM-4bbdc41a-8ec6-4146-8956-301ee9631971.webp",
+            "croppedImageUrl": null,
+            "caption": null,
+            "displayMode": "large",
+            "width": "1854",
+            "height": "620"
+          },
+          "contentSettings": {
+            "showText": true,
+            "showMedia": true,
+            "flipped": true,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "TextAndMedia",
+          "index": 9,
+          "title": null,
+          "subtitle": null,
+          "text": "<h3>Event-Specific Task Template</h3><p>I created separate templates for each event type, with fields for the task name, relative due date, default assignee, and task instructions.</p><p>To establish each relative due date, I analyzed more than five years of historical event timelines to identify when tasks were typically completed in relation to the event date. I reviewed the proposed timelines with event team members to confirm they remained accurate and reflected current training requirements.</p>",
+          "media": {
+            "type": "Image",
+            "url": "https://uxfolio-prod.s3.us-east-1.amazonaws.com/uploads/processed/6a419f6afa8b4c01d54c538f/project/6a553a060b1c9655d97079f4/section-media/Screenshot_2026-07-13_at_2.01.01_PM-ff12746e-3117-4722-994a-8331ccf23a3f.webp",
+            "croppedImageUrl": null,
+            "caption": null,
+            "displayMode": "large",
+            "width": "1055",
+            "height": "359"
+          },
+          "contentSettings": {
+            "showText": true,
+            "showMedia": true,
+            "flipped": true,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "TextAndMedia",
+          "index": 10,
+          "title": null,
+          "subtitle": null,
+          "text": "<h3>Automated Task Generation</h3><p>With one click, the system generated the complete project plan, calculated every deadline, assigned task owners, and added the tasks to the master task list.</p><p>From there, the same task data automatically populated:</p><ul><li><p>the event-specific project tracker, with time-based views and status filters;</p></li><li><p>each team member's personal to-do list;</p></li><li><p>cross-team views for shared dependencies.</p></li></ul><p>This reduced project setup went from two hours to under 30 seconds.</p>",
+          "media": {
+            "type": "Image",
+            "url": "https://uxfolio-prod.s3.us-east-1.amazonaws.com/uploads/processed/6a419f6afa8b4c01d54c538f/project/6a553a060b1c9655d97079f4/section-media/Screenshot_2026-07-13_at_2.13.07_PM-a307235c-08f7-49ad-85f8-c68a013ee377.webp",
+            "croppedImageUrl": null,
+            "caption": null,
+            "displayMode": "medium",
+            "width": "822",
+            "height": "422"
+          },
+          "contentSettings": {
+            "showText": true,
+            "showMedia": true,
+            "flipped": false,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "TextAndMedia",
+          "index": 11,
+          "title": null,
+          "subtitle": null,
+          "text": "<h3>Automated Notifications</h3><p>I used AI-assisted development to build a standardized notification framework that could be reused across the organization. Notifications were triggered when:</p><ul><li><p>A task deadline was changed</p></li><li><p>A task was reassigned, alerting both the previous and new assignee</p></li><li><p>A task was due that day</p></li><li><p>A task became one day overdue</p></li><li><p>A task remained overdue for three days, escalating the alert to the assignee's manager</p></li></ul><p>This replaced manual status check-ins with timely, role-specific communication and gave teams greater visibility into changes, upcoming work, and potential bottlenecks.</p>",
+          "media": {
+            "type": "Image",
+            "url": "https://uxfolio-prod.s3.us-east-1.amazonaws.com/uploads/processed/6a419f6afa8b4c01d54c538f/project/6a553a060b1c9655d97079f4/section-media/Screenshot_2026-07-13_at_2.09.13_PM-454468d2-d408-4e1f-b0ac-92d49f1a602d.webp",
+            "croppedImageUrl": null,
+            "caption": null,
+            "displayMode": "large",
+            "width": "696",
+            "height": "1126"
+          },
+          "contentSettings": {
+            "showText": true,
+            "showMedia": true,
+            "flipped": false,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "Text",
+          "index": 12,
+          "title": null,
+          "subtitle": null,
+          "text": "<h3>Usability Testing</h3><p>The team was already two weeks into onboarding and had a basic understanding of the new platform. I created a simulated event in a sandbox environment and asked participants to complete the setup independently.</p><p>I observed their questions, mouse movements, hesitation, and points of friction, and then held a debrief to understand what felt easier, what remained difficult, and what they would change.</p>",
+          "media": null,
+          "contentSettings": null,
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "Cards",
+          "index": 13,
+          "title": null,
+          "subtitle": null,
+          "text": null,
+          "media": null,
+          "contentSettings": null,
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [
+            "<h3>What Worked</h3><ul><li><p>Any team member could quickly create a new event.</p></li><li><p>The duplicate-generation safeguard increased confidence.</p></li><li><p>The process felt manageable and significantly easier than the previous workflow.</p></li></ul>",
+            "<h3>What Changed</h3><ul><li><p>Notification types and frequencies were adjusted based on the manager's preferences.</p></li><li><p>Additional Gantt, Kanban, and timeline views were created for different working styles.</p></li><li><p>Task instructions were clarified based on user questions.</p></li></ul><p>Because every view drew from the same underlying data, I could implement these changes without duplicating information or creating parallel workflows.</p>",
+            "<h3>Highlight 3</h3><p>Add some details here</p>",
+            "<h3>Card title</h3><p>Add your text here.</p>",
+            "<h3>Card title</h3><p>Add your text here.</p>",
+            "<h3>Card title</h3><p>Add your text here.</p>"
+          ],
+          "galleryItems": []
+        },
+        {
+          "type": "Text",
+          "index": 14,
+          "title": null,
+          "subtitle": null,
+          "text": "<h3>Impact</h3><p>The redesigned workflow reduced event setup time from<strong> 2 hours to under 30 seconds.</strong> Beyond setup speed, the new system:</p><ul><li><p>Reduced manual data entry and repeated work by 95%</p></li><li><p>Gave team members real-time visibility into the full event pipeline</p></li><li><p>Allowed staff to view the same data in formats that matched how they worked</p></li><li><p>Automated deadline, reassignment, and overdue notifications</p></li><li><p>Reduced status check-ins and administrative coordination</p></li><li><p>Made onboarding new team members easier</p></li><li><p>100% adoption reached within two weeks, with all 2026 events managed through the system</p></li><li><p>Created a reusable structure that could be updated once and applied to future events</p></li></ul><p>The result was a more reliable, transparent and scalable workflow that reduced administrative burden and gave the team more time to focus on delivering healthcare training events.</p>",
+          "media": null,
+          "contentSettings": null,
+          "cta": null,
+          "columns": [],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        },
+        {
+          "type": "Columns",
+          "index": 26,
+          "title": null,
+          "subtitle": null,
+          "text": null,
+          "media": null,
+          "contentSettings": {
+            "showText": true,
+            "showMedia": false,
+            "flipped": false,
+            "legacyInsetTextBox": null
+          },
+          "cta": null,
+          "columns": [
+            {
+              "text": "<h4>Learnings</h4><ol><li><p><strong>Map before migrating </strong>— Redesigning the workflow prevented old friction from carrying into a new tool.</p></li><li><p><strong>One source of truth can support many views </strong>— Shared data worked best when adapted to each user's role.</p></li><li><p><strong>Automate the repetitive, preserve flexibility </strong>— Standardization reduced effort without limiting customization.</p></li></ol>",
+              "media": {
+                "type": "Image",
+                "url": null,
+                "croppedImageUrl": null,
+                "caption": null,
+                "displayMode": null,
+                "width": null,
+                "height": null
+              }
+            }
+          ],
+          "processItems": [],
+          "cards": [],
+          "galleryItems": []
+        }
+      ]
+    }
+  ]
+}

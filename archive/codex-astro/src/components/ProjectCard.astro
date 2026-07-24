@@ -1,0 +1,36 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { localAsset } from "../data/portfolio";
+
+interface Props extends HTMLAttributes<"article"> {
+  project: any;
+}
+
+const { project, ...attributes } = Astro.props;
+const images = project.thumbnailImages.map(localAsset);
+---
+
+<article class="project-card" {...attributes}>
+  <a class="project-card__link" href={`/work/${project.slug}/`}>
+    <div class:list={["project-card__visual", `image-count-${images.length}`]}>
+      {
+        images.map((image: string, index: number) => (
+          <img
+            src={image}
+            alt=""
+            loading={index === 0 ? "eager" : "lazy"}
+            decoding="async"
+          />
+        ))
+      }
+    </div>
+    <div class="project-card__body">
+      <ul class="tag-list" aria-label="Project topics">
+        {project.labels.map((label: string) => <li>{label.replace("0 -> 1", "0 → 1")}</li>)}
+      </ul>
+      <h2>{project.title}</h2>
+      <p>{project.subtitle}</p>
+      <span class="project-card__arrow" aria-hidden="true">↗</span>
+    </div>
+  </a>
+</article>

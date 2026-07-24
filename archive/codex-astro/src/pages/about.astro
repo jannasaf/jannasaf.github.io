@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionRenderer from "../components/SectionRenderer.astro";
+import { aboutPage } from "../data/portfolio";
+---
+
+<BaseLayout
+  title="About Janna Safran — UX Researcher & Product Strategist"
+  description="Janna Safran is a systems-minded UX researcher and product strategist with a background in public health."
+  pageClass="about-page"
+>
+  <div class="about-content">
+    {
+      aboutPage?.sections.map((section: any) => (
+        <SectionRenderer section={section} projectTitle="About Janna Safran" />
+      ))
+    }
+  </div>
+</BaseLayout>

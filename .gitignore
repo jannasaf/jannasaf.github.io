@@ -1,0 +1,24 @@
+# site/ is committed on purpose: it is the deliverable, and keeping it in the repo
+# means the built pages are browsable on GitHub and deployable without a CI step.
+# Regenerate with `python3 build.py`.
+
+# archived earlier attempt: keep the source, not its dependencies or build
+archive/codex-astro/node_modules/
+archive/codex-astro/dist/
+archive/codex-astro/.astro/
+
+# agent scratch
+.agents/
+.codex/
+.preview.log
+
+# python
+__pycache__/
+*.pyc
+
+# os
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example

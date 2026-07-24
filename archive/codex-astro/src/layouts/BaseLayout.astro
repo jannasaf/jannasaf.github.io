@@ -1,0 +1,63 @@
+---
+import "@fontsource/instrument-serif/400.css";
+import "@fontsource-variable/inter-tight";
+import "../styles/global.css";
+import SiteFooter from "../components/SiteFooter.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import { localAsset } from "../data/portfolio";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string | null;
+  pageClass?: string;
+}
+
+const {
+  title = "Janna Safran — UX Researcher & Product Strategist",
+  description = "Systems-minded UX researcher and product strategist turning complex needs into clear product direction.",
+  image,
+  pageClass = ""
+} = Astro.props;
+
+const productionOrigin = import.meta.env.PUBLIC_SITE_URL?.replace(/\/$/, "");
+const canonical = productionOrigin
+  ? `${productionOrigin}${Astro.url.pathname}`
+  : undefined;
+const socialImage = image
+  ? productionOrigin
+    ? `${productionOrigin}${localAsset(image)}`
+    : localAsset(image)
+  : undefined;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#e7e7e5" />
+    <meta name="description" content={description} />
+    <meta name="author" content="Janna Safran" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {socialImage && <meta property="og:image" content={socialImage} />}
+    {canonical && <meta property="og:url" content={canonical} />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {socialImage && <meta name="twitter:image" content={socialImage} />}
+    {canonical && <link rel="canonical" href={canonical} />}
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>{title}</title>
+  </head>
+  <body class={pageClass}>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <SiteHeader />
+    <main id="main-content">
+      <slot />
+    </main>
+    <SiteFooter />
+  </body>
+</html>

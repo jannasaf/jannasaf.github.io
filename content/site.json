@@ -1,0 +1,97 @@
+{
+  "_note": "Site-level content model. Hand-authored from the harvested uxfol.io portfolio and verified against the live DOM. Case-study bodies live in the per-slug JSON files and are machine-extracted.",
+  "source": {
+    "platform": "uxfol.io",
+    "url": "https://uxfol.io/7a0815b4",
+    "harvested": "2026-07-24"
+  },
+  "profile": {
+    "name": "Janna Safran",
+    "role": "UX researcher & product strategist",
+    "meta_description": "UX researcher and product strategist turning complex needs into clear product direction.",
+    "email": "janna.safran@gmail.com",
+    "location": "California, open to relocation",
+    "linkedin": ""
+  },
+  "nav": [
+    { "label": "Home", "href": "index.html" },
+    { "label": "About", "href": "about.html" },
+    { "label": "Contact", "href": "#connect" }
+  ],
+  "hero": {
+    "eyebrow": "Hello, I'm Janna!",
+    "headline": "I'm a {{systems-minded}} UX researcher and product strategist who turns complex needs into clear product direction, {{from early discovery through launch}}.",
+    "_headline_note": "{{...}} marks the passages the original set in muted grey (--paletteColor2 / #5A5A5A)."
+  },
+  "projects_intro": {
+    "heading": "Selected Projects",
+    "body": "Explore my selected projects, showcasing my dedication to turning research insights into product strategy and creating experiences people love to use."
+  },
+  "projects": [
+    {
+      "slug": "concierj",
+      "href": "work/concierj.html",
+      "name": "Concierj",
+      "title": "Building an AI-Powered Pre-Booking Communications & Intelligence Platform for Boutique Hotels",
+      "subtitle": "Independent Venture · 2026",
+      "labels": ["AI", "0 → 1", "Entrepreneurship"],
+      "thumbs": [
+        "assets/img/home-01.webp",
+        "assets/img/home-02.webp",
+        "assets/img/home-03.webp",
+        "assets/img/home-04.webp"
+      ],
+      "cta": { "label": "Explore the demo", "href": "" }
+    },
+    {
+      "slug": "safe-water-network",
+      "href": "work/safe-water-network.html",
+      "name": "Safe Water Network",
+      "title": "Redesigning the Digital Giving Experience to Reduce Donor Abandonment",
+      "subtitle": "Safe Water Network",
+      "labels": ["UX Research", "UX/UI Design", "B2C"],
+      "thumbs": ["assets/img/home-05.webp", "assets/img/home-06.webp"],
+      "cta": { "label": "See the live site", "href": "" }
+    },
+    {
+      "slug": "workflow-automation",
+      "href": "work/workflow-automation.html",
+      "name": "Workflow Automation",
+      "title": "Reducing Project Setup Time Through Workflow Automation",
+      "subtitle": "Adolescent Health Initiative, Michigan Medicine",
+      "labels": ["Operational UX", "Systems Design", "Internal Tools"],
+      "thumbs": ["assets/img/home-07.webp"],
+      "cta": null
+    }
+  ],
+  "about": {
+    "heading": "Hello!",
+    "portrait": "assets/img/about-01.webp",
+    "education": [
+      "2020 - 2022 · Columbia University · Master of Public Health (MPH)",
+      "2015 - 2018 · Dickinson College · Sociology (B.A.)"
+    ]
+  },
+  "footer": {
+    "heading": "Let's connect!",
+    "body": "I'm currently exploring opportunities in UX research, product strategy, journey design, and early-stage product work. Based in California and open to relocation."
+  },
+  "tokens": {
+    "_note": "Computed from the live site at 1440px via Playwright.",
+    "color": {
+      "page": "#DDDDDD",
+      "panel": "#CBCBCB",
+      "surface": "#FEFEFE",
+      "ink": "#060606",
+      "muted": "#5A5A5A"
+    },
+    "type": {
+      "display": "\"Instrument Serif\", Georgia, serif",
+      "body": "\"Inter Tight\", system-ui, sans-serif",
+      "display_sizes": { "hero": "56px", "section": "32px", "card": "28px" },
+      "body_sizes": { "base": "18px", "small": "16px", "label": "12px" },
+      "body_weight": 300
+    },
+    "layout": { "max_width": "1440px" }
+  }
+}

@@ -1,0 +1,623 @@
+{
+  "slug": "workflow-automation",
+  "route": "/work/workflow-automation",
+  "source_url": "https://uxfol.io/p/7a0815b4/d97079f4",
+  "blocks": [
+    {
+      "type": "mainheader",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 1,
+          "text": "Reducing Project Setup Time Through Workflow Automation"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Eliminating setup friction and streamlining internal workflows with a single click."
+        }
+      ],
+      "images": [
+        {
+          "src": "assets/img/workflow-automation-01.17_PM-9c97bee6-6c90-44b1-9ec1-e4dfa06fe6",
+          "alt": null
+        }
+      ]
+    },
+    {
+      "type": "columns",
+      "columns": [
+        {
+          "text": [
+            {
+              "kind": "heading",
+              "level": 3,
+              "text": "Overview"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "As part of a broader redesign of the Adolescent Health Initiative's internal tools and workflows, i redesigned how the Training & Events team created and managed project plans for webinars, single-day and multi-day conferences."
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "The existing process required staff to manually adapt a generic task list, calculate deadlines, assign ownership, add instructions, and upload the completed plan into Asana for every new initiative."
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "I replaced it with an automated system that generated complete project plans, individual task lists, and notifications with a single click — reducing setup time from two hours to under two minutes ."
+            }
+          ],
+          "images": []
+        },
+        {
+          "text": [
+            {
+              "kind": "heading",
+              "level": 3,
+              "text": "AHI Role"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "Program Manager"
+            },
+            {
+              "kind": "heading",
+              "level": 3,
+              "text": "Project Role"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "Lead UX Designer & Builder"
+            },
+            {
+              "kind": "heading",
+              "level": 3,
+              "text": "Timeline"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "Oct 2025 - Jan 2026 (16 weeks)"
+            }
+          ],
+          "images": []
+        }
+      ],
+      "text": [],
+      "images": []
+    },
+    {
+      "type": "textandmedia",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "text": "Discovery & Workflow Mapping"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "I spoke with team members involved in planning and delivering training initiatives to understand how projects were created, assigned, updated, and monitored. I also mapped cross-team dependencies, including marketing, partnerships, speaker preparation, and continuing education requirements."
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "The workflow revealed repeated manual reconstruction: staff adapted a generic checklist, recalculated deadlines, reassessed ownership, and communicated updates individually for every event."
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "The process took approximately 2 hours per event and created several points of failure. Manual entry increased risk of errors, and any change required tasks and status updates to be revised separately."
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "The team needed a faster, more reliable way to create initiative-specific project plans while keeping deadlines, responsibilities, and communication aligned."
+        }
+      ],
+      "images": [
+        {
+          "src": "assets/img/workflow-automation-02.webp",
+          "alt": null
+        }
+      ]
+    },
+    {
+      "type": "columns",
+      "columns": [
+        {
+          "text": [
+            {
+              "kind": "p",
+              "level": null,
+              "text": "FINDING 1"
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "text": "Event Dates Drove the Entire Workflow"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "Most tasks were due a specific number of days before or after an event. Yet staff manually calculated and entered every deadline, creating unnecessary work & increasing risk of errors when dates changed."
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "Design Response: Anchor the Workflow to the Event Date"
+            },
+            {
+              "kind": "li",
+              "level": null,
+              "text": "Deadlines should calculate automatically based on how many days before or after each task was due."
+            },
+            {
+              "kind": "li",
+              "level": null,
+              "text": "If the event changed, the full timeline should adjust automatically."
+            }
+          ],
+          "images": []
+        },
+        {
+          "text": [
+            {
+              "kind": "p",
+              "level": null,
+              "text": "FINDING 2"
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "text": "Same Data Needed to Serve Different People"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "Event leads needed a full project view, individual team members needed personal to-do lists, and supporting teams needed visibility into relevant tasks and handoffs. The data needed to stay connected while adapting to each user's role."
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "Design Response: Create One Source of Truth with Role-Specific Views"
+            },
+            {
+              "kind": "li",
+              "level": null,
+              "text": "The same task data should power the full project tracker, individual to-do lists, and cross-team views without requiring duplicate entry."
+            }
+          ],
+          "images": []
+        },
+        {
+          "text": [
+            {
+              "kind": "p",
+              "level": null,
+              "text": "FINDING 3"
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "text": "Limited Visibility Created Bottlenecks"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "Team members could not easily see the full event pipeline, understand what had been completed, or identify where work was delayed. This led to frequent status check-ins, slowed handoffs, and made it difficult to plan ahead for other work."
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "Design Response: Make Status Visible"
+            },
+            {
+              "kind": "li",
+              "level": null,
+              "text": "The system should surface progress, ownership changes, approaching deadlines, and overdue work automatically so teams can plan ahead and respond before bottlenecks form"
+            }
+          ],
+          "images": []
+        }
+      ],
+      "text": [],
+      "images": []
+    },
+    {
+      "type": "textandmedia",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 2,
+          "text": "Designing the New Workflow"
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "text": "Project Control Table"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Each event type was given its own workspace within the broader organizational redesign."
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Each event type began with a control table containing only the essential project information. The \"Tasks Created?\" field acts as a safeguard, preventing users from accidentally generating the same project twice."
+        }
+      ],
+      "images": [
+        {
+          "src": "assets/img/workflow-automation-03.23_PM-4bbdc41a-8ec6-4146-8956-301ee96319",
+          "alt": null
+        }
+      ]
+    },
+    {
+      "type": "textandmedia",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 3,
+          "text": "Event-Specific Task Template"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "I created separate templates for each event type, with fields for the task name, relative due date, default assignee, and task instructions."
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "To establish each relative due date, I analyzed more than five years of historical event timelines to identify when tasks were typically completed in relation to the event date. I reviewed the proposed timelines with event team members to confirm they remained accurate and reflected current training requirements."
+        }
+      ],
+      "images": [
+        {
+          "src": "assets/img/workflow-automation-04.01_PM-ff12746e-3117-4722-994a-8331ccf23a",
+          "alt": null
+        }
+      ]
+    },
+    {
+      "type": "textandmedia",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 3,
+          "text": "Automated Task Generation"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "With one click, the system generated the complete project plan, calculated every deadline, assigned task owners, and added the tasks to the master task list."
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "From there, the same task data automatically populated:"
+        },
+        {
+          "kind": "li",
+          "level": null,
+          "text": "the event-specific project tracker, with time-based views and status filters;"
+        },
+        {
+          "kind": "li",
+          "level": null,
+          "text": "each team member's personal to-do list;"
+        },
+        {
+          "kind": "li",
+          "level": null,
+          "text": "cross-team views for shared dependencies."
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "This reduced project setup went from two hours to under 30 seconds."
+        }
+      ],
+      "images": [
+        {
+          "src": "assets/img/workflow-automation-05.07_PM-a307235c-08f7-49ad-85f8-c68a013ee3",
+          "alt": null
+        }
+      ]
+    },
+    {
+      "type": "textandmedia",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 3,
+          "text": "Automated Notifications"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "I used AI-assisted development to build a standardized notification framework that could be reused across the organization. Notifications were triggered when:"
+        },
+        {
+          "kind": "li",
+          "level": null,
+          "text": "A task deadline was changed"
+        },
+        {
+          "kind": "li",
+          "level": null,
+          "text": "A task was reassigned, alerting both the previous and new assignee"
+        },
+        {
+          "kind": "li",
+          "level": null,
+          "text": "A task was due that day"
+        },
+        {
+          "kind": "li",
+          "level": null,
+          "text": "A task became one day overdue"
+        },
+        {
+          "kind": "li",
+          "level": null,
+          "text": "A task remained overdue for three days, escalating the alert to the assignee's manager"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "This replaced manual status check-ins with timely, role-specific communication and gave teams greater visibility into changes, upcoming work, and potential bottlenecks."
+        }
+      ],
+      "images": [
+        {
+          "src": "assets/img/workflow-automation-06.13_PM-454468d2-d408-4e1f-b0ac-92d49f1a60",
+          "alt": null
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 3,
+          "text": "Usability Testing"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "The team was already two weeks into onboarding and had a basic understanding of the new platform. I created a simulated event in a sandbox environment and asked participants to complete the setup independently."
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "I observed their questions, mouse movements, hesitation, and points of friction, and then held a debrief to understand what felt easier, what remained difficult, and what they would change."
+        }
+      ],
+      "images": []
+    },
+    {
+      "type": "cards",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 3,
+          "text": "What Worked"
+        },
+        {
+          "kind": "li",
+          "level": null,
+          "text": "Any team member could quickly create a new event."
+        },
+        {
+          "kind": "li",
+          "level": null,
+          "text": "The duplicate-generation safeguard increased confidence."
+        },
+        {
+          "kind": "li",
+          "level": null,
+          "text": "The process felt manageable and significantly easier than the previous workflow."
+        },
+        {
+          "kind": "heading",
+          "level": 3,
+          "text": "What Changed"
+        },
+        {
+          "kind": "li",
+          "level": null,
+          "text": "Notification types and frequencies were adjusted based on the manager's preferences."
+        },
+        {
+          "kind": "li",
+          "level": null,
+          "text": "Additional Gantt, Kanban, and timeline views were created for different working styles."
+        },
+        {
+          "kind": "li",
+          "level": null,
+          "text": "Task instructions were clarified based on user questions."
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Because every view drew from the same underlying data, I could implement these changes without duplicating information or creating parallel workflows."
+        }
+      ],
+      "images": []
+    },
+    {
+      "type": "text",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 3,
+          "text": "Impact"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "The redesigned workflow reduced event setup time from 2 hours to under 30 seconds. Beyond setup speed, the new system:"
+        },
+        {
+          "kind": "li",
+          "level": null,
+          "text": "Reduced manual data entry and repeated work by 95%"
+        },
+        {
+          "kind": "li",
+          "level": null,
+          "text": "Gave team members real-time visibility into the full event pipeline"
+        },
+        {
+          "kind": "li",
+          "level": null,
+          "text": "Allowed staff to view the same data in formats that matched how they worked"
+        },
+        {
+          "kind": "li",
+          "level": null,
+          "text": "Automated deadline, reassignment, and overdue notifications"
+        },
+        {
+          "kind": "li",
+          "level": null,
+          "text": "Reduced status check-ins and administrative coordination"
+        },
+        {
+          "kind": "li",
+          "level": null,
+          "text": "Made onboarding new team members easier"
+        },
+        {
+          "kind": "li",
+          "level": null,
+          "text": "100% adoption reached within two weeks, with all 2026 events managed through the system"
+        },
+        {
+          "kind": "li",
+          "level": null,
+          "text": "Created a reusable structure that could be updated once and applied to future events"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "The result was a more reliable, transparent and scalable workflow that reduced administrative burden and gave the team more time to focus on delivering healthcare training events."
+        }
+      ],
+      "images": []
+    },
+    {
+      "type": "columns",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 4,
+          "text": "Learnings"
+        },
+        {
+          "kind": "li",
+          "level": null,
+          "text": "Map before migrating — Redesigning the workflow prevented old friction from carrying into a new tool."
+        },
+        {
+          "kind": "li",
+          "level": null,
+          "text": "One source of truth can support many views — Shared data worked best when adapted to each user's role."
+        },
+        {
+          "kind": "li",
+          "level": null,
+          "text": "Automate the repetitive, preserve flexibility — Standardization reduced effort without limiting customization."
+        }
+      ],
+      "images": []
+    },
+    {
+      "type": "text",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 3,
+          "text": "Read more of my case studies"
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "text": "Building an AI-Powered Pre-Booking Communications & Intelligence Platform for Boutique Hotels"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Independent Venture · 2026"
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "text": "Redesigning the Digital Giving Experience to Reduce Donor Abandonment"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Safe Water Network"
+        }
+      ],
+      "images": [
+        {
+          "src": "assets/img/home-01.webp",
+          "alt": null
+        },
+        {
+          "src": "assets/img/home-02.webp",
+          "alt": null
+        },
+        {
+          "src": "assets/img/home-03.webp",
+          "alt": null
+        },
+        {
+          "src": "assets/img/home-04.webp",
+          "alt": null
+        },
+        {
+          "src": "assets/img/home-05.webp",
+          "alt": null
+        },
+        {
+          "src": "assets/img/home-06.webp",
+          "alt": null
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 3,
+          "text": "Let’s connect!"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "I'm currently exploring opportunities in UX research, product strategy, journey design, and early-stage product work. Based in California and open to relocation."
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "janna.safran@gmail.com"
+        }
+      ],
+      "images": []
+    }
+  ]
+}

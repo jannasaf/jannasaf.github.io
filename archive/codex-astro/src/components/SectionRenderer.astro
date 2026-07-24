@@ -1,0 +1,126 @@
+---
+import MediaBlock from "./MediaBlock.astro";
+import { cleanHtml, isValidMedia, sectionTitle } from "../data/portfolio";
+
+interface Props {
+  section: any;
+  projectTitle: string;
+}
+
+const { section, projectTitle } = Astro.props;
+const hasMedia = isValidMedia(
+  section.media?.croppedImageUrl || section.media?.url
+);
+const usefulCards = (section.cards || []).filter(
+  (card: string) => card && !card.includes("Card title")
+);
+const heading = sectionTitle(section);
+const mediaAlt = `${projectTitle}: ${heading}`;
+const columnCount = Math.min(Math.max(section.columns?.length || 1, 1), 4);
+const cardHtml = (card: string) =>
+  cleanHtml(card)
+    .replace(/<h1>/g, '<p class="metric">')
+    .replace(/<\/h1>/g, "</p>");
+---
+
+{
+  section.type === "MainHeader" ? (
+    <section class="case-hero shell" id={`section-${section.index}`}>
+      <div class="case-hero__copy">
+        <div class="rich-text" set:html={cleanHtml(section.title)} />
+        <div class="case-hero__subtitle rich-text" set:html={cleanHtml(section.subtitle)} />
+      </div>
+      {hasMedia && (
+        <div class="case-hero__media">
+          <MediaBlock media={section.media} alt={`${projectTitle} project preview`} eager />
+        </div>
+      )}
+    </section>
+  ) : section.type === "Text" ? (
+    <section class="content-section shell" id={`section-${section.index}`}>
+      <div class="rich-text reading-width" set:html={cleanHtml(section.text)} />
+      {section.cta?.show && section.cta.url && (
+        <a class="button" href={section.cta.url}>{section.cta.title}</a>
+      )}
+    </section>
+  ) : section.type === "TextAndMedia" ? (
+    <section
+      class:list={[
+        "content-section",
+        "shell",
+        "text-media",
+        !hasMedia && "text-media--text-only",
+        section.contentSettings?.flipped && "text-media--flipped"
+      ]}
+      id={`section-${section.index}`}
+    >
+      <div class="rich-text" set:html={cleanHtml(section.text)} />
+      {hasMedia && (
+        <div class="text-media__media">
+          <MediaBlock media={section.media} alt={mediaAlt} />
+        </div>
+      )}
+      {section.cta?.show && section.cta.url && (
+        <a
+          class="button"
+          href={section.cta.url}
+          target={section.cta.actionType === "open-link" ? "_blank" : undefined}
+          rel={section.cta.actionType === "open-link" ? "noreferrer" : undefined}
+        >
+          {section.cta.title}
+          <span aria-hidden="true">↗</span>
+        </a>
+      )}
+    </section>
+  ) : section.type === "Columns" && section.columns?.length ? (
+    <section class="content-section shell" id={`section-${section.index}`}>
+      <div class={`columns-grid columns-grid--${columnCount}`}>
+        {section.columns.map((column: any, index: number) => (
+          <div class="column-item">
+            {column.text && (
+              <div class="rich-text" set:html={cleanHtml(column.text)} />
+            )}
+            {(column.media?.url || column.media?.croppedImageUrl) && (
+              <MediaBlock
+                media={column.media}
+                alt={`${projectTitle}: supporting visual ${index + 1}`}
+              />
+            )}
+          </div>
+        ))}
+      </div>
+    </section>
+  ) : section.type === "Cards" && usefulCards.length ? (
+    <section class="content-section shell" id={`section-${section.index}`}>
+      <div class="insight-grid">
+        {usefulCards.map((card: string) => (
+          <article class="insight-card rich-text" set:html={cardHtml(card)} />
+        ))}
+      </div>
+    </section>
+  ) : section.type === "Process" && section.processItems?.length ? (
+    <nav class="process-nav shell" aria-label="Case study sections" id={`section-${section.index}`}>
+      <ol>
+        {section.processItems.map((item: any, index: number) => (
+          <li>
+            <a href={`#section-${item.sectionIndex}`}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              {item.name}
+            </a>
+          </li>
+        ))}
+      </ol>
+    </nav>
+  ) : section.type === "Gallery" && section.galleryItems?.length ? (
+    <section class="content-section shell" id={`section-${section.index}`}>
+      <div class="gallery-grid">
+        {section.galleryItems.map((media: any, index: number) => (
+          <MediaBlock
+            media={media}
+            alt={`${projectTitle}: gallery image ${index + 1}`}
+          />
+        ))}
+      </div>
+    </section>
+  ) : null
+}

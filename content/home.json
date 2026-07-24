@@ -1,0 +1,170 @@
+{
+  "slug": "home",
+  "route": "/",
+  "source_url": "https://uxfol.io/7a0815b4",
+  "blocks": [
+    {
+      "type": "hero",
+      "text": [
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Hello, I'm Janna!"
+        },
+        {
+          "kind": "heading",
+          "level": 1,
+          "text": "I'm a systems-minded UX researcher and product strategist who turns complex needs into clear product direction, from early discovery through launch ."
+        }
+      ],
+      "images": []
+    },
+    {
+      "type": "text",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 3,
+          "text": "Selected Projects"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Explore my selected projects, showcasing my dedication to turning research insights into product strategy and creating experiences people love to use."
+        }
+      ],
+      "images": []
+    },
+    {
+      "type": "projectgrid",
+      "text": [
+        {
+          "kind": "p",
+          "level": null,
+          "text": "AI"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "0 -> 1"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Entrepreneurship"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Building an AI-Powered Pre-Booking Communications & Intelligence Platform for Boutique Hotels"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Independent Venture · 2026"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "UX Research"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "UX/UI Design"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "B2C"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Redesigning the Digital Giving Experience to Reduce Donor Abandonment"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Safe Water Network"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Operational UX"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Systems Design"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Internal Tools"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Reducing Project Setup Time Through Workflow Automation"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Adolescent Health Initiative, Michigan Medicine"
+        }
+      ],
+      "images": [
+        {
+          "src": "assets/img/home-01.webp",
+          "alt": null
+        },
+        {
+          "src": "assets/img/home-02.webp",
+          "alt": null
+        },
+        {
+          "src": "assets/img/home-03.webp",
+          "alt": null
+        },
+        {
+          "src": "assets/img/home-04.webp",
+          "alt": null
+        },
+        {
+          "src": "assets/img/home-05.webp",
+          "alt": null
+        },
+        {
+          "src": "assets/img/home-06.webp",
+          "alt": null
+        },
+        {
+          "src": "assets/img/home-07.webp",
+          "alt": null
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 3,
+          "text": "Let’s connect!"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "I'm currently exploring opportunities in UX research, product strategy, journey design, and early-stage product work. Based in California and open to relocation."
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "janna.safran@gmail.com"
+        }
+      ],
+      "images": []
+    }
+  ]
+}

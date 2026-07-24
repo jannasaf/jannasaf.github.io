@@ -1,0 +1,20 @@
+---
+import { projects } from "../data/portfolio";
+import ProjectCard from "./ProjectCard.astro";
+
+interface Props {
+  currentSlug: string;
+}
+
+const { currentSlug } = Astro.props;
+const related = projects.filter((project) => project.slug !== currentSlug).slice(0, 2);
+---
+
+<section class="related-projects">
+  <div class="shell">
+    <h2>Read more of my case studies</h2>
+    <div class="project-grid project-grid--related">
+      {related.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </div>
+</section>

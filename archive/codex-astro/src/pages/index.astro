@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { cleanHtml, homePage, portfolio, projects } from "../data/portfolio";
+
+const intro = homePage?.sections.find((section: any) => section.type === "Text");
+---
+
+<BaseLayout pageClass="home-page">
+  <section class="home-hero shell">
+    <div class="rich-text home-hero__copy" set:html={cleanHtml(portfolio.site.hero)} />
+  </section>
+
+  <section class="work-section shell" aria-labelledby="selected-projects">
+    <div
+      class="rich-text work-intro"
+      id="selected-projects"
+      set:html={cleanHtml(intro?.text || "<h2>Selected projects</h2>")}
+    />
+    <div class="project-grid">
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </section>
+</BaseLayout>
