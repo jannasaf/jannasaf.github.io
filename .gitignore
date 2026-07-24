@@ -1,6 +1,9 @@
-# site/ is committed on purpose: it is the deliverable, and keeping it in the repo
-# means the built pages are browsable on GitHub and deployable without a CI step.
+# The generated pages (index.html, about.html, work/, assets/css/) are committed on
+# purpose: GitHub Pages serves this repo's root, so they are the deployed site.
 # Regenerate with `python3 build.py`.
+
+# throwaway builds from `python3 build.py <dir>`
+/preview/
 
 # archived earlier attempt: keep the source, not its dependencies or build
 archive/codex-astro/node_modules/

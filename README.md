@@ -9,17 +9,23 @@ decision is still open.
 
 ## Layout
 
+This is a GitHub Pages **user site**, so Pages serves the root of `main`. The generated
+pages therefore sit at the root, next to the sources that produce them.
+
 ```
-content/           portable content layer (plain JSON, no framework coupling)
-  site.json          site-level model: profile, nav, projects, tokens (hand-authored)
-  <slug>.json        per-page ordered blocks (machine-extracted from the original)
-assets/img/         39 images pulled from the original site
-build.py            generator: content/ + assets/ -> site/
-site/               build output (5 static pages, self-contained)
+index.html          generated — home
+about.html          generated — about
+work/*.html         generated — one page per case study
+assets/css/site.css generated — all styles
+assets/img/         39 images pulled from the original site (source, served in place)
+content/            portable content layer (plain JSON, no framework coupling)
+  site.json           site-level model: profile, nav, projects, tokens (hand-authored)
+  <slug>.json         per-page ordered blocks (machine-extracted from the original)
+build.py            generator
 tools/              the migration pipeline, kept so the harvest is reproducible
-  harvest.py         drives headless Chromium over the live site, saves DOM + assets
-  extract.py         converts harvested DOM into content/*.json
-  verify.py          screenshots the build, reports broken images / overflow / console errors
+  harvest.py          drives headless Chromium over the live site, saves DOM + assets
+  extract.py          converts harvested DOM into content/*.json
+  verify.py           screenshots the build, reports broken images / overflow / console errors
 reference/          original-site screenshots + asset manifest, for fidelity checks
 archive/codex-astro/  earlier Astro attempt, kept for reference
 DESIGN-REVIEW.md    review of the original site with measured findings
@@ -28,8 +34,15 @@ DESIGN-REVIEW.md    review of the original site with measured findings
 ## Build
 
 ```sh
-python3 build.py            # -> site/
-python3 -m http.server -d site 8747
+python3 build.py            # regenerate the pages at the repo root
+python3 -m http.server 8747 # preview at http://127.0.0.1:8747
+```
+
+`build.py` rewrites only the generated files listed above — it never deletes the
+sources. Pass a directory to build a throwaway copy elsewhere instead:
+
+```sh
+python3 build.py preview/
 ```
 
 Requires Python 3 only. `tools/` additionally needs `playwright` and `beautifulsoup4`,

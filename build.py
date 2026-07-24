@@ -1,12 +1,17 @@
 #!/usr/bin/env python3
 """Build the static site from the portable content layer.
 
-    python3 build.py            # -> site/
+    python3 build.py            # -> repo root (what GitHub Pages serves)
+    python3 build.py preview/   # -> preview/ (throwaway copy, assets included)
+
+This repo is a GitHub Pages *user site* (jannasaf.github.io), so Pages serves the
+root of `main`. The generated pages therefore live at the root next to the sources,
+and reference `assets/img/` in place rather than copying it.
 
 Reads  content/site.json      site-level model (hand-authored, verified)
        content/<slug>.json    machine-extracted case-study blocks
        assets/img/*           harvested imagery
-Writes site/                  self-contained static output
+Writes index.html, about.html, work/*.html, assets/css/site.css
 """
 import html
 import json
@@ -16,7 +21,8 @@ import shutil
 import sys
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(ROOT, sys.argv[1] if len(sys.argv) > 1 else "site")
+IN_PLACE = len(sys.argv) < 2
+OUT = ROOT if IN_PLACE else os.path.join(ROOT, sys.argv[1])
 SITE = json.load(open(f"{ROOT}/content/site.json"))
 T = SITE["tokens"]
 
@@ -411,24 +417,38 @@ p{{margin:0 0 1rem;max-width:74ch}}
 # ---------------------------------------------------------------- main
 
 def main():
-    if os.path.isdir(OUT):
-        shutil.rmtree(OUT)
+    generated = ["index.html", "about.html", "assets/css/site.css"] + \
+                [f"work/{s}.html" for s in CASES]
+
+    if IN_PLACE:
+        # Never rmtree the repo root — remove only what a previous run wrote.
+        for rel in generated:
+            p = f"{OUT}/{rel}"
+            if os.path.exists(p):
+                os.remove(p)
+    else:
+        if os.path.isdir(OUT):
+            shutil.rmtree(OUT)
+        os.makedirs(f"{OUT}/assets", exist_ok=True)
+        shutil.copytree(f"{ROOT}/assets/img", f"{OUT}/assets/img")
+
     os.makedirs(f"{OUT}/assets/css", exist_ok=True)
     os.makedirs(f"{OUT}/work", exist_ok=True)
-    shutil.copytree(f"{ROOT}/assets/img", f"{OUT}/assets/img")
-    open(f"{OUT}/assets/css/site.css", "w").write(CSS)
 
+    open(f"{OUT}/assets/css/site.css", "w").write(CSS)
     open(f"{OUT}/index.html", "w").write(build_home())
     open(f"{OUT}/about.html", "w").write(build_about())
-    written = ["index.html", "about.html"]
     for slug in CASES:
         open(f"{OUT}/work/{slug}.html", "w").write(build_case(slug))
-        written.append(f"work/{slug}.html")
 
-    for p in written:
-        print(f"  {os.path.getsize(f'{OUT}/{p}'):>7,} B  {p}")
+    # Pages runs Jekyll unless told not to; that would skip files it does not expect.
+    open(f"{OUT}/.nojekyll", "w").write("")
+
+    for rel in generated:
+        print(f"  {os.path.getsize(f'{OUT}/{rel}'):>7,} B  {rel}")
     n = len(os.listdir(f"{OUT}/assets/img"))
-    print(f"\n  {len(written)} pages + {n} images -> {OUT}")
+    print(f"\n  {len(generated) - 1} pages + {n} images -> "
+          f"{'repo root' if IN_PLACE else OUT}")
 
 
 if __name__ == "__main__":
