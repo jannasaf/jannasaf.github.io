@@ -76,7 +76,7 @@ def nav(depth, active):
 """
 
 
-def footer(depth):
+def footer(depth, script=""):
     f, p = SITE["footer"], SITE["profile"]
     return f"""</main>
 <footer class="connect" id="connect">
@@ -89,8 +89,48 @@ def footer(depth):
     </div>
   </div>
 </footer>
-</body>
+{script}</body>
 </html>
+"""
+
+
+PROCNAV_SCRIPT = """<script>
+(function(){
+  var steps = Array.prototype.slice.call(document.querySelectorAll(".step"));
+  var fill = document.querySelector("[data-progress-fill]");
+  var sections = steps.map(function(s){
+    var href = s.querySelector(".step__link").getAttribute("href");
+    return document.getElementById(href.slice(1));
+  }).filter(Boolean);
+
+  function setActive(id){
+    steps.forEach(function(s){
+      var href = s.querySelector(".step__link").getAttribute("href");
+      s.classList.toggle("is-active", href === "#" + id);
+    });
+  }
+
+  if ("IntersectionObserver" in window && sections.length){
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    }, { rootMargin: "-40% 0px -55% 0px", threshold: 0 });
+    sections.forEach(function(s){ observer.observe(s); });
+  }
+
+  function updateProgress(){
+    if (!fill) return;
+    var doc = document.documentElement;
+    var scrollTop = doc.scrollTop || document.body.scrollTop;
+    var scrollHeight = (doc.scrollHeight || document.body.scrollHeight) - doc.clientHeight;
+    var pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+    fill.style.width = pct + "%";
+  }
+  document.addEventListener("scroll", updateProgress, { passive: true });
+  updateProgress();
+})();
+</script>
 """
 
 
@@ -166,13 +206,20 @@ def render_text(runs, depth, lead_class="d-section", min_level=2):
 
 def render_block(b, depth):
     t, runs, images = b["type"], b.get("text", []), b.get("images", [])
+    anchor = b.get("anchor")
+    id_attr = f' id="{e(anchor)}"' if anchor else ""
 
     if t == "process":
         steps = "".join(
-            f'<li class="step"><span class="step__n">{s["n"]}</span>'
-            f'<span class="step__label">{e(s["label"])}</span></li>'
+            f'<li class="step" data-step="{s["n"]}">'
+            f'<a class="step__link" href="#{e(s["anchor"])}">'
+            f'<span class="step__n">{s["n"]}</span>'
+            f'<span class="step__label">{e(s["label"])}</span></a></li>'
             for s in b.get("steps", []))
-        return f'<section class="sec sec--process"><ol class="steps">{steps}</ol></section>'
+        return f"""<nav class="procnav" aria-label="Case study sections">
+  <div class="procnav__bar"><div class="procnav__fill" data-progress-fill></div></div>
+  <ol class="steps">{steps}</ol>
+</nav>"""
 
     if t in ("mainheader", "header"):
         head_runs = [r for r in runs if r["kind"] == "heading"]
@@ -180,18 +227,18 @@ def render_block(b, depth):
         title = e(head_runs[0]["text"]) if head_runs else ""
         sub = "".join(f"<p>{e(r['text'])}</p>" for r in rest)
         media = "".join(img(i["src"], i["alt"], depth, "casehero__img") for i in images)
-        return f"""<section class="sec casehero">
+        return f"""<section class="sec casehero"{id_attr}>
   <div class="casehero__text"><h1 class="d-hero">{title}</h1><div class="lede">{sub}</div></div>
   <div class="casehero__media">{media}</div>
 </section>"""
 
     if t == "cards":
         cards = "".join(f'<div class="tile">{e(r["text"])}</div>' for r in runs if r["text"])
-        return f'<section class="sec"><div class="tiles">{cards}</div></section>'
+        return f'<section class="sec"{id_attr}><div class="tiles">{cards}</div></section>'
 
     if t == "gallery":
         media = "".join(img(i["src"], i["alt"], depth, "gallery__img") for i in images)
-        return f'<section class="sec"><div class="gallery">{media}</div></section>'
+        return f'<section class="sec"{id_attr}><div class="gallery">{media}</div></section>'
 
     if t == "columns":
         cols = b.get("columns")
@@ -204,29 +251,29 @@ def render_block(b, depth):
                 is_meta = (c["text"] and not c["images"]
                            and all(len(r["text"]) < 60 for r in c["text"]))
                 cells.append(f'<div class="{"meta" if is_meta else "prose"}">{inner}</div>')
-            return (f'<section class="sec cols cols--{len(cells)}">'
+            return (f'<section class="sec cols cols--{len(cells)}"{id_attr}>'
                     + "".join(cells) + "</section>")
         body = render_text(runs, depth)
         media = "".join(img(i["src"], i["alt"], depth, "figure__img") for i in images)
         if body and media:
-            return (f'<section class="sec sec--split"><div class="prose">{body}</div>'
+            return (f'<section class="sec sec--split"{id_attr}><div class="prose">{body}</div>'
                     f'<div class="figure">{media}</div></section>')
         if media:
-            return f'<section class="sec"><div class="figure figure--wide">{media}</div></section>'
-        return f'<section class="sec"><div class="prose">{body}</div></section>'
+            return f'<section class="sec"{id_attr}><div class="figure figure--wide">{media}</div></section>'
+        return f'<section class="sec"{id_attr}><div class="prose">{body}</div></section>'
 
     if t == "textandmedia":
         body = render_text(runs, depth)
         media = "".join(img(i["src"], i["alt"], depth, "figure__img") for i in images)
         if media:
-            return (f'<section class="sec sec--split"><div class="prose">{body}</div>'
+            return (f'<section class="sec sec--split"{id_attr}><div class="prose">{body}</div>'
                     f'<div class="figure">{media}</div></section>')
-        return f'<section class="sec"><div class="prose">{body}</div></section>'
+        return f'<section class="sec"{id_attr}><div class="prose">{body}</div></section>'
 
     body = render_text(runs, depth)
     media = "".join(img(i["src"], i["alt"], depth, "figure__img") for i in images)
     inner = f'<div class="prose">{body}</div>' + (f'<div class="figure figure--wide">{media}</div>' if media else "")
-    return f'<section class="sec">{inner}</section>'
+    return f'<section class="sec"{id_attr}>{inner}</section>'
 
 
 # ---------------------------------------------------------------- pages
@@ -294,6 +341,7 @@ def build_case(slug):
             continue
         keep.append(b)
 
+    has_procnav = any(b["type"] == "process" for b in keep)
     body = "".join(render_block(b, 1) for b in keep)
     more = "".join(project_card(p, 1) for p in others)
     nxt = f"""<section class="sec sec--more">
@@ -301,7 +349,8 @@ def build_case(slug):
   <div class="grid">{more}</div>
 </section>"""
     return (head(f"{meta['name']} — {SITE['profile']['name']}", meta["title"], 1)
-            + nav(1, "Home") + f'<div class="shell">{body}{nxt}</div>' + footer(1))
+            + nav(1, "Home") + f'<div class="shell">{body}{nxt}</div>'
+            + footer(1, PROCNAV_SCRIPT if has_procnav else ""))
 
 
 # ---------------------------------------------------------------- css
@@ -316,9 +365,11 @@ CSS = f""":root {{
   --display:{T['type']['display']};
   --body:{T['type']['body']};
   --gap:clamp(1.25rem,3vw,2.5rem);
+  --topbar-h:4rem;
+  --procnav-h:5rem;
 }}
 *,*::before,*::after{{box-sizing:border-box}}
-html{{-webkit-text-size-adjust:100%}}
+html{{-webkit-text-size-adjust:100%;scroll-behavior:smooth}}
 body{{margin:0;background:var(--page);color:var(--ink);
   font-family:var(--body);font-weight:{T['type']['body_weight']};font-size:1.125rem;line-height:1.45}}
 img{{max-width:100%;height:auto;display:block}}
@@ -380,12 +431,22 @@ p{{margin:0 0 1rem;max-width:74ch}}
   gap:var(--gap);align-items:center}}
 
 /* process */
+section[id]{{scroll-margin-top:calc(var(--topbar-h) + var(--procnav-h))}}
+.procnav{{position:sticky;top:var(--topbar-h);z-index:9;background:var(--page);
+  padding-block:.85rem;border-bottom:1px solid color-mix(in srgb,var(--ink) 12%,transparent)}}
+.procnav__bar{{height:3px;background:color-mix(in srgb,var(--ink) 12%,transparent);
+  border-radius:2px;margin-bottom:.85rem;overflow:hidden}}
+.procnav__fill{{height:100%;width:0%;background:var(--ink);transition:width .1s linear}}
 .steps{{list-style:none;display:flex;flex-wrap:wrap;gap:clamp(1rem,3vw,2.5rem);
   margin:0;padding:0;counter-reset:none}}
-.step{{display:flex;align-items:center;gap:.6rem;font-size:1rem;color:var(--muted)}}
+.step__link{{display:flex;align-items:center;gap:.6rem;font-size:1rem;
+  color:var(--muted);text-decoration:none}}
 .step__n{{display:grid;place-items:center;width:2rem;height:2rem;flex:0 0 auto;
   border-radius:50%;border:1px solid color-mix(in srgb,var(--ink) 30%,transparent);
-  font-family:var(--display);font-size:1rem;color:var(--ink)}}
+  font-family:var(--display);font-size:1rem;color:var(--ink);transition:background-color .15s,color .15s}}
+.step__link:hover{{color:var(--ink)}}
+.step.is-active .step__link{{color:var(--ink)}}
+.step.is-active .step__n,.step__link:hover .step__n{{background:var(--ink);color:var(--page)}}
 
 /* tiles / insight cards */
 .tiles{{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:var(--gap)}}
@@ -423,8 +484,11 @@ p{{margin:0 0 1rem;max-width:74ch}}
 
 @media (max-width:820px){{
   .sec--split,.casehero,.cols--2,.cols--3{{grid-template-columns:1fr}}
+  .steps{{flex-wrap:nowrap;overflow-x:auto;gap:1.5rem}}
+  .step__link{{white-space:nowrap}}
 }}
 @media (prefers-reduced-motion:reduce){{
+  html{{scroll-behavior:auto}}
   *{{transition:none!important;animation:none!important}}
   .card:hover{{transform:none}}
 }}

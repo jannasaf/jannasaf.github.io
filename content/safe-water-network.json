@@ -91,23 +91,28 @@
       "steps": [
         {
           "n": 1,
-          "label": "Research & Discovery"
+          "label": "Research & Discovery",
+          "anchor": "research-discovery"
         },
         {
           "n": 2,
-          "label": "Donor Journey"
+          "label": "Donor Journey",
+          "anchor": "donor-journey"
         },
         {
           "n": 3,
-          "label": "Design"
+          "label": "Design",
+          "anchor": "design"
         },
         {
           "n": 4,
-          "label": "Testing & Iteration"
+          "label": "Testing & Iteration",
+          "anchor": "testing-iteration"
         },
         {
           "n": 5,
-          "label": "Growth & Retention Impact"
+          "label": "Growth & Retention Impact",
+          "anchor": "growth-impact"
         }
       ],
       "text": [],
@@ -115,6 +120,7 @@
     },
     {
       "type": "textandmedia",
+      "anchor": "research-discovery",
       "text": [
         {
           "kind": "heading",
@@ -284,6 +290,7 @@
     },
     {
       "type": "textandmedia",
+      "anchor": "donor-journey",
       "text": [
         {
           "kind": "heading",
@@ -315,6 +322,7 @@
     },
     {
       "type": "text",
+      "anchor": "design",
       "text": [
         {
           "kind": "heading",
@@ -559,6 +567,7 @@
     },
     {
       "type": "text",
+      "anchor": "testing-iteration",
       "text": [
         {
           "kind": "heading",
@@ -626,6 +635,7 @@
     },
     {
       "type": "text",
+      "anchor": "growth-impact",
       "text": [
         {
           "kind": "heading",

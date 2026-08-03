@@ -106,23 +106,28 @@
       "steps": [
         {
           "n": 1,
-          "label": "Research"
+          "label": "Research",
+          "anchor": "research"
         },
         {
           "n": 2,
-          "label": "Funnel & Journey Design"
+          "label": "Funnel & Journey Design",
+          "anchor": "funnel-journey-design"
         },
         {
           "n": 3,
-          "label": "What I Built & Why"
+          "label": "What I Built & Why",
+          "anchor": "what-i-built"
         },
         {
           "n": 4,
-          "label": "Testing & Iteration"
+          "label": "Testing & Iteration",
+          "anchor": "testing-iteration"
         },
         {
           "n": 5,
-          "label": "Prototype & Results"
+          "label": "Prototype & Results",
+          "anchor": "prototype-results"
         }
       ],
       "text": [],
@@ -130,6 +135,7 @@
     },
     {
       "type": "text",
+      "anchor": "research",
       "text": [
         {
           "kind": "heading",
@@ -197,6 +203,7 @@
     },
     {
       "type": "text",
+      "anchor": "funnel-journey-design",
       "text": [
         {
           "kind": "heading",
@@ -301,6 +308,7 @@
     },
     {
       "type": "text",
+      "anchor": "what-i-built",
       "text": [
         {
           "kind": "heading",
@@ -512,6 +520,7 @@
     },
     {
       "type": "text",
+      "anchor": "testing-iteration",
       "text": [
         {
           "kind": "heading",
@@ -716,6 +725,7 @@
     },
     {
       "type": "textandmedia",
+      "anchor": "prototype-results",
       "text": [
         {
           "kind": "heading",
