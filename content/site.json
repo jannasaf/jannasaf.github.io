@@ -20,8 +20,8 @@
   ],
   "hero": {
     "eyebrow": "Hello, I'm Janna!",
-    "headline": "I'm a {{data-driven}} product manager who pairs funnel analytics with user feedback to diagnose drop-off and build the fixes, {{from first session to loyal cohort}}.",
-    "_headline_note": "{{...}} marks the passages the original set in muted grey (--paletteColor2 / #5A5A5A)."
+    "headline": "I'm a data-driven growth and lifecycle product strategist",
+    "subhead": "I pair funnel analytics with user feedback to find where cohorts drop off, then design the workflows and experiences that keep them engaged, from first session to loyal cohort."
   },
   "projects_intro": {
     "heading": "Selected projects",

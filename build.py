@@ -16,7 +16,6 @@ Writes index.html, about.html, work/*.html, assets/css/site.css
 import html
 import json
 import os
-import re
 import shutil
 import sys
 
@@ -95,15 +94,6 @@ def footer(depth):
 
 
 # ---------------------------------------------------------------- pieces
-
-
-def rich(text):
-    """Render {{...}} emphasis spans from the content model."""
-    parts = re.split(r"\{\{(.+?)\}\}", text)
-    out = []
-    for i, part in enumerate(parts):
-        out.append(f'<span class="muted">{e(part)}</span>' if i % 2 else e(part))
-    return "".join(out)
 
 
 def img(src, alt, depth, cls=""):
@@ -238,7 +228,8 @@ def build_home():
     cards = "".join(project_card(p, 0) for p in SITE["projects"])
     body = f"""<section class="sec hero">
   <p class="eyebrow">{e(h['eyebrow'])}</p>
-  <h1 class="d-hero">{rich(h['headline'])}</h1>
+  <h1 class="d-hero">{e(h['headline'])}</h1>
+  <p class="lede">{e(h['subhead'])}</p>
 </section>
 <section class="sec">
   <h2 class="d-section">{e(pi['heading'])}</h2>
@@ -336,7 +327,6 @@ a{{color:inherit}}
 .d-sub{{font-family:var(--display);font-weight:400;font-size:1.3rem;line-height:1.3;margin:0 0 .5rem}}
 .d-card{{font-family:var(--display);font-weight:400;font-size:clamp(1.25rem,1.9vw,1.75rem);
   line-height:1.22;margin:0 0 .4rem}}
-.muted{{color:var(--muted)}}
 .eyebrow{{font-size:1.125rem;font-weight:700;margin:0 0 1.25rem}}
 .lede{{color:var(--muted);max-width:62ch;margin:0 0 1rem}}
 p{{margin:0 0 1rem;max-width:74ch}}
