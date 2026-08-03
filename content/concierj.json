@@ -157,6 +157,7 @@
     },
     {
       "type": "cards",
+      "cols": 2,
       "items": [
         {
           "text": [
@@ -309,6 +310,7 @@
     },
     {
       "type": "cards",
+      "bold_heading": true,
       "items": [
         {
           "text": [
@@ -322,7 +324,7 @@
         {
           "text": [
             { "kind": "heading", "level": 3, "text": "Staff" },
-            { "kind": "p", "level": null, "text": "Human attention where it matters" },
+            { "kind": "p", "level": null, "text": "Human attention where it matters:" },
             { "kind": "li", "level": null, "text": "Lead capture" },
             { "kind": "li", "level": null, "text": "Smart escalations" },
             { "kind": "li", "level": null, "text": "Conversation summaries" }
@@ -331,7 +333,7 @@
         {
           "text": [
             { "kind": "heading", "level": 3, "text": "Hotel Leadership" },
-            { "kind": "p", "level": null, "text": "Actionable guest intelligence" },
+            { "kind": "p", "level": null, "text": "Actionable guest intelligence:" },
             { "kind": "li", "level": null, "text": "Inquiry trends" },
             { "kind": "li", "level": null, "text": "Guest preferences" },
             { "kind": "li", "level": null, "text": "Operational insights" }
@@ -711,22 +713,6 @@
         }
       ],
       "images": []
-    },
-    {
-      "type": "textandmedia",
-      "text": [
-        {
-          "kind": "heading",
-          "level": 3,
-          "text": "The product is ready. What's next?"
-        }
-      ],
-      "images": [
-        {
-          "src": "assets/img/concierj-13.png",
-          "alt": null
-        }
-      ]
     }
   ]
 }

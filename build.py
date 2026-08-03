@@ -253,7 +253,12 @@ def render_block(b, depth):
             cards = "".join(render_tile(it) for it in items)
         else:
             cards = "".join(f'<div class="tile">{e(r["text"])}</div>' for r in runs if r["text"])
-        return f'<section class="sec"{id_attr}><div class="tiles">{cards}</div></section>'
+        tiles_cls = "tiles"
+        if b.get("cols"):
+            tiles_cls += f' tiles--{b["cols"]}'
+        if b.get("bold_heading"):
+            tiles_cls += " tiles--bold-heading"
+        return f'<section class="sec"{id_attr}><div class="{tiles_cls}">{cards}</div></section>'
 
     if t == "gallery":
         media = "".join(img(i["src"], i["alt"], depth, "gallery__img") for i in images)
@@ -403,8 +408,8 @@ a{{color:inherit}}
 .d-hero{{font-family:var(--display);font-weight:400;font-size:clamp(2rem,4.6vw,3.5rem);
   line-height:1.07;margin:0 0 1rem;letter-spacing:-.005em}}
 .d-section{{font-family:var(--display);font-weight:400;font-size:clamp(1.5rem,2.6vw,2rem);
-  line-height:1.25;margin:0 0 .75rem}}
-.d-sub{{font-family:var(--display);font-weight:400;font-size:1.3rem;line-height:1.3;margin:0 0 .5rem}}
+  line-height:1.25;margin:0 0 .5rem}}
+.d-sub{{font-family:var(--display);font-weight:400;font-size:1.3rem;line-height:1.3;margin:0 0 .4rem}}
 .d-card{{font-family:var(--display);font-weight:400;font-size:clamp(1.25rem,1.9vw,1.75rem);
   line-height:1.22;margin:0 0 .4rem}}
 .eyebrow{{font-size:1.125rem;font-weight:700;margin:0 0 1.25rem}}
@@ -424,7 +429,7 @@ p{{margin:0 0 1rem;max-width:74ch}}
 .nav a:hover,.nav a[aria-current]{{color:var(--ink)}}
 
 /* sections */
-.sec{{padding-block:clamp(2.5rem,6vw,5rem)}}
+.sec{{padding-block:clamp(1.75rem,4vw,3.5rem)}}
 .sec--split{{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
   gap:var(--gap);align-items:start}}
 .prose>:last-child,.lede:last-child{{margin-bottom:0}}
@@ -469,9 +474,11 @@ section[id]{{scroll-margin-top:calc(var(--topbar-h) + var(--procnav-h))}}
 
 /* tiles / insight cards */
 .tiles{{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:var(--gap)}}
+.tiles--2{{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .tile{{background:var(--surface);padding:clamp(1.1rem,2.2vw,1.75rem);border-radius:2px}}
-.tile__label{{font-size:.95rem;font-weight:500;color:var(--muted);margin:0 0 .5rem}}
+.tile__label{{font-size:.95rem;font-weight:500;color:var(--muted);margin:0 0 .4rem}}
 .tile__body{{margin:0;font-family:var(--display);font-size:1.15rem;line-height:1.35}}
+.tiles--bold-heading .tile__body{{font-family:var(--body);font-weight:700;font-size:1.05rem;margin:0 0 .4rem}}
 .tile>:last-child{{margin-bottom:0}}
 
 /* project cards */
@@ -505,7 +512,7 @@ section[id]{{scroll-margin-top:calc(var(--topbar-h) + var(--procnav-h))}}
 .mailto{{display:inline-block}}
 
 @media (max-width:820px){{
-  .sec--split,.casehero,.cols--2,.cols--3{{grid-template-columns:1fr}}
+  .sec--split,.casehero,.cols--2,.cols--3,.tiles--2{{grid-template-columns:1fr}}
   .steps{{flex-wrap:nowrap;overflow-x:auto;gap:1.5rem}}
   .step__link{{white-space:nowrap}}
 }}
