@@ -109,7 +109,8 @@ p{margin:0 0 1rem;max-width:74ch}
 /* footer */
 .connect{background:var(--panel);margin-top:clamp(2rem,5vw,4rem)}
 .connect__inner{padding-block:clamp(2.5rem,6vw,4rem)}
-.mailto{display:inline-block;margin-top:.25rem}
+.connect__links{display:flex;gap:1.5rem;margin-top:.25rem;flex-wrap:wrap}
+.mailto{display:inline-block}
 
 @media (max-width:820px){
   .sec--split,.casehero,.cols--2,.cols--3{grid-template-columns:1fr}
