@@ -125,12 +125,22 @@ def project_card(p, depth):
 # ---------------------------------------------------------------- blocks
 
 
-def render_text(runs, depth, lead_class="d-section"):
+def render_text(runs, depth, lead_class="d-section", min_level=2):
+    """min_level=1 lets a block own the page's <h1>; sections default to <h2>.
+
+    The source levels come from uxfolio and skip around (h1 then h3, h2 after h3),
+    which leaves a broken outline for screen readers. Derive the *semantic* level
+    from position instead — first heading in a section, then subordinates — and keep
+    the *visual* size from the original level, so appearance is unchanged.
+    """
     out = []
+    seen_heading = False
     for r in runs:
         if r["kind"] == "heading":
-            lvl = min(max(r["level"] or 2, 2), 4)
-            cls = lead_class if lvl <= 3 else "d-sub"
+            orig = r["level"] or min_level
+            cls = lead_class if orig <= 3 else "d-sub"
+            lvl = min_level if not seen_heading else min(min_level + 1, 6)
+            seen_heading = True
             out.append(f'<h{lvl} class="{cls}">{e(r["text"])}</h{lvl}>')
         elif r["kind"] == "li":
             out.append(f'<li>{e(r["text"])}</li>')
@@ -249,7 +259,8 @@ def build_about():
             continue
         else:
             prose_runs += b["text"]
-    prose = render_text(prose_runs, 0, "d-hero")
+    # "Hello!" is this page's title, so it owns the <h1>.
+    prose = render_text(prose_runs, 0, "d-hero", min_level=1)
     edu = "".join(f'<li>{e(r["text"])}</li>' for r in edu_runs) or \
           "".join(f"<li>{e(x)}</li>" for x in a["education"])
     body = f"""<section class="sec sec--split">
