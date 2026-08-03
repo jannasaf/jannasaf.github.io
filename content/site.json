@@ -7,8 +7,8 @@
   },
   "profile": {
     "name": "Janna Safran",
-    "role": "UX researcher & product strategist",
-    "meta_description": "UX researcher and product strategist turning complex needs into clear product direction.",
+    "role": "Growth & Lifecycle Product Manager",
+    "meta_description": "Growth and lifecycle product manager who turns funnel data and user feedback into activation, retention, and revenue.",
     "email": "janna.safran@gmail.com",
     "location": "California, open to relocation",
     "linkedin": ""
@@ -20,21 +20,21 @@
   ],
   "hero": {
     "eyebrow": "Hello, I'm Janna!",
-    "headline": "I'm a {{systems-minded}} UX researcher and product strategist who turns complex needs into clear product direction, {{from early discovery through launch}}.",
+    "headline": "I'm a {{data-driven}} product manager who pairs funnel analytics with user feedback to diagnose drop-off and build the fixes, {{from first session to loyal cohort}}.",
     "_headline_note": "{{...}} marks the passages the original set in muted grey (--paletteColor2 / #5A5A5A)."
   },
   "projects_intro": {
-    "heading": "Selected Projects",
-    "body": "Explore my selected projects, showcasing my dedication to turning research insights into product strategy and creating experiences people love to use."
+    "heading": "Selected projects",
+    "body": "Selected work using funnel data and user feedback to move people from first interest to repeat engagement."
   },
   "projects": [
     {
       "slug": "concierj",
       "href": "work/concierj.html",
       "name": "Concierj",
-      "title": "Building an AI-Powered Pre-Booking Communications & Intelligence Platform for Boutique Hotels",
+      "title": "An AI activation layer that recovers boutique-hotel guests lost to pre-booking drop-off",
       "subtitle": "Independent Venture · 2026",
-      "labels": ["AI", "0 → 1", "Entrepreneurship"],
+      "labels": ["Activation & Retention", "Funnel Diagnosis", "0 → 1 AI Build"],
       "thumbs": [
         "assets/img/home-01.webp",
         "assets/img/home-02.webp",
@@ -47,21 +47,11 @@
       "slug": "safe-water-network",
       "href": "work/safe-water-network.html",
       "name": "Safe Water Network",
-      "title": "Redesigning the Digital Giving Experience to Reduce Donor Abandonment",
+      "title": "Rebuilding the donor funnel to cut abandonment and grow a repeat-giving cohort",
       "subtitle": "Safe Water Network",
-      "labels": ["UX Research", "UX/UI Design", "B2C"],
+      "labels": ["Lifecycle & Retention", "Funnel Redesign", "Donor Growth"],
       "thumbs": ["assets/img/home-05.webp", "assets/img/home-06.webp"],
       "cta": { "label": "See the live site", "href": "" }
-    },
-    {
-      "slug": "workflow-automation",
-      "href": "work/workflow-automation.html",
-      "name": "Workflow Automation",
-      "title": "Reducing Project Setup Time Through Workflow Automation",
-      "subtitle": "Adolescent Health Initiative, Michigan Medicine",
-      "labels": ["Operational UX", "Systems Design", "Internal Tools"],
-      "thumbs": ["assets/img/home-07.webp"],
-      "cta": null
     }
   ],
   "about": {
@@ -74,7 +64,7 @@
   },
   "footer": {
     "heading": "Let's connect!",
-    "body": "I'm currently exploring opportunities in UX research, product strategy, journey design, and early-stage product work. Based in California and open to relocation."
+    "body": "I'm looking for growth and lifecycle product roles in consumer health, travel tech, or subscription products, based in California and targeting the San Diego to Irvine corridor."
   },
   "tokens": {
     "_note": "Computed from the live site at 1440px via Playwright.",

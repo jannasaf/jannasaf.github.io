@@ -14,7 +14,7 @@
         {
           "kind": "p",
           "level": null,
-          "text": "AI-powered pre-booking guest communications & intelligence product for boutique properties — 0 → 1 solo build"
+          "text": "An AI activation layer that recovers boutique-hotel guests lost in the pre-booking funnel, built solo 0 → 1 in 12 weeks"
         }
       ],
       "images": [
@@ -37,17 +37,17 @@
             {
               "kind": "p",
               "level": null,
-              "text": "Boutique hotels are losing potential guests before they ever book — not because of price or availability, but because of a gap in the pre-booking experience. No guided consideration stage exists, no system to answer questions in real time, qualify fit, or move an interested guest towards a booking decision. I built Concierj to solve that and become a property's personal travel agent - capturing interested guests and guiding them to booking."
+              "text": "Boutique hotels lose guests before they ever book. The drop-off has nothing to do with price or availability: there's no consideration stage in the funnel, no system to answer questions in real time, qualify fit, or move an interested guest toward a booking decision. I built Concierj to close that gap and act as a property's activation layer, capturing interested guests during consideration and converting them to bookings."
             },
             {
               "kind": "p",
               "level": null,
-              "text": "AI-powered guest communication & intelligence product, solo build in 12 weeks, from concept to live launch."
+              "text": "The result: an AI-powered guest communication and intelligence layer, built solo in 12 weeks from concept to live launch."
             },
             {
               "kind": "p",
               "level": null,
-              "text": "I saw a gap and harnessed this opportunity to not only solve the gap, but to challenge myself to learn and deploy an AI product."
+              "text": "Building it was also how I taught myself to design, build, and ship an AI product end to end, not only close a market gap."
             }
           ],
           "images": []
@@ -110,7 +110,7 @@
         },
         {
           "n": 2,
-          "label": "Conceptual Design"
+          "label": "Funnel & Journey Design"
         },
         {
           "n": 3,
@@ -118,11 +118,11 @@
         },
         {
           "n": 4,
-          "label": "Usability Testing"
+          "label": "Testing & Iteration"
         },
         {
           "n": 5,
-          "label": "Prototype"
+          "label": "Prototype & Results"
         }
       ],
       "text": [],
@@ -139,12 +139,12 @@
         {
           "kind": "p",
           "level": null,
-          "text": "My research is rooted in human-centered design with the belief that end users should be included in all aspects of the process and product design. I conducted 59 interviews across four stakeholder groups - boutique hotel owners, front desk staff, guests, and travel agents to understand where the pre-booking breakdown actually happened and for whom. I wasn't looking to validate a solution; I was looking for the truth about the problem."
+          "text": "I ran 59 interviews across four stakeholder groups: boutique hotel owners, front desk staff, guests, and travel agents, to find exactly where the pre-booking funnel broke down and for whom. I wasn't testing a solution; I was diagnosing the drop-off."
         },
         {
           "kind": "p",
           "level": null,
-          "text": "Alongside primary research, I analyzed the competitive landscape, assessed the total addressable market for AI-powered hospitality tools, and identified which data points would be most significant to track across the chatbot and the guest intelligence report."
+          "text": "Alongside the interviews, I sized the market for AI-powered hospitality tools, mapped the competitive landscape, and defined which data points the chatbot and guest intelligence report needed to track to make the funnel measurable."
         }
       ],
       "images": []
@@ -201,17 +201,17 @@
         {
           "kind": "heading",
           "level": 3,
-          "text": "02 - Conceptual Design"
+          "text": "02 - Funnel & journey design"
         },
         {
           "kind": "p",
           "level": null,
-          "text": "Research identified a missing consideration stage between website visit and booking. The next step was defining how guests would move through that experience, what information would be collected, and when human intervention was necessary."
+          "text": "Research surfaced a missing consideration stage between website visit and booking. The next step was defining how guests would move through it, what data to collect at each point, and when a human needed to step in."
         },
         {
           "kind": "p",
           "level": null,
-          "text": "As part of the architecture process, I evaluated multiple technical approaches and refined the solution to a streamlined Botpress and Claude stack, eliminating unnecessary complexity identified during the research phase. The resulting user flows, system architecture, business rules, and data requirements served as the blueprint for development of the functional prototype."
+          "text": "I evaluated several technical approaches and settled on a streamlined Botpress and Claude stack, cutting the complexity the research had flagged as unnecessary. The resulting flows, architecture, business rules, and data requirements became the blueprint for the prototype."
         }
       ],
       "images": []
@@ -222,22 +222,22 @@
         {
           "kind": "heading",
           "level": 2,
-          "text": "The Guest Journey Map"
+          "text": "The guest journey map"
         },
         {
           "kind": "p",
           "level": null,
-          "text": "Following stakeholder and user interviews, I created a guest journey map to better understand how prospective guests navigate a hotel website during the decision-making process. The exercise helped further identify moments of friction, information gaps, and drop-off points within the traditional booking funnel, while revealing opportunities where Concierj could provide meaningful support."
+          "text": "After the interviews, I mapped the guest journey to see how prospective guests move through a hotel website during the decision stage. The map located the friction points, information gaps, and drop-off moments in the booking funnel, and where Concierj could intervene."
         },
         {
           "kind": "p",
           "level": null,
-          "text": "One key insight emerged immediately: high purchase intent exists before booking, but guests often lack guidance during the consideration stage. As they compare accommodations and experiences and search for specific information, decision fatigue causes them to abandon the booking process altogether."
+          "text": "One insight stood out immediately: purchase intent is already high before booking, but guests get no guidance during consideration. Comparing rooms and experiences while hunting for specific information causes decision fatigue, and decision fatigue causes abandonment."
         },
         {
           "kind": "p",
           "level": null,
-          "text": "Key design decision: Built guided prompt bubbles that surface common guest questions and next steps. This approach reduces cognitive load, accelerates information discovery, and gently steers a guests towards information they are most likely seeking, creating a more intuitive and effective pre-booking experience."
+          "text": "Key design decision: guided prompt bubbles that surface common guest questions and next steps. They cut cognitive load, speed up information discovery, and point guests toward what they're most likely looking for."
         }
       ],
       "images": [
@@ -253,17 +253,17 @@
         {
           "kind": "heading",
           "level": 2,
-          "text": "Feature Map"
+          "text": "Feature map"
         },
         {
           "kind": "p",
           "level": null,
-          "text": "I synthesized findings into a feature map to prioritize and define the MVP, identifying the ore capabilities needed to support guests during the hotel consideration stage while minimizing operational burden of staff."
+          "text": "I turned the findings into a feature map to prioritize and scope the MVP: the core capabilities needed to support guests through the consideration stage without adding to staff workload."
         },
         {
           "kind": "heading",
           "level": 4,
-          "text": "Research didn't just inform the product, it changed it...4 times throughout the product build."
+          "text": "Research reshaped the product four times over the course of the build."
         }
       ],
       "images": [
@@ -279,17 +279,17 @@
         {
           "kind": "heading",
           "level": 3,
-          "text": "Low-Fidelity Systems Design"
+          "text": "Low-fidelity systems design"
         },
         {
           "kind": "p",
           "level": null,
-          "text": "I began the systems design process with low-fidelity sketches to determine how different guest segments should be identified and routed through the experience, including lead qualification, escalation pathways, and human handoff triggers."
+          "text": "I started with low-fidelity sketches to work out how to identify and route different guest segments through the experience: lead qualification, escalation pathways, and human handoff triggers."
         },
         {
           "kind": "p",
           "level": null,
-          "text": "I designed end-to-end user journeys and conversation flows, mapping how prospective guests move from initial questions to booking decisions or human hand off via lead capture or escalation."
+          "text": "From there I mapped end-to-end conversation flows, tracing how a guest moves from an initial question to a booking decision, or to a human handoff through lead capture or escalation."
         }
       ],
       "images": [
@@ -305,12 +305,12 @@
         {
           "kind": "heading",
           "level": 3,
-          "text": "03 - What I Built and Why"
+          "text": "03 - What I built and why"
         },
         {
           "kind": "p",
           "level": null,
-          "text": "Rather than building a simple FAQ chatbot, my goal was to create a system that could actively guide guests through the pre-booking journey while providing value to hotel staff behind the scenes. Each component was intentionally designed to support one of Concerj's three core pillars:"
+          "text": "The goal wasn't a FAQ chatbot. It was a system that actively guides guests through the pre-booking journey while giving hotel staff something useful behind the scenes. Every component maps to one of Concierj's three core pillars:"
         }
       ],
       "images": []
@@ -402,22 +402,22 @@
         {
           "kind": "heading",
           "level": 3,
-          "text": "Conversational Workflow Architecture"
+          "text": "Conversational workflow architecture"
         },
         {
           "kind": "p",
           "level": null,
-          "text": "What I built: Standard nodes (after hours, guest feedback, new v. returning guests) and autonomous node (decision tree for room & experience recommendations, lead capture, escalation paths)."
+          "text": "What I built: standard nodes (after hours, guest feedback, new vs. returning guests) and an autonomous node (decision tree for room and experience recommendations, lead capture, escalation paths)."
         },
         {
           "kind": "p",
           "level": null,
-          "text": "Why: Interviews revealed guests wanted guidance, not FAQ answers. Needed a system that could handle common inquiries, escalate high-intent guests, and build on conversation."
+          "text": "Why: interviews showed guests wanted guidance, not FAQ answers. The system needed to handle common questions, escalate high-intent guests, and build on the conversation as it went."
         },
         {
           "kind": "p",
           "level": null,
-          "text": "Key design decision: The autonomous node handles 98% of the service, proactively guiding guests through trip planning using personalized recommendations and suggested conversation paths, while simultaneously capturing guest intelligence."
+          "text": "Key design decision: the autonomous node handles 98% of the service, proactively guiding guests through trip planning using personalized recommendations and suggested conversation paths, while capturing guest intelligence at the same time."
         }
       ],
       "images": [
@@ -433,22 +433,22 @@
         {
           "kind": "heading",
           "level": 3,
-          "text": "Knowledge Base Design"
+          "text": "Knowledge base design"
         },
         {
           "kind": "p",
           "level": null,
-          "text": "What I built: Structured hotel information repository including room data, amenities, dining, policies, and local experiences."
+          "text": "What I built: structured hotel information repository including room data, amenities, dining, policies, and local experiences."
         },
         {
           "kind": "p",
           "level": null,
-          "text": "Why: AI quality is only as good as the information available and the guidelines in place to prevent hallucination. Early testing showed generic responses reduced trust."
+          "text": "Why: AI output is only as good as the information behind it and the guardrails against hallucination. Early testing showed generic responses cost guest trust."
         },
         {
           "kind": "p",
           "level": null,
-          "text": "Key design decision: Organize content around guest-decison making rather than internal hotel departments to improve AI-response time and reduce token usage."
+          "text": "Key design decision: organize content around guest decision-making rather than internal hotel departments, to speed up AI response time and cut token usage."
         }
       ],
       "images": []
@@ -459,22 +459,22 @@
         {
           "kind": "heading",
           "level": 3,
-          "text": "Human Handoff & Email Notifications"
+          "text": "Human handoff and notifications"
         },
         {
           "kind": "p",
           "level": null,
-          "text": "What I built: Automated staff alerts, conversation summaries, and guest contact information."
+          "text": "What I built: automated staff alerts, conversation summaries, and guest contact information."
         },
         {
           "kind": "p",
           "level": null,
-          "text": "Why: Hotels don't need more conversations — they need visibility into the conversations that matter."
+          "text": "Why: hotels don't need more conversations. They need visibility into the ones that matter."
         },
         {
           "kind": "p",
           "level": null,
-          "text": "Key design decision: Deliver actionable context rather than raw chat transcripts."
+          "text": "Key design decision: deliver actionable context rather than raw chat transcripts."
         }
       ],
       "images": [
@@ -490,22 +490,22 @@
         {
           "kind": "heading",
           "level": 3,
-          "text": "Guest Intelligence Report"
+          "text": "Guest intelligence report"
         },
         {
           "kind": "p",
           "level": null,
-          "text": "What I built: Inquiry trend reporting, guest behavior insights, common questions, conversion indicators, and recommendations."
+          "text": "What I built: inquiry trend reporting, guest behavior insights, common questions, conversion indicators, and recommendations."
         },
         {
           "kind": "p",
           "level": null,
-          "text": "Why: Every guest conversation contains market research. Boutique hotels rarely capture or analyze that data."
+          "text": "Why: every guest conversation is funnel data. Boutique hotels rarely capture or analyze it."
         },
         {
           "kind": "p",
           "level": null,
-          "text": "Key design decision: Transform individual conversations into operational insights."
+          "text": "Key design decision: turn individual conversations into cohort-level insight on where guests convert and where they don't."
         }
       ],
       "images": []
@@ -516,22 +516,22 @@
         {
           "kind": "heading",
           "level": 3,
-          "text": "04 - Usability testing"
+          "text": "04 - Testing and iteration"
         },
         {
           "kind": "p",
           "level": null,
-          "text": "I created a fully-functional, high-fidelity prototype of Concierj using Botpress. Throughout development, Concierj was iteratively tested through hundreds of real-world conversations and simulated guest scenarios across family members, friends, advisors, and prospective users. Testing ranged from structured booking scenarios to exploratory sessions designed to uncover edge cases, identify failure points, and evaluate the overall guest experience."
+          "text": "I built a fully functional, high-fidelity prototype of Concierj in Botpress and tested it through hundreds of real conversations and simulated guest scenarios with family, friends, advisors, and prospective users. Testing ranged from structured booking scenarios to open-ended sessions built to surface edge cases and failure points."
         },
         {
           "kind": "heading",
           "level": 4,
-          "text": "Finding #1: Guests weren't simply booking a hotel room — they were planning an expeirence."
+          "text": "Finding #1: guests weren't booking a room. They were planning a trip."
         },
         {
           "kind": "p",
           "level": null,
-          "text": "During testing, I explored several approaches to helping guests begin their journey. While each improved information discovery, testing revealed that guests weren't simply looking for answers — they were looking for confidence in their booking decision. The final solution balanced both information retrieval and personalized guidance."
+          "text": "During testing I tried several approaches to starting that journey. Each improved information discovery, but testing surfaced something the prompts weren't addressing: guests needed confidence in the booking decision, not just an answer to a question. The final solution balanced information retrieval with personalized guidance."
         }
       ],
       "images": []
@@ -544,12 +544,12 @@
             {
               "kind": "p",
               "level": null,
-              "text": "Iteration 1: Lead with Intent"
+              "text": "Iteration 1: lead with intent"
             },
             {
               "kind": "p",
               "level": null,
-              "text": "The first iteration asked guests to self-identity their trip to mirror the kind of curated qualification a hotel concierge would do in-person. In testing, the approach surfaced a gap: travelers booking family trips, group travel, or simple logistics didn't see themselves in any option, and even guests with clear trip types, felt boxed into a single narrative before they'd had a chance to ask their actual question."
+              "text": "The first version asked guests to self-identify their trip type, mirroring how an in-person concierge would qualify a guest. Testing surfaced a gap: travelers with family trips, group travel, or simple logistics questions didn't see themselves in any option, and even guests with a clear trip type felt boxed into one narrative before they'd asked their actual question."
             }
           ],
           "images": [
@@ -564,12 +564,12 @@
             {
               "kind": "p",
               "level": null,
-              "text": "Iteration 2: Lead with Information"
+              "text": "Iteration 2: lead with information"
             },
             {
               "kind": "p",
               "level": null,
-              "text": "Next, I replaced the prompts with broader category bubbles - closer to a standard FAQ menu. Guests responded well to the directness: questions got answered fast, with no guesswork about where to click. But the format introduced its own friction. Without any framing around intent, guests comparing rooms or experiences across categories ran into decision fatigue."
+              "text": "Next I replaced the qualifying prompts with broad category bubbles, closer to a standard FAQ menu. Guests responded to the directness: questions got answered fast, with no guesswork about where to click. But the format created its own friction. With no framing around intent, guests comparing rooms or experiences across categories hit decision fatigue."
             }
           ],
           "images": [
@@ -584,12 +584,12 @@
             {
               "kind": "p",
               "level": null,
-              "text": "Solution: Lead With Guidance"
+              "text": "Solution: lead with guidance"
             },
             {
               "kind": "p",
               "level": null,
-              "text": "The winning decision combined the strengths of both: low-friction categories for guests who just needed information, alongside a new \"Plan My Stay\" option for guests who wanted guidance. Plan My Stay opens with a simple prompt - tell me about your trip - and the bot responds with a personalized, story-driven recommendation: specific rooms, activities, and special touches tailored to what the guest shared, helping them picture themselves at the property before any logistics enter the conversation. From there, guests naturally move into the practical questions already sold on the stay. Engagement jumped noticeably after the change, and Plan My Stay is now a core, defining feature of the Concierj experience."
+              "text": "The winning version combined both: low-friction categories for guests who just needed information, plus a new \"Plan My Stay\" option for guests who wanted guidance. Plan My Stay opens with one prompt, tell me about your trip, and returns a personalized recommendation: specific rooms, activities, and touches tailored to what the guest shared, so they can picture themselves at the property before any logistics enter the conversation. From there, guests move into practical questions already sold on the stay. Engagement rose noticeably after the change, and Plan My Stay is now a core, defining feature of Concierj."
             }
           ],
           "images": [
@@ -609,17 +609,17 @@
         {
           "kind": "heading",
           "level": 3,
-          "text": "Finding #2: Different Situations Require Different Summaries"
+          "text": "Finding #2: different situations need different summaries"
         },
         {
           "kind": "p",
           "level": null,
-          "text": "Early versions of the summaries were accurate but inconsistent. Some included too much detail, creating noise, while others omitted important context needed for follow-up. Through iterative testing and refinement, i developed specialized summary frameworks for different conversation outcomes, ensuring hotel staff received concise, actionable information tailored to the next step required."
+          "text": "Early summaries were accurate but inconsistent. Some buried the signal in detail, others left out context staff needed for follow-up. Through testing and refinement, I built specialized summary frameworks for each conversation outcome, so staff get concise, actionable information tailored to the next step."
         },
         {
           "kind": "p",
           "level": null,
-          "text": "Key insight: The most useful summary depends on what action the hotel needs to take."
+          "text": "Key insight: the most useful summary depends on what action the hotel needs to take."
         }
       ],
       "images": []
@@ -644,7 +644,7 @@
         {
           "kind": "heading",
           "level": 3,
-          "text": "Finding #3: Real Guests Don't Follow Happy Paths"
+          "text": "Finding #3: real guests don't follow happy paths"
         },
         {
           "kind": "p",
@@ -654,7 +654,7 @@
         {
           "kind": "p",
           "level": null,
-          "text": "One of the most significant issues emerged when users opened the chatbot and immediately asked a question that was out of the assistant's scope. Rather than gracefully recovering, the assistant became trapped in an error state failed to continue the conversation, and failed to trigger the escalation workflow."
+          "text": "One of the most significant issues emerged when users opened the chatbot and immediately asked a question that was out of the assistant's scope. Rather than gracefully recovering, the assistant became trapped in an error state, failed to continue the conversation, and failed to trigger the escalation workflow."
         },
         {
           "kind": "p",
@@ -689,12 +689,12 @@
         {
           "kind": "p",
           "level": null,
-          "text": "The assistant become significantly more resilient, reducing dead ends and ensuring guests could continue receiving support even when the conversations moved outside predefined workflows. By introducing dedicated fallback and escalation pathways, the system was able to recover gracefully from uncertainty while minimalizing the likelihood of inaccurate or hallucinated responses."
+          "text": "The assistant became significantly more resilient: fewer dead ends, and guests kept getting support even when conversations moved outside the predefined workflow. The fallback and escalation pathways let the system recover from uncertainty while cutting the odds of an inaccurate or hallucinated response."
         },
         {
           "kind": "p",
           "level": null,
-          "text": "Additional Iterations:"
+          "text": "Additional iterations:"
         },
         {
           "kind": "li",
@@ -720,17 +720,17 @@
         {
           "kind": "heading",
           "level": 3,
-          "text": "05 - Prototype & Next Steps"
+          "text": "05 - Prototype and results"
         },
         {
           "kind": "p",
           "level": null,
-          "text": "The workflows and user journeys were initially designed in Figma before being implemented as a fully functional prototype in Botpress. Claude was used to generate and refine the custom code required throughout development, enabling rapid iteration and testing. The prototype underwent hundreds of conversational interactions and usability testing sessions, allowing me to continuously refine the guest experience, staff workflows, AI instructions, and conversation routing logic."
+          "text": "The workflows and user journeys were first designed in Figma, then built as a fully functional prototype in Botpress. I used Claude to generate and refine the custom code throughout development, which let me iterate and test quickly. The prototype went through hundreds of conversational interactions and usability sessions, letting me continuously refine the guest experience, staff workflows, AI instructions, and routing logic."
         },
         {
           "kind": "p",
           "level": null,
-          "text": "The result is a fully functional, AI-powered pre-booking guest communication system capable of guiding guests through the consideration stage, escalating high-value opportunities to staff, and transforming guest conversations into actionable intelligence."
+          "text": "The result is a fully functional AI-powered guest communication system that guides guests through consideration, escalates high-value opportunities to staff, and turns every conversation into funnel intelligence."
         }
       ],
       "images": []
@@ -746,22 +746,22 @@
         {
           "kind": "li",
           "level": null,
-          "text": "The Real Problem is Rarely the Stated Problems: Research revealed a mismatch between what hotels were providing and what guests actually needed. It's important to say flexible in idea generation and to include the end users from the start."
+          "text": "The stated problem is rarely the real one: research showed a mismatch between what hotels were providing and what guests actually needed. Stay flexible on the solution and include real users from day one."
         },
         {
           "kind": "li",
           "level": null,
-          "text": "Speed Is a Design Tool: Building with Claude dramatically shortened the time between idea and prototype. The faster I could put a working experience in front of the users, the faster I could identify flawed assumptions, unconver edge cases, and iterate on the experience. Rapid prototyping allowed me to spend less time speculating and more time learning from real interactions."
+          "text": "Speed is a growth tool: building with Claude cut the time between idea and prototype dramatically. The faster a working experience got in front of users, the faster I could catch flawed assumptions, uncover edge cases, and iterate. Less time speculating, more time learning from real interactions."
         },
         {
           "kind": "li",
           "level": null,
-          "text": "Designing AI Means Designing Human Workflows: This project reinforced that successful AI products must be designed around the people receiving the output as much as the people interacting with the system. Human workflows, handoffs, and decision-making processes are critical parts of the overall experience."
+          "text": "AI products are human-workflow products: the staff receiving the AI's output need as much design attention as the guest interacting with it. Handoffs and decision points are part of the product, not an afterthought."
         },
         {
           "kind": "li",
           "level": null,
-          "text": "Building a Product Requires More Than Design: What began as a simple side project evolved into a full-scale entrepreneurial venture. Beyond UX design, I found myself learning market positioning, product strategy, implementation decisions, technical constraints, and business viability. The experience reinforced that successful products are built through equal parts design, adaptability, and persistence."
+          "text": "Shipping a product takes more than design: what started as a side project became a real venture. Beyond the product itself, I had to learn market positioning, technical constraints, and business viability. Growth work is equal parts strategy, adaptability, and persistence."
         }
       ],
       "images": []
@@ -772,7 +772,7 @@
         {
           "kind": "heading",
           "level": 3,
-          "text": "The product is ready, so...what's next?"
+          "text": "The product is ready. What's next?"
         }
       ],
       "images": [
@@ -781,71 +781,6 @@
           "alt": null
         }
       ]
-    },
-    {
-      "type": "text",
-      "text": [
-        {
-          "kind": "heading",
-          "level": 3,
-          "text": "Read more of my case studies"
-        },
-        {
-          "kind": "heading",
-          "level": 4,
-          "text": "Redesigning the Digital Giving Experience to Reduce Donor Abandonment"
-        },
-        {
-          "kind": "p",
-          "level": null,
-          "text": "Safe Water Network"
-        },
-        {
-          "kind": "heading",
-          "level": 4,
-          "text": "Reducing Project Setup Time Through Workflow Automation"
-        },
-        {
-          "kind": "p",
-          "level": null,
-          "text": "Adolescent Health Initiative, Michigan Medicine"
-        }
-      ],
-      "images": [
-        {
-          "src": "assets/img/home-05.webp",
-          "alt": null
-        },
-        {
-          "src": "assets/img/home-06.webp",
-          "alt": null
-        },
-        {
-          "src": "assets/img/home-07.webp",
-          "alt": null
-        }
-      ]
-    },
-    {
-      "type": "text",
-      "text": [
-        {
-          "kind": "heading",
-          "level": 3,
-          "text": "Let’s connect!"
-        },
-        {
-          "kind": "p",
-          "level": null,
-          "text": "I'm currently exploring opportunities in UX research, product strategy, journey design, and early-stage product work. Based in California and open to relocation."
-        },
-        {
-          "kind": "p",
-          "level": null,
-          "text": "janna.safran@gmail.com"
-        }
-      ],
-      "images": []
     }
   ]
 }
