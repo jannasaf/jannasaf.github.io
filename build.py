@@ -16,6 +16,7 @@ Writes index.html, about.html, work/*.html, assets/css/site.css
 import html
 import json
 import os
+import re
 import shutil
 import sys
 
@@ -94,6 +95,15 @@ def footer(depth):
 
 
 # ---------------------------------------------------------------- pieces
+
+
+def rich(text):
+    """Render {{...}} emphasis spans from the content model."""
+    parts = re.split(r"\{\{(.+?)\}\}", text)
+    out = []
+    for i, part in enumerate(parts):
+        out.append(f'<span class="muted">{e(part)}</span>' if i % 2 else e(part))
+    return "".join(out)
 
 
 def img(src, alt, depth, cls=""):
@@ -228,8 +238,8 @@ def build_home():
     cards = "".join(project_card(p, 0) for p in SITE["projects"])
     body = f"""<section class="sec hero">
   <p class="eyebrow">{e(h['eyebrow'])}</p>
-  <h1 class="d-hero">{e(h['headline'])}</h1>
-  <p class="lede">{e(h['subhead'])}</p>
+  <h1 class="d-hero">{rich(h['headline'])}</h1>
+  <p class="lede hero__lede">{e(h['subhead'])}</p>
 </section>
 <section class="sec">
   <h2 class="d-section">{e(pi['heading'])}</h2>
@@ -329,6 +339,8 @@ a{{color:inherit}}
   line-height:1.22;margin:0 0 .4rem}}
 .eyebrow{{font-size:1.125rem;font-weight:700;margin:0 0 1.25rem}}
 .lede{{color:var(--muted);max-width:62ch;margin:0 0 1rem}}
+.hero__lede{{max-width:none}}
+.muted{{color:var(--muted)}}
 p{{margin:0 0 1rem;max-width:74ch}}
 
 /* chrome */

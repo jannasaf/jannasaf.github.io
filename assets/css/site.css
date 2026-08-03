@@ -31,6 +31,8 @@ a{color:inherit}
   line-height:1.22;margin:0 0 .4rem}
 .eyebrow{font-size:1.125rem;font-weight:700;margin:0 0 1.25rem}
 .lede{color:var(--muted);max-width:62ch;margin:0 0 1rem}
+.hero__lede{max-width:none}
+.muted{color:var(--muted)}
 p{margin:0 0 1rem;max-width:74ch}
 
 /* chrome */

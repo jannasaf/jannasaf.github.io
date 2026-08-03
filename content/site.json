@@ -20,7 +20,7 @@
   ],
   "hero": {
     "eyebrow": "Hello, I'm Janna!",
-    "headline": "I'm a data-driven growth and lifecycle product strategist",
+    "headline": "I'm a {{data-driven}} growth and lifecycle product strategist",
     "subhead": "I pair funnel analytics with user feedback to find where cohorts drop off, then design the workflows and experiences that keep them engaged, from first session to loyal cohort."
   },
   "projects_intro": {
