@@ -94,6 +94,9 @@ section[id]{scroll-margin-top:calc(var(--topbar-h) + var(--procnav-h))}
 /* tiles / insight cards */
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:var(--gap)}
 .tile{background:var(--surface);padding:clamp(1.1rem,2.2vw,1.75rem);border-radius:2px}
+.tile__label{font-size:.95rem;font-weight:500;color:var(--muted);margin:0 0 .5rem}
+.tile__body{margin:0;font-family:var(--display);font-size:1.15rem;line-height:1.35}
+.tile>:last-child{margin-bottom:0}
 
 /* project cards */
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr));

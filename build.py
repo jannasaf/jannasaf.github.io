@@ -233,7 +233,26 @@ def render_block(b, depth):
 </section>"""
 
     if t == "cards":
-        cards = "".join(f'<div class="tile">{e(r["text"])}</div>' for r in runs if r["text"])
+        items = b.get("items")
+        if items:
+            def render_tile(it):
+                out, li_buf = [], []
+                def flush():
+                    if li_buf:
+                        out.append('<ul class="ticks">' + "".join(li_buf) + "</ul>")
+                        li_buf.clear()
+                for r in it["text"]:
+                    if r["kind"] == "li":
+                        li_buf.append(f'<li>{e(r["text"])}</li>')
+                        continue
+                    flush()
+                    cls = "tile__body" if r["kind"] == "heading" else "tile__label"
+                    out.append(f'<p class="{cls}">{e(r["text"])}</p>')
+                flush()
+                return '<div class="tile">' + "".join(out) + "</div>"
+            cards = "".join(render_tile(it) for it in items)
+        else:
+            cards = "".join(f'<div class="tile">{e(r["text"])}</div>' for r in runs if r["text"])
         return f'<section class="sec"{id_attr}><div class="tiles">{cards}</div></section>'
 
     if t == "gallery":
@@ -451,6 +470,9 @@ section[id]{{scroll-margin-top:calc(var(--topbar-h) + var(--procnav-h))}}
 /* tiles / insight cards */
 .tiles{{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:var(--gap)}}
 .tile{{background:var(--surface);padding:clamp(1.1rem,2.2vw,1.75rem);border-radius:2px}}
+.tile__label{{font-size:.95rem;font-weight:500;color:var(--muted);margin:0 0 .5rem}}
+.tile__body{{margin:0;font-family:var(--display);font-size:1.15rem;line-height:1.35}}
+.tile>:last-child{{margin-bottom:0}}
 
 /* project cards */
 .grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr));

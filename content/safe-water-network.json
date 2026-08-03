@@ -584,51 +584,27 @@
     },
     {
       "type": "cards",
-      "text": [
+      "items": [
         {
-          "kind": "heading",
-          "level": 4,
-          "text": "Impact needed to be immediate, concrete, and decision-relevant"
+          "text": [
+            { "kind": "heading", "level": 4, "text": "Impact needed to be immediate, concrete, and decision-relevant" },
+            { "kind": "p", "level": null, "text": "What we learned: participants responded best to short, tangible outcomes they could understand instantly, like Water Quality Test." },
+            { "kind": "p", "level": null, "text": "Iteration: I shortened impact copy, prioritized clear outcome-based hooks, and moved more complex narratives into deeper story content where additional context could be provided." }
+          ]
         },
         {
-          "kind": "p",
-          "level": null,
-          "text": "What we learned: participants responded best to short, tangible outcomes they could understand instantly, like Water Quality Test."
+          "text": [
+            { "kind": "heading", "level": 4, "text": "Emotional connection created momentum" },
+            { "kind": "p", "level": null, "text": "What we learned: the community thank-you video generated the strongest emotional response across testing. Participants described it as \"personal,\" \"touching,\" and \"humanizing,\" and many wanted to learn more about the people featured." },
+            { "kind": "p", "level": null, "text": "Iteration: the strong positive response directly shaped the community impact stories embedded in the donor profile. The video became a gateway to deeper engagement, carrying the curiosity and emotional connection it created into the broader donor relationship." }
+          ]
         },
         {
-          "kind": "p",
-          "level": null,
-          "text": "Iteration: I shortened impact copy, prioritized clear outcome-based hooks, and moved more complex narratives into deeper story content where additional context could be provided."
-        },
-        {
-          "kind": "heading",
-          "level": 4,
-          "text": "Emotional connection created momentum"
-        },
-        {
-          "kind": "p",
-          "level": null,
-          "text": "What we learned: the community thank-you video generated the strongest emotional response across testing. Participants described it as \"personal,\" \"touching,\" and \"humanizing,\" and many wanted to learn more about the people featured."
-        },
-        {
-          "kind": "p",
-          "level": null,
-          "text": "Iteration: the strong positive response directly shaped the community impact stories embedded in the donor profile. The video became a gateway to deeper engagement, carrying the curiosity and emotional connection it created into the broader donor relationship."
-        },
-        {
-          "kind": "heading",
-          "level": 4,
-          "text": "Friction was about trust and control"
-        },
-        {
-          "kind": "p",
-          "level": null,
-          "text": "What we learned: participants valued the guided checkout, saved payment options, and clear review step. Recurring giving by default did not create the confusion I was worried about initially."
-        },
-        {
-          "kind": "p",
-          "level": null,
-          "text": "Iterations: I kept the guided flow, retained recurring giving as the initial selection, added giving frequency to the final confirmation summary, and centralized common donor needs, like tax statements and staff messaging, in the donor profile."
+          "text": [
+            { "kind": "heading", "level": 4, "text": "Friction was about trust and control" },
+            { "kind": "p", "level": null, "text": "What we learned: participants valued the guided checkout, saved payment options, and clear review step. Recurring giving by default did not create the confusion I was worried about initially." },
+            { "kind": "p", "level": null, "text": "Iterations: I kept the guided flow, retained recurring giving as the initial selection, added giving frequency to the final confirmation summary, and centralized common donor needs, like tax statements and staff messaging, in the donor profile." }
+          ]
         }
       ],
       "images": []

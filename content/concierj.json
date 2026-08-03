@@ -157,46 +157,30 @@
     },
     {
       "type": "cards",
-      "text": [
+      "items": [
         {
-          "kind": "p",
-          "level": null,
-          "text": "Key insight 1: Hotel Owners"
+          "text": [
+            { "kind": "p", "level": null, "text": "Key insight 1: Hotel Owners" },
+            { "kind": "heading", "level": 4, "text": "Owners wanted it handled for them — no more tools to manage. Overwhelmed by repetitive queries and after-hour inquiries." }
+          ]
         },
         {
-          "kind": "heading",
-          "level": 4,
-          "text": "Owners wanted it handled for them — no more tools to manage. Overwhelmed by repetitive queries and after-hour inquiries."
+          "text": [
+            { "kind": "p", "level": null, "text": "Key insight 2: Front Desk Staff" },
+            { "kind": "heading", "level": 4, "text": "Missed and duplicated responses across shifts were a systemic problem, not a staffing one. Overwhelmed by repetitive queries, wanted lead capture segmentation." }
+          ]
         },
         {
-          "kind": "p",
-          "level": null,
-          "text": "Key insight 2: Front Desk Staff"
+          "text": [
+            { "kind": "p", "level": null, "text": "Key insight 3: Guests" },
+            { "kind": "heading", "level": 4, "text": "Unanswered pre-booking questions led to a different property. Wanted instant pre-booking answers and trip guidance." }
+          ]
         },
         {
-          "kind": "heading",
-          "level": 4,
-          "text": "Missed and duplicated responses across shifts were a systemic problem, not a staffing one. Overwhelmed by repetitive queries, wanted lead capture segmentation."
-        },
-        {
-          "kind": "p",
-          "level": null,
-          "text": "Key insight 3: Guests"
-        },
-        {
-          "kind": "heading",
-          "level": 4,
-          "text": "Unanswered pre-booking questions led to a different property. Wanted instant pre-booking answers and trip guidance."
-        },
-        {
-          "kind": "p",
-          "level": null,
-          "text": "Key insight 4: Travel Agents"
-        },
-        {
-          "kind": "heading",
-          "level": 4,
-          "text": "Needed more information on property qualifications and policies for group trip planning. Can't always rely on 1:1 relationships to grow business."
+          "text": [
+            { "kind": "p", "level": null, "text": "Key insight 4: Travel Agents" },
+            { "kind": "heading", "level": 4, "text": "Needed more information on property qualifications and policies for group trip planning. Can't always rely on 1:1 relationships to grow business." }
+          ]
         }
       ],
       "images": []
@@ -325,81 +309,33 @@
     },
     {
       "type": "cards",
-      "text": [
+      "items": [
         {
-          "kind": "heading",
-          "level": 3,
-          "text": "Guests"
+          "text": [
+            { "kind": "heading", "level": 3, "text": "Guests" },
+            { "kind": "p", "level": null, "text": "Confident booking decisions:" },
+            { "kind": "li", "level": null, "text": "Personalized recommendations" },
+            { "kind": "li", "level": null, "text": "Reduced decision fatigue" },
+            { "kind": "li", "level": null, "text": "Guided trip planning" }
+          ]
         },
         {
-          "kind": "p",
-          "level": null,
-          "text": "Confident booking decisions:"
+          "text": [
+            { "kind": "heading", "level": 3, "text": "Staff" },
+            { "kind": "p", "level": null, "text": "Human attention where it matters" },
+            { "kind": "li", "level": null, "text": "Lead capture" },
+            { "kind": "li", "level": null, "text": "Smart escalations" },
+            { "kind": "li", "level": null, "text": "Conversation summaries" }
+          ]
         },
         {
-          "kind": "li",
-          "level": null,
-          "text": "Personalized recommendations"
-        },
-        {
-          "kind": "li",
-          "level": null,
-          "text": "Reduced decision fatigue"
-        },
-        {
-          "kind": "li",
-          "level": null,
-          "text": "Guided trip planning"
-        },
-        {
-          "kind": "heading",
-          "level": 3,
-          "text": "Staff"
-        },
-        {
-          "kind": "p",
-          "level": null,
-          "text": "Human attention where it matters"
-        },
-        {
-          "kind": "li",
-          "level": null,
-          "text": "Lead capture"
-        },
-        {
-          "kind": "li",
-          "level": null,
-          "text": "Smart escalations"
-        },
-        {
-          "kind": "li",
-          "level": null,
-          "text": "Conversation summaries"
-        },
-        {
-          "kind": "heading",
-          "level": 3,
-          "text": "Hotel Leadership"
-        },
-        {
-          "kind": "p",
-          "level": null,
-          "text": "Actionable guest intelligence"
-        },
-        {
-          "kind": "li",
-          "level": null,
-          "text": "Inquiry trends"
-        },
-        {
-          "kind": "li",
-          "level": null,
-          "text": "Guest preferences"
-        },
-        {
-          "kind": "li",
-          "level": null,
-          "text": "Operational insights"
+          "text": [
+            { "kind": "heading", "level": 3, "text": "Hotel Leadership" },
+            { "kind": "p", "level": null, "text": "Actionable guest intelligence" },
+            { "kind": "li", "level": null, "text": "Inquiry trends" },
+            { "kind": "li", "level": null, "text": "Guest preferences" },
+            { "kind": "li", "level": null, "text": "Operational insights" }
+          ]
         }
       ],
       "images": []
