@@ -339,6 +339,7 @@
     },
     {
       "type": "textandmedia",
+      "compact_media": true,
       "text": [
         {
           "kind": "heading",
@@ -365,6 +366,7 @@
     },
     {
       "type": "text",
+      "wide": true,
       "text": [
         {
           "kind": "heading",
@@ -411,6 +413,7 @@
     },
     {
       "type": "textandmedia",
+      "compact_media": true,
       "text": [
         {
           "kind": "heading",
@@ -584,6 +587,8 @@
     },
     {
       "type": "cards",
+      "bold_heading": true,
+      "italic_label": true,
       "items": [
         {
           "text": [
@@ -633,6 +638,7 @@
     },
     {
       "type": "columns",
+      "stat": true,
       "columns": [
         {
           "text": [
@@ -728,14 +734,15 @@
       "type": "textandmedia",
       "text": [
         {
-          "kind": "p",
+          "kind": "link",
           "level": null,
+          "href": "https://donate.safewaternetwork.org/safe-water-network/checkout/donor-portal-checkout-182",
           "text": "See the live site"
         }
       ],
       "images": [
         {
-          "src": "assets/img/safe-water-network-12.33_PM-919eee11-0b5f-452e-8283-05f77dd1a5",
+          "src": "assets/img/safe-water-network-12.33_PM-919eee11-0b5f-452e-8283-05f77dd1a5.webp",
           "alt": null
         }
       ]

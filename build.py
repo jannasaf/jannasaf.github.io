@@ -187,6 +187,8 @@ def render_text(runs, depth, lead_class="d-section", min_level=2):
             out.append(f'<h{lvl} class="{cls}">{e(r["text"])}</h{lvl}>')
         elif r["kind"] == "li":
             out.append(f'<li>{e(r["text"])}</li>')
+        elif r["kind"] == "link":
+            out.append(f'<a class="btn" href="{e(r["href"])}" target="_blank" rel="noopener">{e(r["text"])}</a>')
         else:
             out.append(f'<p>{e(r["text"])}</p>')
     # wrap consecutive <li> in a <ul>
@@ -258,6 +260,8 @@ def render_block(b, depth):
             tiles_cls += f' tiles--{b["cols"]}'
         if b.get("bold_heading"):
             tiles_cls += " tiles--bold-heading"
+        if b.get("italic_label"):
+            tiles_cls += " tiles--italic-label"
         return f'<section class="sec"{id_attr}><div class="{tiles_cls}">{cards}</div></section>'
 
     if t == "gallery":
@@ -267,15 +271,21 @@ def render_block(b, depth):
     if t == "columns":
         cols = b.get("columns")
         if cols:
+            is_stat = b.get("stat")
             cells = []
             for c in cols:
-                inner = render_text(c["text"], depth, "d-section")
+                inner = render_text(c["text"], depth, "stat__value" if is_stat else "d-section")
                 inner += "".join(img(i["src"], i["alt"], depth, "figure__img") for i in c["images"])
-                # A column of short label/value pairs is meta, not prose.
-                is_meta = (c["text"] and not c["images"]
-                           and all(len(r["text"]) < 60 for r in c["text"]))
-                cells.append(f'<div class="{"meta" if is_meta else "prose"}">{inner}</div>')
-            return (f'<section class="sec cols cols--{len(cells)}"{id_attr}>'
+                if is_stat:
+                    cls = "stat"
+                else:
+                    # A column of short label/value pairs is meta, not prose.
+                    is_meta = (c["text"] and not c["images"]
+                               and all(len(r["text"]) < 60 for r in c["text"]))
+                    cls = "meta" if is_meta else "prose"
+                cells.append(f'<div class="{cls}">{inner}</div>')
+            extra = " cols--stat" if is_stat else ""
+            return (f'<section class="sec cols cols--{len(cells)}{extra}"{id_attr}>'
                     + "".join(cells) + "</section>")
         body = render_text(runs, depth)
         media = "".join(img(i["src"], i["alt"], depth, "figure__img") for i in images)
@@ -290,13 +300,15 @@ def render_block(b, depth):
         body = render_text(runs, depth)
         media = "".join(img(i["src"], i["alt"], depth, "figure__img") for i in images)
         if media:
+            figure_cls = "figure figure--compact" if b.get("compact_media") else "figure"
             return (f'<section class="sec sec--split"{id_attr}><div class="prose">{body}</div>'
-                    f'<div class="figure">{media}</div></section>')
+                    f'<div class="{figure_cls}">{media}</div></section>')
         return f'<section class="sec"{id_attr}><div class="prose">{body}</div></section>'
 
     body = render_text(runs, depth)
     media = "".join(img(i["src"], i["alt"], depth, "figure__img") for i in images)
-    inner = f'<div class="prose">{body}</div>' + (f'<div class="figure figure--wide">{media}</div>' if media else "")
+    prose_cls = "prose prose--wide" if b.get("wide") else "prose"
+    inner = f'<div class="{prose_cls}">{body}</div>' + (f'<div class="figure figure--wide">{media}</div>' if media else "")
     return f'<section class="sec"{id_attr}>{inner}</section>'
 
 
@@ -437,12 +449,22 @@ p{{margin:0 0 1rem;max-width:74ch}}
 .cols--2{{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}}
 .cols--3{{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .cols--4{{grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr))}}
+.cols--stat{{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.stat__value{{font-family:var(--body);font-weight:700;font-size:clamp(2.25rem,5vw,3.25rem);
+  line-height:1.05;margin:0 0 .35rem}}
+.stat p{{color:var(--muted);margin:0;font-size:.95rem}}
+.stat>:last-child{{margin-bottom:0}}
 .meta .d-section{{font-size:1.05rem;font-family:var(--body);font-weight:500;margin:0}}
 .meta p{{color:var(--muted);margin:0 0 1.25rem}}
 .meta>:last-child{{margin-bottom:0}}
+.prose--wide p{{max-width:none}}
 .figure--wide{{grid-column:1/-1}}
+.figure--compact{{max-width:320px;margin-inline:auto}}
 .figure__img,.gallery__img,.casehero__img{{border-radius:2px;background:var(--surface)}}
 .figure__img+.figure__img{{margin-top:1rem}}
+.btn{{display:inline-block;background:var(--ink);color:var(--page);text-decoration:none;
+  padding:.75rem 1.5rem;border-radius:2px;font-size:1rem;margin-top:.5rem}}
+.btn:hover{{opacity:.85}}
 .gallery{{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:var(--gap)}}
 .ticks{{margin:0 0 1rem;padding-left:1.1rem}}
 .ticks li{{margin-bottom:.4rem;max-width:70ch}}
@@ -479,6 +501,7 @@ section[id]{{scroll-margin-top:calc(var(--topbar-h) + var(--procnav-h))}}
 .tile__label{{font-size:.95rem;font-weight:500;color:var(--muted);margin:0 0 .4rem}}
 .tile__body{{margin:0;font-family:var(--display);font-size:1.15rem;line-height:1.35}}
 .tiles--bold-heading .tile__body{{font-family:var(--body);font-weight:700;font-size:1.05rem;margin:0 0 .4rem}}
+.tiles--italic-label .tile__label{{font-style:italic}}
 .tile>:last-child{{margin-bottom:0}}
 
 /* project cards */
@@ -513,6 +536,7 @@ section[id]{{scroll-margin-top:calc(var(--topbar-h) + var(--procnav-h))}}
 
 @media (max-width:820px){{
   .sec--split,.casehero,.cols--2,.cols--3,.tiles--2{{grid-template-columns:1fr}}
+  .cols--stat{{grid-template-columns:repeat(2,minmax(0,1fr))}}
   .steps{{flex-wrap:nowrap;overflow-x:auto;gap:1.5rem}}
   .step__link{{white-space:nowrap}}
 }}
