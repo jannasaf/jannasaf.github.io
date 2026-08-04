@@ -487,6 +487,7 @@ section[id]{{scroll-margin-top:calc(var(--topbar-h) + var(--procnav-h))}}
   margin:0;padding:0;counter-reset:none}}
 .step__link{{display:flex;align-items:center;gap:.6rem;font-size:1rem;
   color:var(--muted);text-decoration:none}}
+.step__label{{font-weight:700}}
 .step__n{{display:grid;place-items:center;width:2rem;height:2rem;flex:0 0 auto;
   border-radius:50%;border:1px solid color-mix(in srgb,var(--ink) 30%,transparent);
   font-family:var(--display);font-size:1rem;color:var(--ink);transition:background-color .15s,color .15s}}
