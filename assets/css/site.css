@@ -109,7 +109,6 @@ section[id]{scroll-margin-top:calc(var(--topbar-h) + var(--procnav-h))}
 .tile__label{font-size:.95rem;font-weight:500;color:var(--muted);margin:0 0 .4rem}
 .tile__body{margin:0;font-family:var(--display);font-size:1.15rem;line-height:1.35}
 .tiles--bold-heading .tile__body{font-family:var(--body);font-weight:700;font-size:1.05rem;margin:0 0 .4rem}
-.tiles--italic-label .tile__label{font-style:italic}
 .tile>:last-child{margin-bottom:0}
 
 /* project cards */

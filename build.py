@@ -237,6 +237,7 @@ def render_block(b, depth):
     if t == "cards":
         items = b.get("items")
         if items:
+            italic_lead = b.get("italic_label")
             def render_tile(it):
                 out, li_buf = [], []
                 def flush():
@@ -248,8 +249,13 @@ def render_block(b, depth):
                         li_buf.append(f'<li>{e(r["text"])}</li>')
                         continue
                     flush()
-                    cls = "tile__body" if r["kind"] == "heading" else "tile__label"
-                    out.append(f'<p class="{cls}">{e(r["text"])}</p>')
+                    if r["kind"] == "heading":
+                        out.append(f'<p class="tile__body">{e(r["text"])}</p>')
+                    elif italic_lead and ":" in r["text"]:
+                        lead, rest = r["text"].split(":", 1)
+                        out.append(f'<p class="tile__label"><em>{e(lead)}:</em>{e(rest)}</p>')
+                    else:
+                        out.append(f'<p class="tile__label">{e(r["text"])}</p>')
                 flush()
                 return '<div class="tile">' + "".join(out) + "</div>"
             cards = "".join(render_tile(it) for it in items)
@@ -260,8 +266,6 @@ def render_block(b, depth):
             tiles_cls += f' tiles--{b["cols"]}'
         if b.get("bold_heading"):
             tiles_cls += " tiles--bold-heading"
-        if b.get("italic_label"):
-            tiles_cls += " tiles--italic-label"
         return f'<section class="sec"{id_attr}><div class="{tiles_cls}">{cards}</div></section>'
 
     if t == "gallery":
@@ -502,7 +506,6 @@ section[id]{{scroll-margin-top:calc(var(--topbar-h) + var(--procnav-h))}}
 .tile__label{{font-size:.95rem;font-weight:500;color:var(--muted);margin:0 0 .4rem}}
 .tile__body{{margin:0;font-family:var(--display);font-size:1.15rem;line-height:1.35}}
 .tiles--bold-heading .tile__body{{font-family:var(--body);font-weight:700;font-size:1.05rem;margin:0 0 .4rem}}
-.tiles--italic-label .tile__label{{font-style:italic}}
 .tile>:last-child{{margin-bottom:0}}
 
 /* project cards */
