@@ -7,8 +7,8 @@
   },
   "profile": {
     "name": "Janna Safran",
-    "role": "Growth & Lifecycle Product Manager",
-    "meta_description": "Growth and lifecycle product manager who turns funnel data and user feedback into activation, retention, and revenue.",
+    "role": "Product Strategist & Researcher",
+    "meta_description": "Product strategist and researcher who turns mixed-methods data into insights that drive behavior change, across UX research, growth and lifecycle, and product strategy.",
     "email": "janna.safran@gmail.com",
     "location": "California, open to relocation",
     "linkedin": "https://www.linkedin.com/in/janna-safran/"
@@ -20,12 +20,12 @@
   ],
   "hero": {
     "eyebrow": "Hello, I'm Janna!",
-    "headline": "I'm a {{data-driven}} growth and lifecycle product strategist",
-    "subhead": "I pair funnel analytics with user feedback to find where cohorts drop off, then design the workflows and experiences that keep them engaged, from first session to loyal cohort."
+    "headline": "I turn mixed-methods data into product insights that drive behavior change.",
+    "subhead": "I apply that across UX research, product strategy, and growth and lifecycle work, from early discovery through activation, retention, and long-term product direction."
   },
   "projects_intro": {
     "heading": "Selected projects",
-    "body": "Selected work using funnel data and user feedback to move people from first interest to repeat engagement."
+    "body": "Selected work spanning UX research, product strategy, and growth, using mixed-methods data to shape product direction."
   },
   "projects": [
     {
@@ -34,7 +34,7 @@
       "name": "Concierj",
       "title": "An AI activation layer that recovers boutique-hotel guests lost to pre-booking drop-off",
       "subtitle": "Independent Venture · 2026",
-      "labels": ["Activation & Retention", "Funnel Diagnosis", "0 → 1 AI Build"],
+      "labels": ["UX Research", "Activation & Retention", "0 → 1 AI Build"],
       "thumbs": [
         "assets/img/home-01.webp",
         "assets/img/home-02.webp",
@@ -64,7 +64,7 @@
   },
   "footer": {
     "heading": "Let's connect!",
-    "body": "I'm looking for growth and lifecycle product roles in consumer health, travel tech, or subscription products. Currently based in California, open to relocating to SoCal. Prefer in-person, open to remote."
+    "body": "I'm looking for UX research, product strategy, or growth and lifecycle roles in consumer health, travel tech, or subscription products. Currently based in California, open to relocating to SoCal. Prefer in-person, open to remote."
   },
   "tokens": {
     "_note": "Computed from the live site at 1440px via Playwright.",
