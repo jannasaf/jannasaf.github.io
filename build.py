@@ -189,6 +189,8 @@ def render_text(runs, depth, lead_class="d-section", min_level=2):
             out.append(f'<li>{e(r["text"])}</li>')
         elif r["kind"] == "link":
             out.append(f'<a class="btn" href="{e(r["href"])}" target="_blank" rel="noopener">{e(r["text"])}</a>')
+        elif r["kind"] == "aside":
+            out.append(f'<p class="aside">{e(r["text"])}</p>')
         else:
             out.append(f'<p>{e(r["text"])}</p>')
     # wrap consecutive <li> in a <ul>
@@ -451,6 +453,7 @@ a{{color:inherit}}
 .hero__lede{{max-width:none}}
 .muted{{color:var(--muted)}}
 p{{margin:0 0 1rem;max-width:74ch}}
+.aside{{font-style:italic;color:var(--muted);margin-top:1.25rem}}
 
 /* chrome */
 .topbar{{position:sticky;top:0;z-index:10;background:var(--page);
