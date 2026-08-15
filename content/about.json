@@ -35,6 +35,76 @@
       ]
     },
     {
+      "type": "tags",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 3,
+          "text": "What I do"
+        }
+      ],
+      "tags": [
+        "Mixed-methods analysis",
+        "Behavioral insights",
+        "Product strategy",
+        "A/B testing",
+        "Growth & lifecycle",
+        "AI-applied research synthesis",
+        "AI prototyping"
+      ]
+    },
+    {
+      "type": "text",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 3,
+          "text": "Methods & tools"
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "text": "Quantitative"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Survey analysis · Statistical analysis · Regression · ANOVA · T-tests"
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "text": "Qualitative"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Interviews · Concept testing · Usability testing · Thematic analysis"
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "text": "AI"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Claude · GPT · Perplexity for research synthesis, pattern identification, and rapid analysis, paired with human judgment to interpret subgroup and population-level findings in context."
+        },
+        {
+          "kind": "heading",
+          "level": 4,
+          "text": "Tools"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "SPSS · Excel · Qualtrics · Salesforce · Coda · Claude Code · Tableau · ArcGIS · Dedoose"
+        }
+      ],
+      "images": []
+    },
+    {
       "type": "text",
       "text": [
         {

@@ -129,6 +129,8 @@ section[id]{scroll-margin-top:calc(var(--topbar-h) + var(--procnav-h))}
 .pills{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.85rem}
 .pill{background:var(--ink);color:var(--page);border-radius:999px;
   padding:.28rem .7rem;font-size:.75rem;line-height:1.4}
+.pills--lg{gap:.6rem;margin-bottom:0}
+.pills--lg .pill{font-size:.9rem;padding:.45rem .95rem}
 .card__meta{color:var(--muted);font-size:1rem;margin:0}
 .sec--more{border-top:1px solid color-mix(in srgb,var(--ink) 14%,transparent)}
 

@@ -341,11 +341,15 @@ def build_home():
 def build_about():
     a = SITE["about"]
     doc = json.load(open(f"{ROOT}/content/about.json"))
-    prose_runs, edu_runs = [], []
+    prose_runs, edu_runs, tags, methods_runs = [], [], None, None
     for b in doc["blocks"]:
         heads = [r["text"] for r in b["text"] if r["kind"] == "heading"]
         if "Education" in heads:
             edu_runs = [r for r in b["text"] if r["kind"] != "heading"]
+        elif "What I do" in heads:
+            tags = b.get("tags", [])
+        elif "Methods & tools" in heads:
+            methods_runs = b["text"]
         elif SITE["footer"]["heading"].replace("'", "’") in " ".join(heads) or "connect" in " ".join(heads).lower():
             continue
         else:
@@ -354,11 +358,25 @@ def build_about():
     prose = render_text(prose_runs, 0, "d-hero", min_level=1)
     edu = "".join(f'<li>{e(r["text"])}</li>' for r in edu_runs) or \
           "".join(f"<li>{e(x)}</li>" for x in a["education"])
+    tags_section = ""
+    if tags:
+        pills = "".join(f'<span class="pill">{e(t)}</span>' for t in tags)
+        tags_section = f"""<section class="sec">
+  <h2 class="d-section">What I do</h2>
+  <div class="pills pills--lg">{pills}</div>
+</section>
+"""
+    methods_section = ""
+    if methods_runs:
+        methods_section = f"""<section class="sec">
+  <div class="prose">{render_text(methods_runs, 0, "d-section")}</div>
+</section>
+"""
     body = f"""<section class="sec sec--split">
   <div class="prose">{prose}</div>
   <div class="figure"><img class="portrait" src="{e(a['portrait'])}" alt="Portrait of {e(SITE['profile']['name'])}" loading="lazy" decoding="async"></div>
 </section>
-<section class="sec">
+{tags_section}{methods_section}<section class="sec">
   <h2 class="d-section">Education</h2>
   <ul class="rows">{edu}</ul>
 </section>"""
@@ -526,6 +544,8 @@ section[id]{{scroll-margin-top:calc(var(--topbar-h) + var(--procnav-h))}}
 .pills{{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.85rem}}
 .pill{{background:var(--ink);color:var(--page);border-radius:999px;
   padding:.28rem .7rem;font-size:.75rem;line-height:1.4}}
+.pills--lg{{gap:.6rem;margin-bottom:0}}
+.pills--lg .pill{{font-size:.9rem;padding:.45rem .95rem}}
 .card__meta{{color:var(--muted);font-size:1rem;margin:0}}
 .sec--more{{border-top:1px solid color-mix(in srgb,var(--ink) 14%,transparent)}}
 
