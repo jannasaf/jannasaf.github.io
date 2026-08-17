@@ -1,0 +1,457 @@
+{
+  "slug": "signal-to-action",
+  "route": "/work/signal-to-action",
+  "source_url": null,
+  "blocks": [
+    {
+      "type": "mainheader",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 1,
+          "text": "Signal to Action"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "A synthetic mixed-method case study exploring when wearable-generated insights lead to action—and when a product should surface, modify, delay, or suppress an intervention."
+        }
+      ],
+      "images": [
+        {
+          "src": "assets/img/signal-to-action-01.png",
+          "alt": "Signal to Action executive summary view"
+        }
+      ]
+    },
+    {
+      "type": "columns",
+      "columns": [
+        {
+          "text": [
+            {
+              "kind": "heading",
+              "level": 3,
+              "text": "Overview"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "Wearables can already tell someone their heart rate variability dropped or their activity is down for the day. What they're bad at is judging whether that specific insight, for that specific person, at that specific moment, is worth interrupting them for."
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "I framed this as a decision problem, not a detection problem: when do wearable-generated insights lead to meaningful action, and when should a product change the message, change the timing, or choose not to intervene?"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "I designed a synthetic research dataset to test it, ran the analysis with AI assistance, and built an interactive dashboard and decision simulator in Claude Code to carry the evidence from raw data to a product recommendation."
+            }
+          ],
+          "images": []
+        },
+        {
+          "text": [
+            {
+              "kind": "heading",
+              "level": 4,
+              "text": "Role"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "Research & Product Strategy · AI-assisted build"
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "text": "Team"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "Solo build"
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "text": "Timeline"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "Aug 16 - 17, 2026 (2 days)"
+            }
+          ],
+          "images": []
+        }
+      ],
+      "text": [],
+      "images": []
+    },
+    {
+      "type": "columns",
+      "stat": true,
+      "columns": [
+        {
+          "text": [
+            {
+              "kind": "heading",
+              "level": 3,
+              "text": "1,000"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "synthetic users, 7,487 insight events"
+            }
+          ],
+          "images": []
+        },
+        {
+          "text": [
+            {
+              "kind": "heading",
+              "level": 3,
+              "text": "100"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "users oversampled into a Crohn's subgroup for subgroup analysis"
+            }
+          ],
+          "images": []
+        },
+        {
+          "text": [
+            {
+              "kind": "heading",
+              "level": 3,
+              "text": "125"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "simulated qualitative excerpts coded against an 8-code framework"
+            }
+          ],
+          "images": []
+        },
+        {
+          "text": [
+            {
+              "kind": "heading",
+              "level": 3,
+              "text": "0.73"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "held-out AUC on a user-level train/test split"
+            }
+          ],
+          "images": []
+        }
+      ],
+      "text": [],
+      "images": []
+    },
+    {
+      "type": "process",
+      "steps": [
+        {
+          "n": 1,
+          "label": "Framing the problem",
+          "anchor": "framing-the-problem"
+        },
+        {
+          "n": 2,
+          "label": "Data & analysis",
+          "anchor": "data-and-analysis"
+        },
+        {
+          "n": 3,
+          "label": "Translating evidence",
+          "anchor": "translating-evidence"
+        },
+        {
+          "n": 4,
+          "label": "What I built",
+          "anchor": "what-i-built"
+        },
+        {
+          "n": 5,
+          "label": "Product judgment",
+          "anchor": "product-judgment"
+        }
+      ],
+      "text": [],
+      "images": []
+    },
+    {
+      "type": "text",
+      "anchor": "framing-the-problem",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 3,
+          "text": "01 - Framing the problem"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Most wearable products treat detection as the hard part. Once a signal moves, notify the user and count it as a win. That framing misses the actual product risk: a technically accurate insight sent at the wrong moment, in the wrong framing, or to someone whose current context makes it useless, doesn't build trust. It erodes it."
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "I set the primary outcome as action taken within four hours of an insight, exact time-to-action preserved only as a secondary measure, and asked which factors actually moved that number after adjustment: ability to act, message framing, recent notification burden, wearable signal, and current health context."
+        }
+      ],
+      "images": []
+    },
+    {
+      "type": "text",
+      "anchor": "data-and-analysis",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 3,
+          "text": "02 - Data and analysis"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "I designed the synthetic dataset and used GPT to generate it within predefined constraints: 1,000 users, roughly 7.5 insight events each, and a 100-user Crohn's subgroup intentionally oversampled so a small population would carry real subgroup signal. I ran an adjusted logistic regression with user-clustered standard errors, held out a user-level test split, and paired it with 125 simulated qualitative excerpts coded against a predefined 8-code framework."
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "After adjustment, three patterns held up:"
+        }
+      ],
+      "images": []
+    },
+    {
+      "type": "cards",
+      "cols": 3,
+      "bold_heading": true,
+      "items": [
+        {
+          "text": [
+            {
+              "kind": "heading",
+              "level": 3,
+              "text": "Actionable messages worked better"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "47% of users acted on messages with a concrete next step, versus 30% on descriptive messages alone."
+            }
+          ]
+        },
+        {
+          "text": [
+            {
+              "kind": "heading",
+              "level": 3,
+              "text": "Notification load mattered"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "Action rate dropped from 41% at low recent notification burden to 33% at high burden."
+            }
+          ]
+        },
+        {
+          "text": [
+            {
+              "kind": "heading",
+              "level": 3,
+              "text": "Context beat diagnosis label"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "Crohn's status alone wasn't predictive. Current functional limitation was: action rate fell from 38% to 4% as activity capacity dropped."
+            }
+          ]
+        }
+      ],
+      "text": [],
+      "images": []
+    },
+    {
+      "type": "text",
+      "text": [
+        {
+          "kind": "p",
+          "level": null,
+          "text": "The harder, more useful part was deciding what to do with results that were technically valid but not strong enough to act on. I removed findings that were statistically valid but difficult to defend or explain, rejected a notification-volume result too weak to carry an executive recommendation, replaced a more dramatic trust statistic with a cleaner and more transparent comparison, and revised the message-design analysis once I realized “paired” messages were confounded with actionable content, so the dashboard never claims pairing alone drives action."
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "I used AI to accelerate the work, not to make these calls for me: synthetic data generation, the statistical and qualitative analysis passes, and exploring alternative interpretations were all AI-assisted. Framing the research question, designing the subgroup strategy, choosing which sensitivity checks mattered, and deciding which findings were strong enough to put in front of a stakeholder were mine."
+        }
+      ],
+      "images": []
+    },
+    {
+      "type": "text",
+      "anchor": "translating-evidence",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 3,
+          "text": "03 - Translating evidence for different audiences"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "The same evidence doesn't work the same way for every reader. A VP needs the decision, not the regression table. A researcher wants to see the pattern break down by subgroup and inspect the coefficients behind it. A product team wants to act on it. I built three ways into the same evidence instead of one dashboard trying to serve all three."
+        }
+      ],
+      "images": []
+    },
+    {
+      "type": "cards",
+      "cols": 3,
+      "items": [
+        {
+          "text": [
+            {
+              "kind": "heading",
+              "level": 3,
+              "text": "Executive Summary"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "Understand the decision: findings, implications, and recommendations in one page, no regression table required."
+            }
+          ]
+        },
+        {
+          "text": [
+            {
+              "kind": "heading",
+              "level": 3,
+              "text": "Visual Dashboard"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "Explore the evidence: interactive charts for population patterns, subgroup differences, and mixed-method findings, with the full statistical detail one click away."
+            }
+          ]
+        },
+        {
+          "text": [
+            {
+              "kind": "heading",
+              "level": 3,
+              "text": "Decision Simulator"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "Apply the evidence: change a user's context and watch the recommended product action, surface, modify, delay, or suppress, change with it."
+            }
+          ]
+        }
+      ],
+      "text": [],
+      "images": []
+    },
+    {
+      "type": "gallery",
+      "images": [
+        {
+          "src": "assets/img/signal-to-action-02.png",
+          "alt": "Population Overview view with population and outcome controls"
+        },
+        {
+          "src": "assets/img/signal-to-action-03.png",
+          "alt": "What Drives Action view with plain-language findings and expandable technical detail"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "anchor": "what-i-built",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 3,
+          "text": "04 - What I built"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "The dashboard is a single self-contained page, no framework, built in Claude Code: five views, native expandable panels for the full regression output and sensitivity checks, light and dark themes, and a layout that holds up from a phone to a wide monitor. Nothing about the interactivity, the Population Overview controls, the technical-detail panels, or the simulator, is a screenshot standing in for the real thing."
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "The Decision Simulator is the sharpest translation of the research into product terms. Set a wearable signal, a message design, a user's current ability to act, recent notification burden, and (if relevant) today's symptom context, and the tool returns a recommendation, surface, modify, delay, or suppress, using transparent rule logic evaluated in a fixed priority order: context fit, then notification load, then whether the user can act right now, then message design, and only last, a model-estimated probability. The predicted probability never decides the recommendation on its own."
+        }
+      ],
+      "images": []
+    },
+    {
+      "type": "textandmedia",
+      "text": [
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Every recommendation comes with the actual notification a user would see, or, for delay and suppress, a plain explanation of why nothing is sent instead. Crohn's status shifts tone and routing behind the scenes; it never appears in the message copy itself."
+        },
+        {
+          "kind": "link",
+          "level": null,
+          "text": "Launch the interactive dashboard",
+          "href": "signal-to-action-dashboard.html"
+        }
+      ],
+      "images": [
+        {
+          "src": "assets/img/signal-to-action-04.png",
+          "alt": "Decision Simulator showing a Delay recommendation with its reasoning"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "anchor": "product-judgment",
+      "text": [
+        {
+          "kind": "heading",
+          "level": 3,
+          "text": "05 - Product judgment and what's next"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "The recommendation logic is deliberately conservative about suppression. A Crohn's user with very limited activity capacity doesn't get the message silenced by default, the tool modifies it into a gentler option first, and reserves full suppression for when limited capacity compounds with high symptom burden. That rule came directly from a negative case in the qualitative data: users who explicitly rejected blanket suppression based on diagnosis alone."
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "I closed the case study with four experiments I'd run before trusting any of this in production: actionable framing against descriptive-only messages, context-aware delivery against fixed scheduling, notification restraint against standard volume, and modified activity nudges against generic ones for users reporting limited function. Synthetic findings generate hypotheses. They don't validate a product rule."
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Data told me what happened in 7,487 events. Judgment decided what the product should do next."
+        }
+      ],
+      "images": []
+    }
+  ]
+}

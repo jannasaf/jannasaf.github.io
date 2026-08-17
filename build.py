@@ -402,7 +402,14 @@ def build_case(slug):
         keep.append(b)
 
     has_procnav = any(b["type"] == "process" for b in keep)
-    body = "".join(render_block(b, 1) for b in keep)
+    # A project can carry a live/interactive destination (site.json cta.href) —
+    # render it as a prominent button right under the hero when present.
+    cta = meta.get("cta") or {}
+    cta_html = ""
+    if cta.get("href"):
+        cta_html = (f'<section class="sec cta-launch"><a class="btn btn--lg" '
+                    f'href="{e(up(cta["href"], 1))}">{e(cta["label"])}</a></section>')
+    body = render_block(keep[0], 1) + cta_html + "".join(render_block(b, 1) for b in keep[1:])
     more = "".join(project_card(p, 1) for p in others)
     nxt = f"""<section class="sec sec--more">
   <h2 class="d-section">More case studies</h2>
@@ -490,6 +497,8 @@ p{{margin:0 0 1rem;max-width:74ch}}
 .btn{{display:inline-block;background:var(--ink);color:var(--page);text-decoration:none;
   padding:.75rem 1.5rem;border-radius:2px;font-size:1rem;margin-top:.5rem}}
 .btn:hover{{opacity:.85}}
+.cta-launch{{padding-block:0 clamp(1.75rem,4vw,3.5rem);text-align:center}}
+.btn--lg{{font-size:1.15rem;padding:1rem 2.25rem;margin-top:0}}
 .gallery{{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:var(--gap)}}
 .ticks{{margin:0 0 1rem;padding-left:1.1rem}}
 .ticks li{{margin-bottom:.4rem;max-width:70ch}}

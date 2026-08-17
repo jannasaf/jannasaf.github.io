@@ -1,0 +1,1196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<title>Signal to Action</title>
+<style>
+/* ============ TOKENS ============ */
+:root{
+  color-scheme: light;
+  --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#f1f0eb; --surface-3:#e9e7df;
+  --ink:#0b0b0b; --ink-2:#52514e; --ink-3:#898781;
+  --gridline:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,0.10); --border-strong:rgba(11,11,11,0.16);
+  --accent:#2a78d6; --accent-ink:#ffffff; --accent-wash:#e8f0fb;
+  --pos:#2a78d6; --neg:#e34948; --ns-fill:#d6d4c9; --ns-ink:#8c8a80;
+  --cat-1:#2a78d6; --cat-2:#eb6834; --cat-3:#1baf7a; --cat-4:#eda100; --cat-5:#e87ba4;
+  --good:#0ca30c; --warning:#fab219; --serious:#ec835a; --critical:#d03b3b;
+  --good-wash:#e5f6e5; --warning-wash:#fef3de; --serious-wash:#fbe9e2; --critical-wash:#fae3e3;
+  --shadow: 0 1px 2px rgba(11,11,11,0.04), 0 6px 20px -8px rgba(11,11,11,0.10);
+  --radius: 10px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221; --surface-3:#2a2a28;
+    --ink:#ffffff; --ink-2:#c3c2b7; --ink-3:#8f8d84;
+    --gridline:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,0.10); --border-strong:rgba(255,255,255,0.16);
+    --accent:#3987e5; --accent-ink:#ffffff; --accent-wash:#132436;
+    --pos:#3987e5; --neg:#e66767; --ns-fill:#3a3a37; --ns-ink:#8f8d84;
+    --cat-1:#3987e5; --cat-2:#d95926; --cat-3:#199e70; --cat-4:#c98500; --cat-5:#d55181;
+    --good:#0ca30c; --warning:#fab219; --serious:#ec835a; --critical:#e66767;
+    --good-wash:#123312; --warning-wash:#3a2c0c; --serious-wash:#3a1f14; --critical-wash:#3a1616;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 10px 30px -10px rgba(0,0,0,0.6);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222221; --surface-3:#2a2a28;
+  --ink:#ffffff; --ink-2:#c3c2b7; --ink-3:#8f8d84;
+  --gridline:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,0.10); --border-strong:rgba(255,255,255,0.16);
+  --accent:#3987e5; --accent-ink:#ffffff; --accent-wash:#132436;
+  --pos:#3987e5; --neg:#e66767; --ns-fill:#3a3a37; --ns-ink:#8f8d84;
+  --cat-1:#3987e5; --cat-2:#d95926; --cat-3:#199e70; --cat-4:#c98500; --cat-5:#d55181;
+  --good:#0ca30c; --warning:#fab219; --serious:#ec835a; --critical:#e66767;
+  --good-wash:#123312; --warning-wash:#3a2c0c; --serious-wash:#3a1f14; --critical-wash:#3a1616;
+  --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 10px 30px -10px rgba(0,0,0,0.6);
+}
+
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:var(--page); color:var(--ink);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size:15px; line-height:1.55; -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{ text-wrap:balance; margin:0; font-weight:650; letter-spacing:-0.01em; }
+p{margin:0;}
+button{font-family:inherit;}
+.tnum{ font-variant-numeric: tabular-nums; }
+.kicker{ font-size:11px; font-weight:700; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-3); }
+
+/* ============ LAYOUT SHELL ============ */
+.app{ max-width:1180px; margin:0 auto; padding:0 24px 80px; }
+.topbar{
+  position:sticky; top:0; z-index:40; background:color-mix(in srgb, var(--page) 88%, transparent);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border-bottom:1px solid var(--border);
+}
+.topbar-inner{ max-width:1180px; margin:0 auto; padding:16px 24px 0; }
+.brand-row{ display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:14px; }
+.brand{ display:flex; align-items:center; gap:12px; }
+.brand-mark{
+  width:38px; height:38px; border-radius:10px; background:var(--accent); color:var(--accent-ink);
+  display:flex; align-items:center; justify-content:center; font-size:19px; flex:none;
+}
+.brand-text{ display:flex; flex-direction:column; gap:1px; }
+.brand-name{ font-size:17px; font-weight:750; letter-spacing:-0.01em; }
+.brand-sub{ font-size:12.5px; color:var(--ink-3); }
+.meth-btn{
+  border:1px solid var(--border-strong); background:var(--surface); color:var(--ink-2);
+  border-radius:100px; padding:8px 14px; font-size:12.5px; font-weight:600; cursor:pointer;
+  display:flex; align-items:center; gap:6px; white-space:nowrap;
+}
+.meth-btn:hover{ background:var(--surface-2); }
+.tabs{ display:flex; gap:4px; overflow-x:auto; }
+.tab{
+  border:none; background:transparent; color:var(--ink-3); cursor:pointer;
+  padding:10px 4px 12px; font-size:13.5px; font-weight:650; border-bottom:2px solid transparent;
+  white-space:nowrap; margin-right:22px; transition:color .15s;
+}
+.tab .num{
+  display:inline-flex; align-items:center; justify-content:center; width:17px; height:17px; border-radius:50%;
+  background:var(--surface-3); color:var(--ink-3); font-size:10px; margin-right:7px; font-weight:700;
+}
+.tab.active{ color:var(--ink); border-bottom-color:var(--accent); }
+.tab.active .num{ background:var(--accent); color:var(--accent-ink); }
+.tab:hover:not(.active){ color:var(--ink-2); }
+
+.synth-banner{
+  max-width:1180px; margin:14px auto 0; padding:9px 16px; border-radius:8px;
+  background:var(--surface-2); border:1px solid var(--border); color:var(--ink-3); font-size:12px;
+  display:flex; gap:8px; align-items:flex-start;
+}
+.synth-banner b{ color:var(--ink-2); font-weight:650;}
+
+main{ padding-top:22px; }
+.view{ display:none; animation:fade .25s ease; }
+.view.active{ display:block; }
+@keyframes fade{ from{opacity:0; transform:translateY(4px);} to{opacity:1; transform:none;} }
+
+/* ============ PRIMITIVES ============ */
+.card{
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+  padding:20px 22px;
+}
+.grid{ display:grid; gap:16px; }
+.g-tiles{ grid-template-columns:repeat(4,1fr); }
+.g-2{ grid-template-columns:1fr 1fr; }
+.g-3{ grid-template-columns:1fr 1fr 1fr; }
+@media (max-width:900px){ .g-tiles{grid-template-columns:repeat(2,1fr);} .g-2,.g-3{grid-template-columns:1fr;} }
+
+.section-head{ display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:14px; flex-wrap:wrap;}
+.section-head h2{ font-size:19px; }
+.section-num{
+  display:inline-flex; align-items:center; justify-content:center; width:24px;height:24px;border-radius:7px;
+  background:var(--accent-wash); color:var(--accent); font-size:12px; font-weight:800; margin-right:9px;
+}
+
+.controls-row{ display:flex; gap:10px; align-items:center; margin-bottom:18px; flex-wrap:wrap; }
+.seg{ display:inline-flex; background:var(--surface-2); border:1px solid var(--border); border-radius:9px; padding:3px; gap:2px;}
+.seg button{
+  border:none; background:transparent; color:var(--ink-2); font-size:12.5px; font-weight:650; cursor:pointer;
+  padding:6px 13px; border-radius:6px;
+}
+.seg button.active{ background:var(--surface); color:var(--ink); box-shadow:var(--shadow); }
+.seg-label{ font-size:11.5px; color:var(--ink-3); font-weight:650; margin-right:2px; }
+
+.stat-tile{ background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:16px 18px; display:flex; flex-direction:column; gap:6px; }
+.stat-tile .kicker{ margin-bottom:2px; }
+.stat-value{ font-size:30px; font-weight:750; letter-spacing:-0.02em; }
+.stat-sub{ font-size:12px; color:var(--ink-3); }
+.stat-tile.accent{ background:var(--accent-wash); border-color:transparent; }
+.stat-tile.accent .stat-value{ color:var(--accent); }
+
+.callout{
+  border-radius:var(--radius); padding:16px 20px; border:1px solid var(--border);
+  background:var(--surface-2); display:flex; gap:14px; align-items:flex-start;
+}
+.callout.hero{ background:linear-gradient(135deg, var(--accent-wash), var(--surface)); border-color:var(--border); }
+.callout .icon{ font-size:20px; flex:none; margin-top:1px; }
+.callout h3{ font-size:15.5px; margin-bottom:4px; }
+.callout p{ color:var(--ink-2); font-size:13.5px; }
+
+.note{
+  font-size:12.5px; color:var(--ink-3); background:var(--surface-2); border:1px dashed var(--border-strong);
+  border-radius:8px; padding:10px 14px; line-height:1.5;
+}
+
+/* quote card */
+.quote{
+  border-left:3px solid var(--accent); background:var(--surface-2); border-radius:0 8px 8px 0;
+  padding:12px 16px; font-size:13.5px; color:var(--ink); font-style:italic;
+}
+.quote footer{ margin-top:8px; font-style:normal; font-size:11.5px; color:var(--ink-3); display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+
+/* expandable technical-details panel */
+.tech-details{
+  border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; background:var(--surface);
+}
+.tech-details summary{
+  cursor:pointer; padding:13px 18px; font-size:13px; font-weight:650; color:var(--ink-2);
+  background:var(--surface-2); list-style:none; display:flex; align-items:center; gap:8px; user-select:none;
+}
+.tech-details summary::-webkit-details-marker{ display:none; }
+.tech-details summary::before{ content:'▸'; color:var(--ink-3); font-size:11px; width:10px; display:inline-block; }
+.tech-details[open] summary::before{ content:'▾'; }
+.tech-details summary:hover{ color:var(--ink); }
+.tech-details-body{ padding:18px; }
+
+/* forest / bar chart */
+.chart-wrap{ display:flex; flex-direction:column; gap:9px; }
+.chart-group-label{ font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-3); margin:14px 0 2px; }
+.chart-group-label:first-child{ margin-top:0; }
+.fbar-row{ display:grid; grid-template-columns:150px 1fr 96px; align-items:center; gap:10px; min-height:26px;}
+.fbar-label{ font-size:12.5px; color:var(--ink-2); text-align:right; }
+.fbar-track{ position:relative; height:20px; background:transparent; }
+.fbar-fill{ position:absolute; top:2px; bottom:2px; border-radius:4px; }
+.fbar-fill.sig-pos{ background:var(--pos); }
+.fbar-fill.sig-neg{ background:var(--neg); }
+.fbar-fill.ns{ background:var(--ns-fill); }
+.fbar-zero{ position:absolute; top:-3px; bottom:-3px; width:1px; background:var(--baseline); }
+.fbar-val{ font-size:12px; text-align:right; }
+.fbar-val .or{ font-weight:700; }
+.fbar-val .p{ color:var(--ink-3); font-size:10.5px; display:block; }
+.fbar-val.ns .or{ color:var(--ns-ink); font-weight:600; }
+
+.simple-bars{ display:flex; flex-direction:column; gap:10px; }
+.sbar-row{ display:grid; grid-template-columns:150px 1fr 54px; align-items:center; gap:10px; }
+.sbar-label{ font-size:12.5px; color:var(--ink-2); text-align:right; }
+.sbar-track{ background:var(--surface-2); border-radius:5px; height:18px; overflow:hidden; position:relative; }
+.sbar-fill{ height:100%; border-radius:5px; }
+.sbar-val{ font-size:12.5px; font-weight:700; }
+
+.axis-row{ display:grid; grid-template-columns:150px 1fr 96px; font-size:10px; color:var(--ink-3); margin-bottom:2px;}
+.axis-ticks{ position:relative; height:14px; }
+.axis-tick{ position:absolute; transform:translateX(-50%); }
+
+/* null chips grid */
+.null-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+@media (max-width:900px){ .null-grid{grid-template-columns:1fr 1fr;} }
+.null-chip{
+  border:1px solid var(--border); border-radius:9px; padding:11px 13px; background:var(--surface-2);
+  display:flex; flex-direction:column; gap:4px;
+}
+.null-chip .lbl{ font-size:11.5px; font-weight:650; color:var(--ink-2); }
+.null-chip .stat{ font-size:12px; color:var(--ink-3); }
+.null-chip .dash{ color:var(--ns-ink); font-weight:700; }
+
+/* simulator */
+.sim-layout{ display:grid; grid-template-columns: 380px 1fr; gap:20px; align-items:start; }
+@media (max-width:920px){ .sim-layout{grid-template-columns:1fr;} }
+.field{ display:flex; flex-direction:column; gap:6px; margin-bottom:14px; }
+.field label{ font-size:12px; font-weight:650; color:var(--ink-2); }
+.field .hint{ font-size:11px; color:var(--ink-3); }
+select, .toggle2{
+  font-family:inherit; font-size:13.5px; padding:9px 11px; border-radius:8px; border:1px solid var(--border-strong);
+  background:var(--surface); color:var(--ink); width:100%;
+}
+select:focus{ outline:2px solid var(--accent); outline-offset:1px; }
+.toggle2{ display:inline-flex; padding:3px; gap:2px; width:auto; border:1px solid var(--border); background:var(--surface-2);}
+.toggle2 button{ border:none; background:transparent; padding:7px 16px; border-radius:6px; font-size:13px; font-weight:650; color:var(--ink-2); cursor:pointer;}
+.toggle2 button.active{ background:var(--surface); color:var(--ink); box-shadow:var(--shadow);}
+.crohns-panel{ border-top:1px dashed var(--border-strong); margin-top:6px; padding-top:14px; }
+
+.sim-output{ display:flex; flex-direction:column; gap:16px; }
+.prob-card{ display:flex; align-items:center; gap:22px; flex-wrap:wrap;}
+.prob-gauge{ position:relative; width:112px; height:112px; flex:none; }
+.prob-num{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; flex-direction:column; }
+.prob-num .n{ font-size:24px; font-weight:800; }
+.prob-num .u{ font-size:10px; color:var(--ink-3); font-weight:650; }
+.prob-meta{ flex:1; min-width:200px; }
+.prob-meta .kicker{ margin-bottom:4px; }
+.prob-meta p{ font-size:12.5px; color:var(--ink-2); }
+
+.rec-badge{
+  display:inline-flex; align-items:center; gap:10px; padding:11px 18px; border-radius:11px; font-weight:800;
+  font-size:17px; letter-spacing:.02em;
+}
+.rec-badge .dot{ width:10px; height:10px; border-radius:50%; }
+.rec-SURFACE{ background:var(--good-wash); color:var(--good); }
+.rec-MODIFY{ background:var(--warning-wash); color:#8a5a00; }
+:root[data-theme="dark"] .rec-MODIFY{ color:var(--warning);}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .rec-MODIFY{ color:var(--warning);} }
+.rec-DELAY{ background:var(--serious-wash); color:#a3441c; }
+:root[data-theme="dark"] .rec-DELAY{ color:var(--serious);}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .rec-DELAY{ color:var(--serious);} }
+.rec-SUPPRESS{ background:var(--critical-wash); color:var(--critical); }
+.rec-badge.rec-SURFACE .dot{ background:var(--good); }
+.rec-badge.rec-MODIFY .dot{ background:var(--warning); }
+.rec-badge.rec-DELAY .dot{ background:var(--serious); }
+.rec-badge.rec-SUPPRESS .dot{ background:var(--critical); }
+
+.driver-cols{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+@media (max-width:560px){ .driver-cols{grid-template-columns:1fr;} }
+.driver-col h4{ font-size:11.5px; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-3); margin-bottom:8px; }
+.driver-item{ display:flex; justify-content:space-between; gap:8px; font-size:12.5px; padding:7px 0; border-bottom:1px solid var(--border); }
+.driver-item:last-child{ border-bottom:none; }
+.driver-item .amt{ font-weight:700; font-variant-numeric:tabular-nums; }
+.driver-item.pos .amt{ color:var(--pos); }
+.driver-item.neg .amt{ color:var(--neg); }
+
+/* notification-preview: the revised-message example, styled like a push notification.
+   Visibly changes state (color, border, icon) by recommendation type. */
+.notif-preview{ border-radius:12px; padding:13px 15px; border:1px solid var(--border); background:var(--surface-2); }
+.notif-head{ display:flex; align-items:center; gap:7px; margin-bottom:7px; }
+.notif-icon{ width:20px; height:20px; border-radius:6px; background:var(--accent); color:var(--accent-ink); display:inline-flex; align-items:center; justify-content:center; font-size:11px; flex:none; }
+.notif-app{ font-size:11px; font-weight:700; color:var(--ink-2); }
+.notif-state-label{ margin-left:auto; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.03em; padding:2px 8px; border-radius:100px; }
+.notif-body{ font-size:13.5px; color:var(--ink); line-height:1.5; }
+.notif-preview.state-sent{ border-color:transparent; background:var(--good-wash); }
+.notif-preview.state-sent .notif-state-label{ background:var(--good); color:#fff; }
+.notif-preview.state-modified{ border-color:transparent; background:var(--warning-wash); }
+.notif-preview.state-modified .notif-state-label{ background:var(--warning); color:#3a2c0c; }
+
+/* action-note: DELAY/SUPPRESS product action — deliberately NOT styled like a
+   notification, since no message is sent to the user in these states. */
+.action-note{ border-radius:10px; padding:14px 16px; border:1px dashed var(--border-strong); background:var(--surface-2); }
+.action-note-label{ display:inline-block; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.03em; padding:2px 8px; border-radius:100px; margin-bottom:8px; }
+.action-note p{ font-size:13.5px; color:var(--ink-2); margin:0; }
+.action-note.state-queued .action-note-label{ background:var(--serious-wash); color:var(--serious); }
+.action-note.state-suppressed{ border-style:solid; border-color:var(--critical); }
+.action-note.state-suppressed .action-note-label{ background:var(--critical-wash); color:var(--critical); }
+
+.priority-strip{ display:flex; align-items:center; gap:6px; flex-wrap:wrap; font-size:11px; color:var(--ink-3); }
+.priority-strip .step{ padding:5px 10px; border-radius:100px; background:var(--surface-2); border:1px solid var(--border); font-weight:650; }
+.priority-strip .step.hit{ background:var(--accent-wash); color:var(--accent); border-color:transparent; }
+.priority-strip .arrow{ color:var(--ink-3); }
+
+/* ============ VIEW 5 — EXECUTIVE SUMMARY ============ */
+.brief-block{ margin-bottom:16px; }
+.brief-block .kicker{ color:var(--accent); margin-bottom:6px; display:block; }
+.brief-block p{ font-size:14px; color:var(--ink-2); max-width:75ch; }
+
+.flow-row{ display:flex; align-items:center; gap:6px; flex-wrap:wrap; margin-top:10px; }
+.flow-row .step{
+  padding:7px 13px; border-radius:100px; background:var(--surface-2); border:1px solid var(--border);
+  font-size:12px; font-weight:650; color:var(--ink-2); white-space:nowrap;
+}
+.flow-row .arrow{ color:var(--ink-3); font-size:13px; }
+.flow-row.flow-current .step{ color:var(--ink-3); }
+.flow-row.flow-target .step.decide{ background:var(--accent-wash); color:var(--accent); border-color:transparent; font-weight:700; }
+.flow-row .step.s-surface{ background:var(--good-wash); color:var(--good); border-color:transparent; }
+.flow-row .step.s-modify{ background:var(--warning-wash); color:#8a5a00; border-color:transparent; }
+:root[data-theme="dark"] .flow-row .step.s-modify{ color:var(--warning); }
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .flow-row .step.s-modify{ color:var(--warning); } }
+.flow-row .step.s-delay{ background:var(--serious-wash); color:#a3441c; border-color:transparent; }
+:root[data-theme="dark"] .flow-row .step.s-delay{ color:var(--serious); }
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .flow-row .step.s-delay{ color:var(--serious); } }
+.flow-row .step.s-suppress{ background:var(--critical-wash); color:var(--critical); border-color:transparent; }
+.flow-label{ font-size:10.5px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-3); }
+
+.rec-list{ display:flex; flex-direction:column; gap:18px; }
+.rec-item h4{ font-size:15px; margin-bottom:5px; }
+.rec-num{ color:var(--accent); font-weight:700; }
+.rec-item p{ font-size:13.5px; color:var(--ink-2); }
+.rec-item p b{ color:var(--ink); }
+
+.exp-card{ border:1px solid var(--border); border-radius:var(--radius); padding:15px 17px; background:var(--surface); }
+.exp-card .kicker{ color:var(--accent); margin-bottom:5px; }
+.exp-card h4{ font-size:13.5px; margin-bottom:5px; }
+.exp-card p{ font-size:12.5px; color:var(--ink-2); }
+
+/* methodology drawer */
+.meth-overlay{
+  position:fixed; inset:0; background:rgba(0,0,0,.35); z-index:60; display:none;
+}
+.meth-overlay.open{ display:block; }
+.meth-drawer{
+  position:fixed; top:0; right:0; height:100%; width:min(440px,92vw); background:var(--surface); z-index:61;
+  border-left:1px solid var(--border); box-shadow:var(--shadow); transform:translateX(100%); transition:transform .25s ease;
+  overflow-y:auto; padding:22px 22px 40px;
+}
+.meth-drawer.open{ transform:translateX(0); }
+.meth-drawer h3{ font-size:16px; margin-bottom:10px;}
+.meth-drawer h4{ font-size:12.5px; margin:18px 0 6px; color:var(--ink-2); text-transform:uppercase; letter-spacing:.04em;}
+.meth-drawer p, .meth-drawer li{ font-size:13px; color:var(--ink-2); line-height:1.6; }
+.meth-drawer ul{ padding-left:18px; margin:0; }
+.meth-close{ position:absolute; top:18px; right:18px; border:none; background:var(--surface-2); width:30px; height:30px; border-radius:50%; cursor:pointer; font-size:14px; color:var(--ink-2);}
+
+.footer-note{ margin-top:36px; padding-top:18px; border-top:1px solid var(--border); font-size:11.5px; color:var(--ink-3); text-align:center; }
+.subtle-link{ background:none;border:none;color:var(--accent);cursor:pointer;font-size:inherit;font-weight:650;padding:0; text-decoration:underline;}
+</style>
+
+
+</head>
+<body>
+<div class="app">
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand-row">
+        <div class="brand">
+          <div class="brand-mark">⌚</div>
+          <div class="brand-text">
+            <span class="brand-name">Signal to Action</span>
+            <span class="brand-sub">When a wearable insight leads to action — a synthetic case study</span>
+          </div>
+        </div>
+        <button class="meth-btn" id="methBtn">📎 Methodology &amp; data notes</button>
+      </div>
+      <nav class="tabs" id="tabs">
+        <button class="tab active" data-view="exec"><span class="num">★</span>Executive Summary</button>
+        <button class="tab" data-view="overview"><span class="num">1</span>Population Overview</button>
+        <button class="tab" data-view="drivers"><span class="num">2</span>What Drives Action</button>
+        <button class="tab" data-view="simulator"><span class="num">3</span>Decision Simulator</button>
+        <button class="tab" data-view="future"><span class="num">4</span>Future Tests</button>
+      </nav>
+    </div>
+  </div>
+
+  <div class="synth-banner"><span>🧪</span><span><b>Synthetic case study.</b> Every user, event, quote, and coefficient here is generated for a portfolio exercise — no real users, no clinical validation, no causal claims.</span></div>
+
+  <main id="main"></main>
+
+  <div class="footer-note">Signal to Action · synthetic mixed-method case study by Janna Safran · population figures, regression coefficients, and qualitative excerpts are simulated and reused verbatim from the case-study dataset</div>
+</div>
+
+<div class="meth-overlay" id="methOverlay"></div>
+<div class="meth-drawer" id="methDrawer">
+  <button class="meth-close" id="methClose">✕</button>
+  <h3>Methodology &amp; data notes</h3>
+  <p>This entire case study — the population, the 7,487 insight events, regression coefficients, and 125 simulated qualitative excerpts — is a <b>synthetic dataset built for a portfolio piece</b>. Nothing here describes real people, real wearable data, or a validated clinical model.</p>
+  <h4>Design of the data</h4>
+  <ul>
+    <li>1,000 synthetic users, ~7.5 insight events each, repeated events within users.</li>
+    <li>100 users carry a simulated Crohn's diagnosis — <b>intentionally oversampled</b> for subgroup analysis. Their 10% share of this sample is a study-design choice, not a claim about real-world prevalence.</li>
+    <li>125 simulated qualitative excerpts were coded against a predefined 8-code framework in a separate AI-assisted analysis pass. I reviewed the resulting themes, contradictions, and negative cases before incorporating them into the product interpretation.</li>
+  </ul>
+  <h4>The model</h4>
+  <ul>
+    <li>A lightweight, interpretable logistic decision-support model — not a production predictive system. Standard errors are user-clustered to account for repeated events per user.</li>
+    <li>Evaluated on a user-level train/test split (no user appears in both sets): held-out AUC ≈ 0.73, Brier score ≈ 0.20.</li>
+    <li>Performance falls substantially if <code>ability_to_act</code> is removed — the single largest driver of what this model can predict.</li>
+    <li><code>ability_to_act</code> is a hypothetical contextual variable used to explore whether a user's current capacity to act could improve delivery decisions. This case study does not establish how a real product would observe or infer that context.</li>
+  </ul>
+  <h4>Primary outcome</h4>
+  <p>Action taken within 4 hours of receiving an insight. Exact time-to-action is preserved only as a secondary descriptive measure (median ≈ 62 min among those who acted) — it is not modeled or optimized for.</p>
+  <h4>Decision Simulator's predicted probability</h4>
+  <p>An illustrative combination of the primary adjusted model (ability to act, notification burden, baseline motivation, wearable signal, Crohn's status) with the message-design sensitivity model and the Crohn's×activity interaction term, evaluated at the levels you select. It is one transparent calculation, not a single validated predictive model — and per the decision rules, this number is the <i>last</i> input consulted, never the first.</p>
+  <h4>Why I Designed 3 Evidence Views</h4>
+  <p>The same evidence should not be presented the same way to every audience. I designed three ways to engage with it, moving from synthesis to exploration to application.</p>
+  <p style="margin-top:10px;"><b>1 — Executive Summary: Understand the decision.</b><br>A one-page view for leaders who need the key findings, implications, and recommendations without working through the underlying analysis.</p>
+  <p style="margin-top:10px;"><b>2 — Visual Dashboard: Explore the evidence.</b><br>Interactive visualizations make patterns, subgroup differences, and mixed-method findings easier to understand without requiring statistical expertise. Technical details remain available for readers who want to go deeper.</p>
+  <p style="margin-top:10px;"><b>3 — Decision Simulator: Apply the evidence.</b><br>A hands-on model-assisted experience shows how changing user context can change the recommended product action: surface, modify, delay, or suppress.</p>
+  <p style="margin-top:10px;">The goal was not to present the same analysis three times. It was to translate the same evidence into the level of detail and interaction different stakeholders may need.</p>
+  <h4>AI-assisted, human-directed analysis</h4>
+  <p>I used AI throughout the workflow to accelerate the work—not to make the analytical decisions for me.</p>
+  <p style="margin-top:10px;"><b>AI accelerated</b></p>
+  <ul>
+    <li>Synthetic data generation within predefined research constraints</li>
+    <li>Quantitative analysis and statistical QA</li>
+    <li>Qualitative coding and synthesis support</li>
+    <li>Exploration of alternative interpretations</li>
+    <li>Dashboard and simulator implementation in Claude Code</li>
+  </ul>
+  <p style="margin-top:10px;"><b>I directed</b></p>
+  <ul>
+    <li>Framing the product question and defining the outcome</li>
+    <li>Designing the dataset, subgroup strategy, and analysis plan</li>
+    <li>Choosing which statistical methods and sensitivity checks were appropriate</li>
+    <li>Interpreting quantitative and qualitative evidence together</li>
+    <li>Deciding which findings were strong enough to communicate</li>
+    <li>Translating the evidence into product recommendations and future tests</li>
+  </ul>
+  <p style="margin-top:10px;">A key part of the process was challenging the output rather than accepting it at face value. For example, I removed findings that were statistically valid but difficult to defend or explain, rejected a notification-volume result that was too weak to carry an executive recommendation, replaced a more dramatic trust statistic with a cleaner and more transparent comparison, and revised the message-design analysis when I realized “paired” messages were confounded with actionable content.</p>
+  <p style="margin-top:10px;">I also deliberately looked for null findings, contradictory qualitative perspectives, and subgroup differences rather than forcing the data to support the original hypotheses.</p>
+  <p style="margin-top:10px;">AI helped me move faster. Human judgment determined what the evidence meant, what could be responsibly claimed, and what the product should do next.</p>
+</div>
+
+<script id="data-bundle" type="application/json">{"all": {"n_users": 1000, "n_events": 7487, "action": {"n": 2810, "d": 7167, "pct": 39.2}, "engagement": {"n": 4346, "d": 7487, "pct": 58.0}, "by_insight_type_action": {"positive_reinforcement": {"n_action": 644, "n_total": 1509, "rate_pct": 42.7}, "descriptive": {"n_action": 436, "n_total": 1452, "rate_pct": 30.0}, "actionable": {"n_action": 810, "n_total": 1726, "rate_pct": 46.9}, "personalized": {"n_action": 543, "n_total": 1425, "rate_pct": 38.1}, "explanatory": {"n_action": 377, "n_total": 1055, "rate_pct": 35.7}}, "by_signal_type_action": {"steps_activity": {"n_action": 894, "n_total": 2112, "rate_pct": 42.3}, "hrv": {"n_action": 389, "n_total": 1108, "rate_pct": 35.1}, "exercise_minutes": {"n_action": 557, "n_total": 1468, "rate_pct": 37.9}, "resting_heart_rate": {"n_action": 437, "n_total": 1065, "rate_pct": 41.0}, "sleep_duration": {"n_action": 533, "n_total": 1414, "rate_pct": 37.7}}, "by_structure_action": {"paired": {"n_action": 1085, "n_total": 2549, "rate_pct": 42.6}, "single": {"n_action": 1725, "n_total": 4618, "rate_pct": 37.4}}, "by_insight_type_engage": {"positive_reinforcement": {"n_action": 909, "n_total": 1580, "rate_pct": 57.5}, "descriptive": {"n_action": 911, "n_total": 1516, "rate_pct": 60.1}, "actionable": {"n_action": 1066, "n_total": 1796, "rate_pct": 59.4}, "personalized": {"n_action": 852, "n_total": 1484, "rate_pct": 57.4}, "explanatory": {"n_action": 608, "n_total": 1111, "rate_pct": 54.7}}, "by_signal_type_engage": {"steps_activity": {"n_action": 1249, "n_total": 2214, "rate_pct": 56.4}, "hrv": {"n_action": 671, "n_total": 1157, "rate_pct": 58.0}, "exercise_minutes": {"n_action": 904, "n_total": 1527, "rate_pct": 59.2}, "resting_heart_rate": {"n_action": 676, "n_total": 1117, "rate_pct": 60.5}, "sleep_duration": {"n_action": 846, "n_total": 1472, "rate_pct": 57.5}}, "by_structure_engage": {"paired": {"n_action": 1605, "n_total": 2659, "rate_pct": 60.4}, "single": {"n_action": 2741, "n_total": 4828, "rate_pct": 56.8}}}, "crohns": {"n_users": 100, "n_events": 706, "action": {"n": 204, "d": 677, "pct": 30.1}, "engagement": {"n": 401, "d": 706, "pct": 56.8}, "by_insight_type_action": {"personalized": {"n_action": 38, "n_total": 127, "rate_pct": 29.9}, "positive_reinforcement": {"n_action": 45, "n_total": 127, "rate_pct": 35.4}, "actionable": {"n_action": 62, "n_total": 169, "rate_pct": 36.7}, "descriptive": {"n_action": 28, "n_total": 143, "rate_pct": 19.6}, "explanatory": {"n_action": 31, "n_total": 111, "rate_pct": 27.9}}, "by_signal_type_action": {"sleep_duration": {"n_action": 49, "n_total": 130, "rate_pct": 37.7}, "hrv": {"n_action": 29, "n_total": 105, "rate_pct": 27.6}, "exercise_minutes": {"n_action": 29, "n_total": 112, "rate_pct": 25.9}, "resting_heart_rate": {"n_action": 39, "n_total": 107, "rate_pct": 36.4}, "steps_activity": {"n_action": 58, "n_total": 223, "rate_pct": 26.0}}, "by_structure_action": {"single": {"n_action": 113, "n_total": 405, "rate_pct": 27.9}, "paired": {"n_action": 91, "n_total": 272, "rate_pct": 33.5}}, "by_insight_type_engage": {"personalized": {"n_action": 83, "n_total": 130, "rate_pct": 63.8}, "positive_reinforcement": {"n_action": 74, "n_total": 130, "rate_pct": 56.9}, "actionable": {"n_action": 102, "n_total": 179, "rate_pct": 57.0}, "descriptive": {"n_action": 82, "n_total": 152, "rate_pct": 53.9}, "explanatory": {"n_action": 60, "n_total": 115, "rate_pct": 52.2}}, "by_signal_type_engage": {"sleep_duration": {"n_action": 71, "n_total": 133, "rate_pct": 53.4}, "hrv": {"n_action": 68, "n_total": 110, "rate_pct": 61.8}, "exercise_minutes": {"n_action": 69, "n_total": 118, "rate_pct": 58.5}, "resting_heart_rate": {"n_action": 65, "n_total": 111, "rate_pct": 58.6}, "steps_activity": {"n_action": 128, "n_total": 234, "rate_pct": 54.7}}, "by_structure_engage": {"single": {"n_action": 222, "n_total": 425, "rate_pct": 52.2}, "paired": {"n_action": 179, "n_total": 281, "rate_pct": 63.7}}}, "general": {"n_users": 900, "n_events": 6781, "action": {"n": 2606, "d": 6490, "pct": 40.2}, "engagement": {"n": 3945, "d": 6781, "pct": 58.2}, "by_insight_type_action": {"positive_reinforcement": {"n_action": 599, "n_total": 1382, "rate_pct": 43.3}, "descriptive": {"n_action": 408, "n_total": 1309, "rate_pct": 31.2}, "actionable": {"n_action": 748, "n_total": 1557, "rate_pct": 48.0}, "personalized": {"n_action": 505, "n_total": 1298, "rate_pct": 38.9}, "explanatory": {"n_action": 346, "n_total": 944, "rate_pct": 36.7}}, "by_signal_type_action": {"steps_activity": {"n_action": 836, "n_total": 1889, "rate_pct": 44.3}, "hrv": {"n_action": 360, "n_total": 1003, "rate_pct": 35.9}, "exercise_minutes": {"n_action": 528, "n_total": 1356, "rate_pct": 38.9}, "resting_heart_rate": {"n_action": 398, "n_total": 958, "rate_pct": 41.5}, "sleep_duration": {"n_action": 484, "n_total": 1284, "rate_pct": 37.7}}, "by_structure_action": {"paired": {"n_action": 994, "n_total": 2277, "rate_pct": 43.7}, "single": {"n_action": 1612, "n_total": 4213, "rate_pct": 38.3}}, "by_insight_type_engage": {"positive_reinforcement": {"n_action": 835, "n_total": 1450, "rate_pct": 57.6}, "descriptive": {"n_action": 829, "n_total": 1364, "rate_pct": 60.8}, "actionable": {"n_action": 964, "n_total": 1617, "rate_pct": 59.6}, "personalized": {"n_action": 769, "n_total": 1354, "rate_pct": 56.8}, "explanatory": {"n_action": 548, "n_total": 996, "rate_pct": 55.0}}, "by_signal_type_engage": {"steps_activity": {"n_action": 1121, "n_total": 1980, "rate_pct": 56.6}, "hrv": {"n_action": 603, "n_total": 1047, "rate_pct": 57.6}, "exercise_minutes": {"n_action": 835, "n_total": 1409, "rate_pct": 59.3}, "resting_heart_rate": {"n_action": 611, "n_total": 1006, "rate_pct": 60.7}, "sleep_duration": {"n_action": 775, "n_total": 1339, "rate_pct": 57.9}}, "by_structure_engage": {"paired": {"n_action": 1426, "n_total": 2378, "rate_pct": 60.0}, "single": {"n_action": 2519, "n_total": 4403, "rate_pct": 57.2}}}, "n_crohns_users": 100, "n_general_users": 900, "crohns_activity_action": {"n": 87, "d": 335, "pct": 26.0}, "crohns_nonactivity_action": {"n": 117, "d": 342, "pct": 34.2}, "general_activity_action": {"n": 1364, "d": 3245, "pct": 42.0}, "general_nonactivity_action": {"n": 1242, "d": 3245, "pct": 38.3}, "crohns_by_ability_active": {"normal": {"n_action": 93, "n_total": 264, "rate_pct": 35.2}, "somewhat limited": {"n_action": 66, "n_total": 224, "rate_pct": 29.5}, "very limited": {"n_action": 14, "n_total": 102, "rate_pct": 13.7}}, "crohns_by_fatigue": {"none": {"n_action": 37, "n_total": 131, "rate_pct": 28.2}, "low": {"n_action": 64, "n_total": 196, "rate_pct": 32.7}, "moderate": {"n_action": 49, "n_total": 176, "rate_pct": 27.8}, "high": {"n_action": 23, "n_total": 87, "rate_pct": 26.4}}, "crohns_by_gi": {"low": {"n_action": 68, "n_total": 227, "rate_pct": 30.0}, "moderate": {"n_action": 40, "n_total": 148, "rate_pct": 27.0}, "none": {"n_action": 53, "n_total": 157, "rate_pct": 33.8}, "high": {"n_action": 12, "n_total": 58, "rate_pct": 20.7}}, "crohns_by_pain": {"low": {"n_action": 56, "n_total": 174, "rate_pct": 32.2}, "high": {"n_action": 20, "n_total": 74, "rate_pct": 27.0}, "moderate": {"n_action": 33, "n_total": 130, "rate_pct": 25.4}, "none": {"n_action": 64, "n_total": 212, "rate_pct": 30.2}}, "crohns_activity_by_ability_active": {"normal": {"n_action": 47, "n_total": 123, "rate_pct": 38.2}, "somewhat limited": {"n_action": 24, "n_total": 116, "rate_pct": 20.7}, "very limited": {"n_action": 2, "n_total": 52, "rate_pct": 3.8}}, "crohns_activity_by_fatigue": {"moderate": {"n_action": 19, "n_total": 89, "rate_pct": 21.3}, "low": {"n_action": 32, "n_total": 107, "rate_pct": 29.9}, "high": {"n_action": 7, "n_total": 38, "rate_pct": 18.4}, "none": {"n_action": 15, "n_total": 57, "rate_pct": 26.3}}, "crohns_activity_by_gi": {"low": {"n_action": 32, "n_total": 114, "rate_pct": 28.1}, "moderate": {"n_action": 14, "n_total": 72, "rate_pct": 19.4}, "none": {"n_action": 26, "n_total": 76, "rate_pct": 34.2}, "high": {"n_action": 1, "n_total": 29, "rate_pct": 3.4}}, "crohns_activity_by_pain": {"low": {"n_action": 28, "n_total": 96, "rate_pct": 29.2}, "moderate": {"n_action": 12, "n_total": 63, "rate_pct": 19.0}, "none": {"n_action": 26, "n_total": 98, "rate_pct": 26.5}, "high": {"n_action": 7, "n_total": 34, "rate_pct": 20.6}}, "time_to_action_minutes": {"n": 2810, "median": 62, "mean": 80.1, "p90": 171}}
+</script>
+<script>
+/* =========================================================================
+   DATA
+   ========================================================================= */
+const POP = JSON.parse(document.getElementById('data-bundle').textContent);
+
+// Primary adjusted model — wearable_insight_action_primary_adjusted_model_coefficients.csv
+const PRIMARY = [
+  {group:'Ability to act', label:'Low (vs. medium)',  or:0.32, lo:0.27, hi:0.38, p:7.9e-45, sig:true},
+  {group:'Ability to act', label:'High (vs. medium)', or:2.91, lo:2.55, hi:3.32, p:6.3e-57, sig:true},
+  {group:'Notification burden', label:'Medium (vs. low)', or:0.83, lo:0.74, hi:0.94, p:0.0026, sig:true},
+  {group:'Notification burden', label:'High (vs. low)',   or:0.65, lo:0.52, hi:0.80, p:7.9e-5, sig:true},
+  {group:'Baseline motivation', label:'Low (vs. medium)',  or:0.86, lo:0.74, hi:0.99, p:0.0331, sig:true},
+  {group:'Baseline motivation', label:'High (vs. medium)', or:1.49, lo:1.31, hi:1.69, p:1.8e-9, sig:true},
+  {group:'Wearable signal (vs. steps &amp; activity)', label:'Exercise minutes', or:0.76, lo:0.65, hi:0.90, p:0.0012, sig:true},
+  {group:'Wearable signal (vs. steps &amp; activity)', label:'HRV',              or:0.72, lo:0.60, hi:0.86, p:0.0003, sig:true},
+  {group:'Wearable signal (vs. steps &amp; activity)', label:'Resting heart rate', or:0.90, lo:0.75, hi:1.07, p:0.2318, sig:false},
+  {group:'Wearable signal (vs. steps &amp; activity)', label:'Sleep duration',   or:0.81, lo:0.69, hi:0.96, p:0.0147, sig:true},
+];
+const PRIMARY_NULLS = [
+  {label:'Time of day — afternoon (vs. morning)', or:0.93, lo:0.82, hi:1.06, p:0.306},
+  {label:'Time of day — evening (vs. morning)',    or:1.04, lo:0.90, hi:1.21, p:0.578},
+  {label:'Age 18–34 (vs. 35–54)', or:0.97, lo:0.85, hi:1.10, p:0.628},
+  {label:'Age 55+ (vs. 35–54)',   or:1.07, lo:0.94, hi:1.23, p:0.307},
+  {label:'Health-data literacy — low (vs. medium)',  or:0.92, lo:0.80, hi:1.06, p:0.232},
+  {label:'Health-data literacy — high (vs. medium)', or:0.92, lo:0.80, hi:1.05, p:0.220},
+  {label:"Crohn's status (yes vs. no)", or:0.84, lo:0.69, hi:1.02, p:0.079},
+];
+// Descriptive action rate by recent notification burden — QA Summary sheet
+const NOTIF_BURDEN_ACTION = [
+  {label:'Low burden', pct:41.3},
+  {label:'Medium burden', pct:38.1},
+  {label:'High burden', pct:33.3},
+];
+// message_design_sensitivity model, vs single_descriptive — quant_sensitivity_results.csv
+const MESSAGE_DESIGN = [
+  {key:'single_actionable', label:'Single · actionable', struct:'single', or:2.61, lo:2.11, hi:3.24, p:0.0001},
+  {key:'explanatory+actionable', label:'Paired · explanatory + actionable', struct:'paired', or:2.57, lo:2.02, hi:3.28, p:0.0001},
+  {key:'personalized+actionable', label:'Paired · personalized + actionable', struct:'paired', or:2.08, lo:1.66, hi:2.60, p:0.0001},
+  {key:'descriptive+actionable', label:'Paired · descriptive + actionable', struct:'paired', or:1.92, lo:1.53, hi:2.41, p:0.0001},
+  {key:'single_positive_reinforcement', label:'Single · positive reinforcement', struct:'single', or:1.88, lo:1.52, hi:2.33, p:0.0001},
+  {key:'single_explanatory', label:'Single · explanatory', struct:'single', or:1.59, lo:1.24, hi:2.03, p:0.0002},
+  {key:'single_personalized', label:'Single · personalized', struct:'single', or:1.58, lo:1.27, hi:1.98, p:0.0001},
+];
+const MD_LOOKUP = {single_descriptive:{or:1, ln:0}};
+MESSAGE_DESIGN.forEach(m=> MD_LOOKUP[m.key] = {or:m.or, ln:Math.log(m.or)});
+
+const ABS_DEV_NULL = {label:'Magnitude of deviation from baseline (per 10pp)', or:1.02, lo:0.97, hi:1.07, p:0.4644};
+const HRV_LIT_NULL = {label:'HRV × health-data literacy', or:1.05, lo:0.84, hi:1.32, p:0.6638};
+const HRV_PAIRED_NULL = {label:'HRV × paired structure', or:1.13, lo:0.83, hi:1.55, p:0.4310};
+
+// crohns_activity_interaction model
+const CROHNS_INTERACTION = [
+  {label:"Crohn's status (main effect)", or:1.15, lo:0.89, hi:1.47, p:0.2913, sig:false},
+  {label:'Activity-related signal (main effect)', or:1.16, lo:1.03, hi:1.31, p:0.0117, sig:true},
+  {label:"Crohn's × activity-related insight", or:0.55, lo:0.38, hi:0.80, p:0.0016, sig:true},
+];
+
+// Curated qualitative excerpts — wearable_insight_action_qualitative_coded_v2.csv (verbatim)
+const Q = {
+  opportunity: {id:'Q002', user:'U0003', text:"The way I experienced it was that the message arrived at a point when there was no realistic opening to do what it suggested. That was the difference for me.", codes:['timing_opportunity']},
+  nextstep: {id:'Q068', user:'U0441', text:"Pointing out a problem is less useful to me than showing a realistic action I can take.", codes:['relevance','actionability']},
+  hrvGood: {id:'Q011', user:'U0087', text:"I actually like HRV because I know my own pattern pretty well. If the app shows me that it dropped and reminds me to take recovery seriously, I usually know what I want to change.", codes:['comprehension','actionability'], neg:'hrv_negative_case'},
+  hrvHard: {id:'Q051', user:'U0280', text:"HRV still felt abstract; I could tell the app was flagging something, but I couldn't translate that number into a decision.", codes:['comprehension']},
+  burden1: {id:'Q004', user:'U0003', text:"None of the notifications was terrible on its own, but together they made the app feel repetitive.", codes:['insight_fatigue']},
+  burden2: {id:'Q049', user:'U0272', text:"The number of alerts wasn't the problem for me as much as whether each message earned my attention.", codes:['relevance','insight_fatigue'], neg:'notification_burden_negative_case'},
+  magnitude: {id:'Q046', user:'U0272', text:"The number was clear, but it didn't feel relevant enough to change what I was doing.", codes:['relevance']},
+  contextMismatch: {id:'Q090', user:'U0825', text:"On a bad symptom day, a generic 'go for a walk' message feels like the app has no idea what is happening.", codes:['trust','insight_fatigue','symptom_context_mismatch']},
+  suppress1: {id:'Q065', user:'U0372', text:"I don't want Crohn's to become a blanket reason to suppress activity advice; the recommendation just needs to match the day I'm having.", codes:['symptom_context_mismatch'], neg:'crohns_suppression_negative_case'},
+  suppress2: {id:'Q075', user:'U0496', text:"Even on a rough symptom day, I don't want the app to assume I should do nothing; I would rather get a gentler option that fits what I can handle.", codes:['trust','actionability','symptom_context_mismatch'], neg:'crohns_suppression_negative_case'},
+};
+
+const SIGNAL_LABELS = {steps_activity:'Steps &amp; activity', exercise_minutes:'Exercise minutes', hrv:'HRV', resting_heart_rate:'Resting heart rate', sleep_duration:'Sleep duration'};
+const TYPE_LABELS = {actionable:'Actionable', descriptive:'Descriptive', explanatory:'Explanatory', personalized:'Personalized', positive_reinforcement:'Positive reinforcement'};
+const CAT_ORDER_TYPE = ['actionable','descriptive','explanatory','personalized','positive_reinforcement'];
+const CAT_ORDER_SIGNAL = ['steps_activity','exercise_minutes','hrv','resting_heart_rate','sleep_duration'];
+const CAT_COLORS = ['var(--cat-1)','var(--cat-2)','var(--cat-3)','var(--cat-4)','var(--cat-5)'];
+
+/* =========================================================================
+   HELPERS
+   ========================================================================= */
+function pfmt(p){ if(p<0.001) return 'p<.001'; return 'p='+p.toFixed(p<0.01?4:3).replace(/^0/,''); }
+function pct(x){ return x.toFixed(1)+'%'; }
+function esc(s){ return s; }
+
+// log2-scaled forest bar, domain OR in [0.2, 5] -> track width 100%
+function logPos(or, lo=0.2, hi=5){
+  const l = Math.log2(or), lLo = Math.log2(lo), lHi = Math.log2(hi);
+  return Math.max(0, Math.min(100, ((l - lLo) / (lHi - lLo)) * 100));
+}
+function forestRow(label, or, lo, hi, p, sig, domain){
+  const zero = logPos(1, ...domain);
+  const x1 = logPos(Math.min(or, 1), ...domain);
+  const x2 = logPos(Math.max(or, 1), ...domain);
+  const dir = or>=1 ? 'sig-pos' : 'sig-neg';
+  const cls = sig ? dir : 'ns';
+  return `<div class="fbar-row">
+    <div class="fbar-label">${label}</div>
+    <div class="fbar-track">
+      <div class="fbar-zero" style="left:${zero}%"></div>
+      <div class="fbar-fill ${cls}" style="left:${x1}%; width:${Math.max(x2-x1,0.6)}%"></div>
+    </div>
+    <div class="fbar-val ${sig?'':'ns'}"><span class="or tnum">${or.toFixed(2)}×</span><span class="p tnum">${pfmt(p)}</span></div>
+  </div>`;
+}
+function axisRow(domain, ticks){
+  const items = ticks.map(t=>`<div class="axis-tick" style="left:${logPos(t,...domain)}%">${t}×</div>`).join('');
+  return `<div class="axis-row"><div></div><div class="axis-ticks">${items}</div><div></div></div>`;
+}
+function simpleBar(label, valuePct, colorVar, sub){
+  return `<div class="sbar-row">
+    <div class="sbar-label">${label}</div>
+    <div class="sbar-track"><div class="sbar-fill" style="width:${valuePct}%; background:${colorVar}"></div></div>
+    <div class="sbar-val tnum">${valuePct.toFixed(1)}%</div>
+  </div>`;
+}
+function quoteCard(q, extra){
+  return `<div class="quote">“${q.text}”<footer><span>${q.id} · simulated participant ${q.user}</span>${extra||''}</footer></div>`;
+}
+
+/* =========================================================================
+   VIEW 1 — POPULATION OVERVIEW
+   ========================================================================= */
+let ov_pop = 'all', ov_outcome = 'action';
+function renderOverview(){
+  const pop = ov_pop === 'crohns' ? POP.crohns : POP.all;
+  const outcomeKey = ov_outcome === 'action' ? 'action' : 'engagement';
+  const byType = pop[ov_outcome==='action' ? 'by_insight_type_action' : 'by_insight_type_engage'];
+  const bySignal = pop[ov_outcome==='action' ? 'by_signal_type_action' : 'by_signal_type_engage'];
+  const outcomeLabel = ov_outcome==='action' ? 'Action within 4h' : 'Engagement (opened & interacted)';
+
+  const typeRows = CAT_ORDER_TYPE.filter(k=>byType[k]).map((k,i)=>
+    simpleBar(TYPE_LABELS[k], byType[k].rate_pct, CAT_COLORS[i])).join('');
+  const signalRows = CAT_ORDER_SIGNAL.filter(k=>bySignal[k]).map((k,i)=>
+    simpleBar(SIGNAL_LABELS[k].replace('&amp;','&'), bySignal[k].rate_pct, CAT_COLORS[i])).join('');
+
+  document.getElementById('main').innerHTML = `
+  <section class="view active" id="view-overview">
+    <div class="section-head">
+      <h2><span class="section-num">1</span>Population Overview</h2>
+    </div>
+    <div class="controls-row">
+      <span class="seg-label">Population</span>
+      <div class="seg" id="seg-pop">
+        <button data-v="all" class="${ov_pop==='all'?'active':''}">All users</button>
+        <button data-v="crohns" class="${ov_pop==='crohns'?'active':''}">Crohn's subgroup</button>
+      </div>
+      <span class="seg-label" style="margin-left:10px;">Outcome</span>
+      <div class="seg" id="seg-outcome">
+        <button data-v="action" class="${ov_outcome==='action'?'active':''}">Action (4h)</button>
+        <button data-v="engagement" class="${ov_outcome==='engagement'?'active':''}">Engagement</button>
+      </div>
+    </div>
+
+    <div class="grid g-tiles" style="margin-bottom:16px;">
+      <div class="stat-tile"><span class="kicker">Users${ov_pop==='crohns'?" · Crohn's":''}</span><span class="stat-value tnum">${pop.n_users.toLocaleString()}</span><span class="stat-sub">of 1,000 total in the study</span></div>
+      <div class="stat-tile"><span class="kicker">Insight events</span><span class="stat-value tnum">${pop.n_events.toLocaleString()}</span><span class="stat-sub">~${(pop.n_events/pop.n_users).toFixed(1)} per user</span></div>
+      <div class="stat-tile accent"><span class="kicker">${outcomeLabel}</span><span class="stat-value tnum">${pop[outcomeKey].pct.toFixed(1)}%</span><span class="stat-sub">${pop[outcomeKey].n.toLocaleString()} of ${pop[outcomeKey].d.toLocaleString()} eligible events</span></div>
+      <div class="stat-tile"><span class="kicker">Crohn's subgroup size</span><span class="stat-value tnum">${POP.n_crohns_users}</span><span class="stat-sub">users, oversampled — see note below</span></div>
+    </div>
+
+    <p class="stat-sub" style="margin-bottom:18px;">Crohn's subgroup intentionally oversampled (100/1,000) to support subgroup analysis; not representative of population prevalence.</p>
+
+    <div class="grid g-2" style="margin-bottom:16px;">
+      <div class="card">
+        <div class="section-head" style="margin-bottom:12px;"><h3 style="font-size:14.5px;">${outcomeLabel.split(' (')[0]} rate by message type</h3></div>
+        <div class="simple-bars">${typeRows}</div>
+      </div>
+      <div class="card">
+        <div class="section-head" style="margin-bottom:12px;"><h3 style="font-size:14.5px;">${outcomeLabel.split(' (')[0]} rate by wearable signal</h3></div>
+        <div class="simple-bars">${signalRows}</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="section-head" style="margin-bottom:12px;"><h3 style="font-size:14.5px;">Secondary measure: time to action</h3></div>
+      <div class="grid g-3">
+        <div><span class="kicker">Median</span><div class="stat-value tnum" style="font-size:22px;">${POP.time_to_action_minutes.median}<span style="font-size:13px;font-weight:600;color:var(--ink-3);"> min</span></div></div>
+        <div><span class="kicker">Mean</span><div class="stat-value tnum" style="font-size:22px;">${POP.time_to_action_minutes.mean}<span style="font-size:13px;font-weight:600;color:var(--ink-3);"> min</span></div></div>
+        <div><span class="kicker">90th pct.</span><div class="stat-value tnum" style="font-size:22px;">${POP.time_to_action_minutes.p90}<span style="font-size:13px;font-weight:600;color:var(--ink-3);"> min</span></div></div>
+      </div>
+      <p class="stat-sub" style="margin-top:12px;">Among events with action within 4h. The product outcome is <b>whether</b> action happened in that window — exact timing is descriptive context only, not what the model optimizes for.</p>
+    </div>
+  </section>`;
+
+  document.getElementById('seg-pop').addEventListener('click', e=>{
+    const b = e.target.closest('button'); if(!b) return; ov_pop = b.dataset.v; renderOverview();
+  });
+  document.getElementById('seg-outcome').addEventListener('click', e=>{
+    const b = e.target.closest('button'); if(!b) return; ov_outcome = b.dataset.v; renderOverview();
+  });
+}
+
+/* =========================================================================
+   VIEW 2 — WHAT DRIVES ACTION
+   Merged "what mattered overall" + "where it breaks down." Plain-language
+   findings lead; adjusted-model statistics live in <details> panels so a
+   non-technical reader gets the takeaway in seconds, and a technical reader
+   can still inspect every coefficient.
+   ========================================================================= */
+function renderDrivers(){
+  const domain = [0.2, 5];
+  const groups = {};
+  PRIMARY.forEach(r=>{ (groups[r.group] = groups[r.group]||[]).push(r); });
+  let chartHtml = axisRow(domain, [0.25,0.5,1,2,4]);
+  Object.keys(groups).forEach(g=>{
+    chartHtml += `<div class="chart-group-label">${g}</div>`;
+    groups[g].forEach(r=>{ chartHtml += forestRow(r.label, r.or, r.lo, r.hi, r.p, r.sig, domain); });
+  });
+  let mdHtml = axisRow([0.2,5],[0.5,1,2,4]);
+  MESSAGE_DESIGN.forEach(m=>{ mdHtml += forestRow(m.label, m.or, m.lo, m.hi, m.p, true, [0.2,5]); });
+  const nullChips = [
+    ...PRIMARY_NULLS.map(n=>({label:n.label, or:n.or, p:n.p})),
+    {label:ABS_DEV_NULL.label, or:ABS_DEV_NULL.or, p:ABS_DEV_NULL.p},
+    {label:HRV_LIT_NULL.label, or:HRV_LIT_NULL.or, p:HRV_LIT_NULL.p},
+    {label:HRV_PAIRED_NULL.label, or:HRV_PAIRED_NULL.or, p:HRV_PAIRED_NULL.p},
+  ].map(n=>`<div class="null-chip"><span class="lbl">${n.label}</span><span class="stat"><span class="dash tnum">${n.or.toFixed(2)}×</span> · <span class="tnum">${pfmt(n.p)}</span> · not significant</span></div>`).join('');
+
+  let interactionChart = axisRow(domain, [0.25,0.5,1,2,4]);
+  CROHNS_INTERACTION.forEach(r=> interactionChart += forestRow(r.label, r.or, r.lo, r.hi, r.p, r.sig, domain));
+
+  const abilityActivity = POP.crohns_activity_by_ability_active;
+  const fatigueA = POP.crohns_activity_by_fatigue, giA = POP.crohns_activity_by_gi, painA = POP.crohns_activity_by_pain;
+  const abilOrder = ['normal','somewhat limited','very limited'];
+  const abilLabels = {normal:'Normal', 'somewhat limited':'Somewhat limited', 'very limited':'Very limited'};
+  const sevOrder = ['none','low','moderate','high'];
+  const sevLabels = {none:'None', low:'Low', moderate:'Moderate', high:'High'};
+
+  const actionableRate = POP.all.by_insight_type_action.actionable.rate_pct;
+  const descriptiveRate = POP.all.by_insight_type_action.descriptive.rate_pct;
+  const hrvRate = POP.all.by_signal_type_action.hrv.rate_pct;
+  const stepsRate = POP.all.by_signal_type_action.steps_activity.rate_pct;
+
+  document.getElementById('main').innerHTML = `
+  <section class="view active" id="view-drivers">
+    <div class="section-head"><h2><span class="section-num">2</span>What Drives Action</h2></div>
+    <p class="stat-sub" style="margin-bottom:22px; max-width:70ch;">What mattered overall — and where those patterns changed for different users.</p>
+
+    <div class="section-head" style="margin-bottom:12px;"><h3 style="font-size:16px;">What mattered overall</h3></div>
+    <div class="grid g-3" style="margin-bottom:10px; align-items:stretch;">
+      <div class="card">
+        <h4 style="font-size:14.5px; margin-bottom:12px;">Actionable messages worked better</h4>
+        <div class="simple-bars">
+          ${simpleBar('Actionable', actionableRate, 'var(--cat-1)')}
+          ${simpleBar('Descriptive', descriptiveRate, 'var(--cat-2)')}
+        </div>
+        <p style="margin-top:12px; font-size:13px; color:var(--ink-2);">Giving users information is not enough — the message is more useful when it includes a clear next step.</p>
+        <p style="margin-top:8px; font-size:13px;"><b>Product implication:</b> Tell users what changed and what they can do next.</p>
+      </div>
+      <div class="card">
+        <h4 style="font-size:14.5px; margin-bottom:12px;">Too many notifications reduced response</h4>
+        <div class="simple-bars">
+          ${NOTIF_BURDEN_ACTION.map((n,i)=>simpleBar(n.label, n.pct, CAT_COLORS[i])).join('')}
+        </div>
+        <p style="margin-top:12px; font-size:13px; color:var(--ink-2);">When users had recently received more notifications, they were less likely to act on another one.</p>
+        <p style="margin-top:8px; font-size:13px;"><b>Product implication:</b> Prioritize the value of the next notification rather than sending every technically valid insight.</p>
+      </div>
+      <div class="card">
+        <h4 style="font-size:14.5px; margin-bottom:12px;">Some technical signals need translation</h4>
+        <div class="simple-bars">
+          ${simpleBar('Steps &amp; activity', stepsRate, 'var(--cat-1)')}
+          ${simpleBar('HRV', hrvRate, 'var(--cat-3)')}
+        </div>
+        <p style="margin-top:12px; font-size:13px; color:var(--ink-2);">Heart rate variability (HRV) produced less action than more immediately understandable activity data.</p>
+        <p style="margin-top:8px; font-size:13px;"><b>Product implication:</b> Translate technical metrics into meaning and a feasible action, while preserving the underlying metric for users who already understand it.</p>
+      </div>
+    </div>
+
+    <details class="tech-details" style="margin-bottom:26px;">
+      <summary>Technical details: adjusted model</summary>
+      <div class="tech-details-body">
+        <p class="stat-sub" style="margin-bottom:14px;">Adjusted logistic-regression odds ratios. Each bar compares one level to its reference level, holding the rest of the model constant. Colored = significant at p&lt;.05 (blue raises odds of action, red lowers them); gray = not significant.</p>
+        <div class="chart-wrap">${chartHtml}</div>
+        <h4 style="font-size:13.5px; margin:22px 0 4px;">Message design — combined sensitivity comparison</h4>
+        <p class="stat-sub" style="margin-bottom:14px;">vs. a single descriptive message. Categories combine content type and single/paired structure — used instead of a standalone structure effect because pairing alone doesn't independently explain the lift.</p>
+        <div class="chart-wrap">${mdHtml}</div>
+        <h4 style="font-size:13.5px; margin:22px 0 4px;">Selected null findings</h4>
+        <p class="stat-sub" style="margin-bottom:14px;">Did not survive adjustment — as important to the product decision as what did.</p>
+        <div class="null-grid">${nullChips}</div>
+      </div>
+    </details>
+
+    <div class="section-head" style="margin-bottom:4px;"><h3 style="font-size:16px;">Context changes the recommendation</h3></div>
+    <p class="stat-sub" style="margin-bottom:14px;">Action rate among Crohn's users receiving activity-related insights, by current functional limitation.</p>
+    <div class="grid g-2" style="margin-bottom:14px; align-items:stretch;">
+      <div class="card">
+        <div class="simple-bars">${abilOrder.map((k,i)=> abilityActivity[k] ? simpleBar(abilLabels[k], abilityActivity[k].rate_pct, CAT_COLORS[i]) : '').join('')}</div>
+        <p style="margin-top:12px; font-size:13px; color:var(--ink-2);">The same activity recommendation can be useful on a good day and inappropriate on a highly symptomatic or limited day.</p>
+        <p style="margin-top:8px; font-size:13px;"><b>Product implication:</b> Use current symptom and functional context to decide whether to surface, modify, delay, or suppress an activity insight.</p>
+      </div>
+      <div class="card" style="display:flex; align-items:center;">
+        ${quoteCard(Q.contextMismatch)}
+      </div>
+    </div>
+
+    <details class="tech-details" style="margin-bottom:26px;">
+      <summary>Technical details: Crohn's × activity interaction</summary>
+      <div class="tech-details-body">
+        <p class="stat-sub" style="margin-bottom:14px;">Crohn's diagnosis alone was not a strong general predictor. The interaction with activity-related insights is what's significant — the difference concentrates around activity recommendations, not all wearable insights.</p>
+        <div class="chart-wrap">${interactionChart}</div>
+        <div class="grid g-2" style="margin-top:18px;">
+          <div>
+            <h4 style="font-size:12.5px;color:var(--ink-3);margin-bottom:8px;">Overall 4h action rate — general vs. Crohn's</h4>
+            <div class="simple-bars">
+              ${simpleBar('General users', POP.general.action.pct, 'var(--cat-1)')}
+              ${simpleBar("Crohn's subgroup", POP.crohns.action.pct, 'var(--cat-2)')}
+            </div>
+          </div>
+          <div>
+            <h4 style="font-size:12.5px;color:var(--ink-3);margin-bottom:8px;">Action rate — activity-related vs. other signals</h4>
+            <div class="simple-bars">
+              ${simpleBar('General · activity', POP.general_activity_action.pct, 'var(--cat-1)')}
+              ${simpleBar('General · other', POP.general_nonactivity_action.pct, 'var(--cat-1)')}
+              ${simpleBar("Crohn's · activity", POP.crohns_activity_action.pct, 'var(--cat-2)')}
+              ${simpleBar("Crohn's · other", POP.crohns_nonactivity_action.pct, 'var(--cat-2)')}
+            </div>
+          </div>
+        </div>
+        <h4 style="font-size:13.5px; margin:22px 0 4px;">Individual symptoms, for context (not a ranking)</h4>
+        <p class="stat-sub" style="margin-bottom:14px;">Fatigue, GI symptoms, and pain/discomfort within the same Crohn's activity-related events. Do not read one symptom as universally more important — this subgroup is small and the symptoms are correlated with each other and with overall functional limitation.</p>
+        <div class="grid g-3">
+          <div><h4 style="font-size:12px;color:var(--ink-3);margin-bottom:8px;">Fatigue</h4><div class="simple-bars">${sevOrder.map((k)=> fatigueA[k]? simpleBar(sevLabels[k], fatigueA[k].rate_pct, 'var(--cat-1)') : '').join('')}</div></div>
+          <div><h4 style="font-size:12px;color:var(--ink-3);margin-bottom:8px;">GI symptoms</h4><div class="simple-bars">${sevOrder.map((k)=> giA[k]? simpleBar(sevLabels[k], giA[k].rate_pct, 'var(--cat-3)') : '').join('')}</div></div>
+          <div><h4 style="font-size:12px;color:var(--ink-3);margin-bottom:8px;">Pain / discomfort</h4><div class="simple-bars">${sevOrder.map((k)=> painA[k]? simpleBar(sevLabels[k], painA[k].rate_pct, 'var(--cat-5)') : '').join('')}</div></div>
+        </div>
+      </div>
+    </details>
+
+    <div class="section-head" style="margin-bottom:4px;"><h3 style="font-size:16px;">Not every user needs the same experience</h3></div>
+    <p class="stat-sub" style="margin-bottom:14px;">Quantitative pattern → qualitative explanation → product judgment.</p>
+
+    <div class="card" style="margin-bottom:14px;">
+      <h4 style="font-size:14px; margin-bottom:10px;">HRV: some users need translation, others don't</h4>
+      <div class="grid g-2">${quoteCard(Q.hrvHard)}${quoteCard(Q.hrvGood)}</div>
+      <p style="margin-top:12px; font-size:13px; color:var(--ink-2);"><b>Takeaway:</b> Some users need translation; others already understand the metric.</p>
+    </div>
+
+    <div class="card" style="margin-bottom:20px;">
+      <h4 style="font-size:14px; margin-bottom:10px;">Crohn's: context, not blanket suppression</h4>
+      <div class="grid g-2">${quoteCard(Q.contextMismatch)}${quoteCard(Q.suppress1)}</div>
+      <p style="margin-top:12px; font-size:13px; color:var(--ink-2);"><b>Takeaway:</b> Context-aware personalization should adapt recommendations, not make blanket assumptions based on diagnosis.</p>
+    </div>
+
+    <div class="callout hero">
+      <span class="icon">🧭</span>
+      <div><p style="font-size:14.5px; font-weight:650; color:var(--ink); margin:0;">Population patterns are a starting point, not a universal rule.</p></div>
+    </div>
+  </section>`;
+}
+
+/* =========================================================================
+   VIEW 3 — PRODUCT DECISION SIMULATOR
+   ========================================================================= */
+const SIM = {
+  signal: 'steps_activity', msgType: 'actionable', structure: 'single',
+  ability: 'medium', burden: 'low', motivation: 'medium', crohns: 'no',
+  fatigue: 'low', gi: 'low', pain: 'low', abilityActive: 'normal',
+};
+const ACTIVITY_SIGNALS = ['steps_activity','exercise_minutes'];
+const PAIR_ELIGIBLE = ['descriptive','explanatory','personalized'];
+
+function messageDesignKey(){
+  if (SIM.structure === 'single') return 'single_' + SIM.msgType;
+  return SIM.msgType + '+actionable';
+}
+function hasNextStep(mdKey){
+  return mdKey === 'single_actionable' || mdKey.endsWith('+actionable');
+}
+function computeProbability(){
+  let logit = -0.8157; // intercept: medium ability, steps/activity, low burden, medium motivation, no crohns, single_descriptive
+  const contrib = [];
+  function add(label, val, key){ if(val!==0){ logit += val; contrib.push({label, val, key}); } }
+
+  if (SIM.ability==='low') add('Ability to act: low', -1.1349);
+  if (SIM.ability==='high') add('Ability to act: high', 1.0673);
+
+  const sigTerm = {exercise_minutes:-0.2694, hrv:-0.3300, resting_heart_rate:-0.1083, sleep_duration:-0.2069}[SIM.signal];
+  if (sigTerm) add('Signal: ' + SIGNAL_LABELS[SIM.signal].replace('&amp;','&'), sigTerm);
+
+  if (SIM.burden==='medium') add('Notification burden: medium', -0.1811);
+  if (SIM.burden==='high') add('Notification burden: high', -0.4345);
+
+  if (SIM.motivation==='low') add('Baseline motivation: low', -0.1550);
+  if (SIM.motivation==='high') add('Baseline motivation: high', 0.3966);
+
+  if (SIM.crohns==='yes') add("Crohn's status", -0.1732);
+
+  const mdKey = messageDesignKey();
+  const md = MD_LOOKUP[mdKey];
+  if (md && md.ln !== 0) add('Message design: ' + mdKey.replace('_',' ').replace('+',' + '), md.ln);
+
+  const activityRelated = ACTIVITY_SIGNALS.includes(SIM.signal);
+  if (SIM.crohns==='yes' && activityRelated) add("Crohn's × activity-related insight", Math.log(0.55));
+
+  const prob = 1/(1+Math.exp(-logit));
+  return {prob, contrib};
+}
+function decide(prob, contrib){
+  const activityRelated = ACTIVITY_SIGNALS.includes(SIM.signal);
+  const severeMismatch = SIM.crohns==='yes' && activityRelated && SIM.abilityActive==='very_limited';
+  const moderateMismatch = SIM.crohns==='yes' && activityRelated && SIM.abilityActive==='somewhat_limited';
+  const compounding = SIM.crohns==='yes' && (SIM.fatigue==='high' || SIM.pain==='high' || SIM.gi==='high');
+  const mdKey = messageDesignKey();
+  const actionable = hasNextStep(mdKey);
+  const stages = ['Context fit','notification load','Can they act now?','message design','model estimate'];
+  let hit = null, rec, rationale;
+
+  if (severeMismatch) {
+    hit = 'Context fit';
+    if (compounding) { rec='SUPPRESS'; rationale = `Activity capacity is very limited and symptom burden is also high right now — an activity nudge here is more noise than help. Hold it rather than send the default version.`; }
+    else { rec='MODIFY'; rationale = `Activity capacity is very limited today, but that's not a reason to blank-suppress activity advice — swap in a lighter, achievable version instead.`; }
+  } else if (moderateMismatch) {
+    hit = 'Context fit'; rec='MODIFY';
+    rationale = `Some activity limitation today — soften the default recommendation to match current capacity rather than sending the standard goal.`;
+  } else if (SIM.burden==='high' && SIM.ability==='low') {
+    hit = 'notification load'; rec='DELAY';
+    rationale = `Recent notification load is high and the user can't easily act right now. Wait for a better moment instead of adding another notification.`;
+  } else if (SIM.burden==='high' && !actionable) {
+    hit = 'notification load'; rec='MODIFY';
+    rationale = `Under high notification burden, only messages with a concrete next step earn attention — sharpen the framing before sending as-is.`;
+  } else if (SIM.ability==='low') {
+    hit = 'Can they act now?'; rec='DELAY';
+    rationale = `Low ability to act and no urgent context — hold for a moment with real opportunity rather than pushing into a closed window.`;
+  } else if (!actionable && SIM.ability!=='high') {
+    hit = 'message design'; rec='MODIFY';
+    rationale = `The signal is relevant, but the message doesn't hand the user a next step — pair it with one concrete action before sending.`;
+  } else if (prob >= 0.45) {
+    hit = 'model estimate'; rec='SURFACE';
+    rationale = `Strong opportunity, manageable burden, and a message that already gives a next step — surface as designed.`;
+  } else if (prob >= 0.25) {
+    hit = 'model estimate'; rec='MODIFY';
+    rationale = `Workable conditions but not strong ones — a sharper or better-timed version would likely outperform the default.`;
+  } else {
+    hit = 'model estimate'; rec='DELAY';
+    rationale = `Predicted follow-through is low under these conditions even without a hard blocker — hold for a better-fit moment.`;
+  }
+  return {rec, rationale, hitStage:hit, stages};
+}
+// User-facing message copy for activity-related signals (steps & activity,
+// exercise minutes). Crohn's status shifts tone/framing but is never named —
+// it affects the product decision, not the label on the message.
+const ACTIVITY_ACTION_COPY = {
+  SURFACE: {
+    no:  "Your activity is lower than usual today. A 10-minute walk would help you get closer to your typical range.",
+    yes: "Your activity is lower than usual today. If you're feeling up to it, a 10-minute walk could help you get closer to your typical range.",
+  },
+  MODIFY: {
+    no:  "Your activity is lower than usual. If a 10-minute walk isn't realistic right now, try a 2-minute movement break instead.",
+    yes: "Your activity is lower than usual. If a walk doesn't feel manageable today, choose a gentler movement option that feels right for you.",
+  },
+  DELAY: {
+    no:  "No notification now. Hold the insight and surface it later when the user is more likely to act.",
+    yes: "No notification now. Hold the activity insight until current symptom/function context is more favorable.",
+  },
+  SUPPRESS: {
+    no:  "Do not send. The insight adds too little value given the current context or recent notification burden.",
+    yes: "Do not send. Current symptom/function context makes the activity recommendation poorly matched right now.",
+  },
+};
+
+// Non-activity signals never branch on Crohn's status — diagnosis alone
+// shouldn't drive personalization outside the activity context.
+const SIGNAL_MESSAGE_TEMPLATES = {
+  hrv: {
+    surface: "Your HRV is below your usual range today. A few minutes of slow breathing would help you move closer to your typical range.",
+    modify:  "Your HRV is below your usual range today. If a few minutes of slow breathing isn't realistic right now, try one minute of deep breathing instead.",
+  },
+  resting_heart_rate: {
+    surface: "Your resting heart rate is above your usual range today. A few minutes of rest would help you move closer to your typical range.",
+    modify:  "Your resting heart rate is above your usual range today. If a few minutes of rest isn't realistic right now, try a brief pause between tasks instead.",
+  },
+  sleep_duration: {
+    surface: "You're below your usual sleep today. An earlier wind-down tonight would help you move closer to your typical range.",
+    modify:  "You're below your usual sleep today. If an earlier wind-down isn't realistic tonight, try a short screen-free break before bed instead.",
+  },
+};
+
+function exampleProductAction(rec){
+  const activityRelated = ACTIVITY_SIGNALS.includes(SIM.signal);
+  const crohnsKey = SIM.crohns==='yes' ? 'yes' : 'no';
+
+  // DELAY / SUPPRESS: no user-facing notification — explain the product action instead.
+  if (rec==='DELAY' || rec==='SUPPRESS') {
+    const body = activityRelated ? ACTIVITY_ACTION_COPY[rec][crohnsKey] : ACTIVITY_ACTION_COPY[rec].no;
+    return { kind:'action', state: rec==='DELAY' ? 'queued' : 'suppressed', label: rec==='DELAY' ? 'Queued — not sent' : 'Suppressed — not sent', body };
+  }
+
+  // SURFACE / MODIFY: the actual example notification the user would receive.
+  let body;
+  if (activityRelated) {
+    body = ACTIVITY_ACTION_COPY[rec][crohnsKey];
+  } else {
+    const t = SIGNAL_MESSAGE_TEMPLATES[SIM.signal] || SIGNAL_MESSAGE_TEMPLATES.hrv;
+    body = rec==='SURFACE' ? t.surface : t.modify;
+  }
+  return { kind:'notification', state: rec==='SURFACE' ? 'sent' : 'modified', label: rec==='SURFACE' ? 'Sent as designed' : 'Modified', body:`"${body}"` };
+}
+
+function fieldSelect(id, label, options, value, hint){
+  const opts = options.map(o=>`<option value="${o.v}" ${o.v===value?'selected':''}>${o.l}</option>`).join('');
+  return `<div class="field"><label for="${id}">${label}</label><select id="${id}">${opts}</select>${hint?`<span class="hint">${hint}</span>`:''}</div>`;
+}
+
+function renderSimulator(){
+  const activityRelated = ACTIVITY_SIGNALS.includes(SIM.signal);
+  const typeOptions = SIM.structure==='paired'
+    ? PAIR_ELIGIBLE.map(t=>({v:t,l:TYPE_LABELS[t]+' + actionable'}))
+    : Object.keys(TYPE_LABELS).map(t=>({v:t,l:TYPE_LABELS[t]}));
+  if (SIM.structure==='paired' && !PAIR_ELIGIBLE.includes(SIM.msgType)) SIM.msgType = 'descriptive';
+
+  const crohnsPanel = SIM.crohns==='yes' ? `
+    <div class="crohns-panel">
+      ${fieldSelect('f-fatigue','Fatigue',[{v:'none',l:'None'},{v:'low',l:'Low'},{v:'moderate',l:'Moderate'},{v:'high',l:'High'}], SIM.fatigue)}
+      ${fieldSelect('f-gi','GI symptoms',[{v:'none',l:'None'},{v:'low',l:'Low'},{v:'moderate',l:'Moderate'},{v:'high',l:'High'}], SIM.gi)}
+      ${fieldSelect('f-pain','Pain / discomfort',[{v:'none',l:'None'},{v:'low',l:'Low'},{v:'moderate',l:'Moderate'},{v:'high',l:'High'}], SIM.pain)}
+      ${fieldSelect('f-abilityActive','Ability to be active',[{v:'normal',l:'Normal'},{v:'somewhat_limited',l:'Somewhat limited'},{v:'very_limited',l:'Very limited'}], SIM.abilityActive)}
+    </div>` : '';
+
+  const {prob, contrib} = computeProbability();
+  const {rec, rationale, hitStage, stages} = decide(prob, contrib);
+  const action = exampleProductAction(rec);
+
+  const pos = contrib.filter(c=>c.val>0).sort((a,b)=>b.val-a.val).slice(0,3);
+  const neg = contrib.filter(c=>c.val<0).sort((a,b)=>a.val-b.val).slice(0,3);
+
+  const probPct = Math.round(prob*100);
+  const gaugeDeg = Math.min(360, probPct*3.6);
+  const gaugeColor = probPct>=45 ? 'var(--good)' : probPct>=25 ? 'var(--warning)' : 'var(--serious)';
+
+  const priorityStrip = stages.map(s=>`<span class="step ${s===hitStage?'hit':''}">${s}</span>`).join(`<span class="arrow">→</span>`);
+
+  document.getElementById('main').innerHTML = `
+  <section class="view active" id="view-simulator">
+    <div class="section-head"><h2><span class="section-num">3</span>Product Decision Simulator</h2></div>
+    <p class="stat-sub" style="margin-bottom:18px; max-width:640px;">Set the context for one insight event. The recommendation below uses transparent rule logic, evaluated in a fixed priority order — predicted probability is consulted last, never first.</p>
+
+    <div class="sim-layout">
+      <div class="card">
+        <h3 style="font-size:13.5px; margin-bottom:14px; color:var(--ink-2);">Insight context</h3>
+        ${fieldSelect('f-signal','Wearable signal', CAT_ORDER_SIGNAL.map(k=>({v:k,l:SIGNAL_LABELS[k].replace('&amp;','&')})), SIM.signal)}
+        <div class="field">
+          <label>Structure</label>
+          <div class="toggle2" id="tg-structure">
+            <button data-v="single" class="${SIM.structure==='single'?'active':''}">Single</button>
+            <button data-v="paired" class="${SIM.structure==='paired'?'active':''}">Paired</button>
+          </div>
+          <span class="hint">${SIM.structure==='paired' ? 'Paired messages in this dataset combine one type with an explicit action.' : 'Actionable and positive-reinforcement messages appear single-only in this dataset.'}</span>
+        </div>
+        ${fieldSelect('f-msgtype','Message type', typeOptions, SIM.msgType)}
+        ${fieldSelect('f-ability','Can the user act right now?',[{v:'low',l:'Low'},{v:'medium',l:'Medium'},{v:'high',l:'High'}], SIM.ability, 'Hypothetical context input for the simulator.')}
+        ${fieldSelect('f-burden','Recent notification burden',[{v:'low',l:'Low'},{v:'medium',l:'Medium'},{v:'high',l:'High'}], SIM.burden)}
+        ${fieldSelect('f-motivation','Baseline motivation',[{v:'low',l:'Low'},{v:'medium',l:'Medium'},{v:'high',l:'High'}], SIM.motivation)}
+        <div class="field">
+          <label>Crohn's status</label>
+          <div class="toggle2" id="tg-crohns">
+            <button data-v="no" class="${SIM.crohns==='no'?'active':''}">No</button>
+            <button data-v="yes" class="${SIM.crohns==='yes'?'active':''}">Yes</button>
+          </div>
+        </div>
+        ${crohnsPanel}
+      </div>
+
+      <div class="sim-output">
+        <div class="card">
+          <div class="prob-card">
+            <div class="prob-gauge">
+              <svg viewBox="0 0 120 120" width="112" height="112">
+                <circle cx="60" cy="60" r="52" fill="none" stroke="var(--surface-2)" stroke-width="12"/>
+                <circle cx="60" cy="60" r="52" fill="none" stroke="${gaugeColor}" stroke-width="12" stroke-linecap="round"
+                  stroke-dasharray="${2*Math.PI*52}" stroke-dashoffset="${2*Math.PI*52*(1-prob)}" transform="rotate(-90 60 60)"/>
+              </svg>
+              <div class="prob-num"><span class="n tnum">${probPct}%</span><span class="u">predicted</span></div>
+            </div>
+            <div class="prob-meta">
+              <span class="kicker">Probability of Action Within 4H</span>
+              <p style="font-size:11.5px; color:var(--ink-3);">Illustrative model estimate, not a validated cutoff.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="kicker" style="margin-bottom:10px; display:block;">Recommendation</span>
+          <div class="rec-badge rec-${rec}"><span class="dot"></span>${rec}</div>
+          <p style="margin-top:12px; font-size:13.5px; color:var(--ink-2);">${rationale}</p>
+          <div class="priority-strip" style="margin-top:14px;">${priorityStrip}</div>
+        </div>
+
+        <div class="card">
+          <span class="kicker" style="margin-bottom:10px; display:block;">What's influencing this decision</span>
+          <div class="driver-cols">
+            <div class="driver-col"><h4>Helping Factors</h4>
+              ${pos.length? pos.map(c=>`<div class="driver-item pos"><span>${c.label}</span></div>`).join('') : '<p class="stat-sub">None active.</p>'}
+            </div>
+            <div class="driver-col"><h4>Factors Working Against</h4>
+              ${neg.length? neg.map(c=>`<div class="driver-item neg"><span>${c.label}</span></div>`).join('') : '<p class="stat-sub">None active.</p>'}
+            </div>
+          </div>
+          <details class="tech-details" style="margin-top:14px;">
+            <summary>Technical details: driver coefficients</summary>
+            <div class="tech-details-body">
+              <p class="stat-sub" style="margin-bottom:10px;">Log-odds contribution of each active term to the model estimate above.</p>
+              ${contrib.length ? contrib.slice().sort((a,b)=>Math.abs(b.val)-Math.abs(a.val)).map(c=>`<div class="driver-item ${c.val>0?'pos':'neg'}"><span>${c.label}</span><span class="amt">${c.val>0?'+':''}${c.val.toFixed(2)}</span></div>`).join('') : '<p class="stat-sub">No terms active — reference case.</p>'}
+            </div>
+          </details>
+        </div>
+
+        <div class="card">
+          <span class="kicker" style="margin-bottom:10px; display:block;">Example product action</span>
+          ${action.kind==='notification' ? `
+          <div class="notif-preview state-${action.state}">
+            <div class="notif-head"><span class="notif-icon">⌚</span><span class="notif-app">Signal to Action</span><span class="notif-state-label">${action.label}</span></div>
+            <div class="notif-body">${action.body}</div>
+          </div>` : `
+          <div class="action-note state-${action.state}">
+            <span class="action-note-label">${action.label}</span>
+            <p>${action.body}</p>
+          </div>`}
+        </div>
+      </div>
+    </div>
+  </section>`;
+
+  document.getElementById('f-signal').addEventListener('change', e=>{ SIM.signal=e.target.value; renderSimulator(); });
+  document.getElementById('f-msgtype').addEventListener('change', e=>{ SIM.msgType=e.target.value; renderSimulator(); });
+  document.getElementById('f-ability').addEventListener('change', e=>{ SIM.ability=e.target.value; renderSimulator(); });
+  document.getElementById('f-burden').addEventListener('change', e=>{ SIM.burden=e.target.value; renderSimulator(); });
+  document.getElementById('f-motivation').addEventListener('change', e=>{ SIM.motivation=e.target.value; renderSimulator(); });
+  document.getElementById('tg-structure').addEventListener('click', e=>{ const b=e.target.closest('button'); if(!b) return; SIM.structure=b.dataset.v; renderSimulator(); });
+  document.getElementById('tg-crohns').addEventListener('click', e=>{ const b=e.target.closest('button'); if(!b) return; SIM.crohns=b.dataset.v; renderSimulator(); });
+  const fFatigue = document.getElementById('f-fatigue');
+  if (fFatigue) fFatigue.addEventListener('change', e=>{ SIM.fatigue=e.target.value; renderSimulator(); });
+  const fGi = document.getElementById('f-gi');
+  if (fGi) fGi.addEventListener('change', e=>{ SIM.gi=e.target.value; renderSimulator(); });
+  const fPain = document.getElementById('f-pain');
+  if (fPain) fPain.addEventListener('change', e=>{ SIM.pain=e.target.value; renderSimulator(); });
+  const fAbil = document.getElementById('f-abilityActive');
+  if (fAbil) fAbil.addEventListener('change', e=>{ SIM.abilityActive=e.target.value; renderSimulator(); });
+}
+
+/* =========================================================================
+   VIEW 5 — EXECUTIVE SUMMARY / STRATEGIC RECOMMENDATIONS
+   Synthesizes Views 1–4. Introduces no new data, no new models, no new
+   qualitative excerpts — every figure below is pulled from the same
+   constants used elsewhere on this page.
+   ========================================================================= */
+const EXEC_ITEMS = [
+  {
+    title: "Context Matters",
+    evidence: "Crohn's users were nearly 3x more likely to act on activity insights when symptoms were mild (31% vs. 11% action rate).",
+    recommendation: "Use symptom context to decide whether to surface, modify, delay, or suppress the insight.",
+  },
+  {
+    title: "Information Needs a Next Step",
+    evidence: "47% of users acted on actionable messages vs. 30% on descriptive messages.",
+    recommendation: "Tell users what changed and what they can do.",
+  },
+  {
+    title: "Trust & Engagement Move Together",
+    evidence: "67% of users with trust scores ≥4 engaged with their next insight.",
+    recommendation: "Suppress or modify notifications that feel irrelevant or mismatched to the user's profile or current context.",
+    note: "Exploratory relationship; not evidence that trust caused engagement.",
+  },
+];
+
+const EXPERIMENTS = [
+  {title:"Actionable Framing", test:"Descriptive insight vs. insight + concrete next step", measure:"Action within 4 hours"},
+  {title:"Context-aware delivery", test:"Compare scheduled delivery with delivery informed by lightweight context signals.", measure:"Action within 4 hours"},
+  {title:"Notification restraint", test:"Standard notification volume vs. delaying lower-value messages", measure:"Action on subsequent high-value insights"},
+  {title:"Context-aware activity nudges", test:"Generic activity recommendations vs. modified/delayed recommendation when symptoms or function are limited", measure:"Action + continued engagement"},
+];
+
+function execItemCard(item, i){
+  const num = String(i+1).padStart(2,'0');
+  return `<div class="rec-item">
+    <h4><span class="rec-num">${num} —</span> ${item.title}</h4>
+    <p>${item.evidence}</p>
+    <p style="margin-top:6px;"><b>Product recommendation:</b> ${item.recommendation}</p>
+    ${item.note ? `<p style="margin-top:6px; font-size:12px; font-style:italic; color:var(--ink-3);">${item.note}</p>` : ''}
+  </div>`;
+}
+function expCard(e, i){
+  return `<div class="exp-card"><span class="kicker">Experiment ${i+1}</span><h4>${e.title}</h4>
+    <p style="margin-top:6px;"><b>Test:</b> ${e.test}</p>
+    <p style="margin-top:4px;"><b>Measure:</b> ${e.measure}</p>
+  </div>`;
+}
+
+function renderExec(){
+  document.getElementById('main').innerHTML = `
+  <section class="view active" id="view-exec">
+    <div class="section-head"><h2>Executive Summary</h2></div>
+
+    <div class="brief-block">
+      <span class="kicker">Project Overview</span>
+      <p>Wearables can detect changes in health data, but detection alone does not guarantee behavior change. This synthetic mixed-method case study explores when wearable-generated insights actually lead to action—and when a product should surface, modify, delay, or suppress an intervention.</p>
+      <p style="margin-top:10px;">I also tested where population-level patterns broke down within a Crohn's subgroup, using symptom and functional context to determine when a generally valid recommendation should be adapted rather than applied uniformly.</p>
+      <p style="margin-top:10px;">I designed the research framework, used GPT to generate synthetic data within defined constraints, applied AI-assisted analysis to evaluate quantitative and qualitative patterns, and used Claude Code to build the interactive dashboard and decision-modeling experience. I translated the same evidence into three formats for different audiences: executive synthesis, visual exploration, and hands-on decision modeling.</p>
+    </div>
+
+    <div class="brief-block" style="margin-bottom:24px;">
+      <span class="kicker">Strategic Thesis</span>
+      <p>The product opportunity is not detecting more health signals. It is deciding when a signal deserves an intervention. The strategic implication is that the product should evolve:</p>
+      <div class="flow-row flow-target"><span class="step">Detect</span><span class="arrow">→</span><span class="step">Assess context</span><span class="arrow">→</span><span class="step">Estimate behavioral value</span><span class="arrow">→</span><span class="step decide">Decide how to intervene</span></div>
+    </div>
+
+    <div class="section-head" style="margin-bottom:12px;"><h3 style="font-size:19px;">Executive Findings &amp; Recommendations</h3></div>
+    <div class="rec-list">
+      ${EXEC_ITEMS.map(execItemCard).join('')}
+    </div>
+  </section>`;
+}
+
+/* =========================================================================
+   VIEW 4 — FUTURE TESTS
+   ========================================================================= */
+function renderFutureTests(){
+  document.getElementById('main').innerHTML = `
+  <section class="view active" id="view-future">
+    <div class="section-head"><h2><span class="section-num">4</span>Future Tests</h2></div>
+    <p class="stat-sub" style="margin-bottom:20px; max-width:70ch;">How I'd validate the product recommendations in real-world use</p>
+
+    <div class="grid g-2" style="margin-bottom:10px;">
+      ${EXPERIMENTS.map(expCard).join('')}
+    </div>
+    <p style="font-size:12px; color:var(--ink-3);">These synthetic findings generate hypotheses — not validated product rules. Real-world testing would determine what actually improves behavior.</p>
+  </section>`;
+}
+
+/* =========================================================================
+   NAV + INIT
+   ========================================================================= */
+const VIEWS = { exec: renderExec, overview: renderOverview, drivers: renderDrivers, simulator: renderSimulator, future: renderFutureTests };
+document.getElementById('tabs').addEventListener('click', e=>{
+  const b = e.target.closest('.tab'); if(!b) return;
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  b.classList.add('active');
+  VIEWS[b.dataset.view]();
+  window.scrollTo({top:0, behavior:'smooth'});
+});
+
+document.getElementById('methBtn').addEventListener('click', ()=>{
+  document.getElementById('methDrawer').classList.add('open');
+  document.getElementById('methOverlay').classList.add('open');
+});
+function closeMeth(){
+  document.getElementById('methDrawer').classList.remove('open');
+  document.getElementById('methOverlay').classList.remove('open');
+}
+document.getElementById('methClose').addEventListener('click', closeMeth);
+document.getElementById('methOverlay').addEventListener('click', closeMeth);
+
+renderExec();
+</script>
+
+</body>
+</html>

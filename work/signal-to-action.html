@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en" class="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Signal to Action — Janna Safran</title>
+<meta name="description" content="An interactive decision tool for when to surface, adapt, delay, or suppress a wearable insight">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="shell topbar__inner">
+    <a class="brand" href="../index.html">Janna Safran</a>
+    <nav class="nav" aria-label="Main"><a href="../index.html" aria-current="page">Home</a><a href="../about.html">About</a><a href="#connect">Contact</a></nav>
+  </div>
+</header>
+<main id="main">
+<div class="shell"><section class="sec casehero">
+  <div class="casehero__text"><h1 class="d-hero">Signal to Action</h1><div class="lede"><p>A synthetic mixed-method case study exploring when wearable-generated insights lead to action—and when a product should surface, modify, delay, or suppress an intervention.</p></div></div>
+  <div class="casehero__media"><img class="casehero__img" src="../assets/img/signal-to-action-01.png" alt="Signal to Action executive summary view" loading="lazy" decoding="async"></div>
+</section><section class="sec cta-launch"><a class="btn btn--lg" href="../work/signal-to-action-dashboard.html">Launch the dashboard</a></section><section class="sec cols cols--2"><div class="prose"><h2 class="d-section">Overview</h2><p>Wearables can already tell someone their heart rate variability dropped or their activity is down for the day. What they&#x27;re bad at is judging whether that specific insight, for that specific person, at that specific moment, is worth interrupting them for.</p><p>I framed this as a decision problem, not a detection problem: when do wearable-generated insights lead to meaningful action, and when should a product change the message, change the timing, or choose not to intervene?</p><p>I designed a synthetic research dataset to test it, ran the analysis with AI assistance, and built an interactive dashboard and decision simulator in Claude Code to carry the evidence from raw data to a product recommendation.</p></div><div class="meta"><h2 class="d-sub">Role</h2><p>Research &amp; Product Strategy · AI-assisted build</p><h3 class="d-sub">Team</h3><p>Solo build</p><h3 class="d-sub">Timeline</h3><p>Aug 16 - 17, 2026 (2 days)</p></div></section><section class="sec cols cols--4 cols--stat"><div class="stat"><h2 class="stat__value">1,000</h2><p>synthetic users, 7,487 insight events</p></div><div class="stat"><h2 class="stat__value">100</h2><p>users oversampled into a Crohn&#x27;s subgroup for subgroup analysis</p></div><div class="stat"><h2 class="stat__value">125</h2><p>simulated qualitative excerpts coded against an 8-code framework</p></div><div class="stat"><h2 class="stat__value">0.73</h2><p>held-out AUC on a user-level train/test split</p></div></section><nav class="procnav" aria-label="Case study sections">
+  <div class="procnav__bar"><div class="procnav__fill" data-progress-fill></div></div>
+  <ol class="steps"><li class="step" data-step="1"><a class="step__link" href="#framing-the-problem"><span class="step__n">1</span><span class="step__label">Framing the problem</span></a></li><li class="step" data-step="2"><a class="step__link" href="#data-and-analysis"><span class="step__n">2</span><span class="step__label">Data &amp; analysis</span></a></li><li class="step" data-step="3"><a class="step__link" href="#translating-evidence"><span class="step__n">3</span><span class="step__label">Translating evidence</span></a></li><li class="step" data-step="4"><a class="step__link" href="#what-i-built"><span class="step__n">4</span><span class="step__label">What I built</span></a></li><li class="step" data-step="5"><a class="step__link" href="#product-judgment"><span class="step__n">5</span><span class="step__label">Product judgment</span></a></li></ol>
+</nav><section class="sec" id="framing-the-problem"><div class="prose"><h2 class="d-section">01 - Framing the problem</h2><p>Most wearable products treat detection as the hard part. Once a signal moves, notify the user and count it as a win. That framing misses the actual product risk: a technically accurate insight sent at the wrong moment, in the wrong framing, or to someone whose current context makes it useless, doesn&#x27;t build trust. It erodes it.</p><p>I set the primary outcome as action taken within four hours of an insight, exact time-to-action preserved only as a secondary measure, and asked which factors actually moved that number after adjustment: ability to act, message framing, recent notification burden, wearable signal, and current health context.</p></div></section><section class="sec" id="data-and-analysis"><div class="prose"><h2 class="d-section">02 - Data and analysis</h2><p>I designed the synthetic dataset and used GPT to generate it within predefined constraints: 1,000 users, roughly 7.5 insight events each, and a 100-user Crohn&#x27;s subgroup intentionally oversampled so a small population would carry real subgroup signal. I ran an adjusted logistic regression with user-clustered standard errors, held out a user-level test split, and paired it with 125 simulated qualitative excerpts coded against a predefined 8-code framework.</p><p>After adjustment, three patterns held up:</p></div></section><section class="sec"><div class="tiles tiles--3 tiles--bold-heading"><div class="tile"><p class="tile__body">Actionable messages worked better</p><p class="tile__label">47% of users acted on messages with a concrete next step, versus 30% on descriptive messages alone.</p></div><div class="tile"><p class="tile__body">Notification load mattered</p><p class="tile__label">Action rate dropped from 41% at low recent notification burden to 33% at high burden.</p></div><div class="tile"><p class="tile__body">Context beat diagnosis label</p><p class="tile__label">Crohn&#x27;s status alone wasn&#x27;t predictive. Current functional limitation was: action rate fell from 38% to 4% as activity capacity dropped.</p></div></div></section><section class="sec"><div class="prose"><p>The harder, more useful part was deciding what to do with results that were technically valid but not strong enough to act on. I removed findings that were statistically valid but difficult to defend or explain, rejected a notification-volume result too weak to carry an executive recommendation, replaced a more dramatic trust statistic with a cleaner and more transparent comparison, and revised the message-design analysis once I realized “paired” messages were confounded with actionable content, so the dashboard never claims pairing alone drives action.</p><p>I used AI to accelerate the work, not to make these calls for me: synthetic data generation, the statistical and qualitative analysis passes, and exploring alternative interpretations were all AI-assisted. Framing the research question, designing the subgroup strategy, choosing which sensitivity checks mattered, and deciding which findings were strong enough to put in front of a stakeholder were mine.</p></div></section><section class="sec" id="translating-evidence"><div class="prose"><h2 class="d-section">03 - Translating evidence for different audiences</h2><p>The same evidence doesn&#x27;t work the same way for every reader. A VP needs the decision, not the regression table. A researcher wants to see the pattern break down by subgroup and inspect the coefficients behind it. A product team wants to act on it. I built three ways into the same evidence instead of one dashboard trying to serve all three.</p></div></section><section class="sec"><div class="tiles tiles--3"><div class="tile"><p class="tile__body">Executive Summary</p><p class="tile__label">Understand the decision: findings, implications, and recommendations in one page, no regression table required.</p></div><div class="tile"><p class="tile__body">Visual Dashboard</p><p class="tile__label">Explore the evidence: interactive charts for population patterns, subgroup differences, and mixed-method findings, with the full statistical detail one click away.</p></div><div class="tile"><p class="tile__body">Decision Simulator</p><p class="tile__label">Apply the evidence: change a user&#x27;s context and watch the recommended product action, surface, modify, delay, or suppress, change with it.</p></div></div></section><section class="sec"><div class="gallery"><img class="gallery__img" src="../assets/img/signal-to-action-02.png" alt="Population Overview view with population and outcome controls" loading="lazy" decoding="async"><img class="gallery__img" src="../assets/img/signal-to-action-03.png" alt="What Drives Action view with plain-language findings and expandable technical detail" loading="lazy" decoding="async"></div></section><section class="sec" id="what-i-built"><div class="prose"><h2 class="d-section">04 - What I built</h2><p>The dashboard is a single self-contained page, no framework, built in Claude Code: five views, native expandable panels for the full regression output and sensitivity checks, light and dark themes, and a layout that holds up from a phone to a wide monitor. Nothing about the interactivity, the Population Overview controls, the technical-detail panels, or the simulator, is a screenshot standing in for the real thing.</p><p>The Decision Simulator is the sharpest translation of the research into product terms. Set a wearable signal, a message design, a user&#x27;s current ability to act, recent notification burden, and (if relevant) today&#x27;s symptom context, and the tool returns a recommendation, surface, modify, delay, or suppress, using transparent rule logic evaluated in a fixed priority order: context fit, then notification load, then whether the user can act right now, then message design, and only last, a model-estimated probability. The predicted probability never decides the recommendation on its own.</p></div></section><section class="sec sec--split"><div class="prose"><p>Every recommendation comes with the actual notification a user would see, or, for delay and suppress, a plain explanation of why nothing is sent instead. Crohn&#x27;s status shifts tone and routing behind the scenes; it never appears in the message copy itself.</p><a class="btn" href="signal-to-action-dashboard.html" target="_blank" rel="noopener">Launch the interactive dashboard</a></div><div class="figure"><img class="figure__img" src="../assets/img/signal-to-action-04.png" alt="Decision Simulator showing a Delay recommendation with its reasoning" loading="lazy" decoding="async"></div></section><section class="sec" id="product-judgment"><div class="prose"><h2 class="d-section">05 - Product judgment and what&#x27;s next</h2><p>The recommendation logic is deliberately conservative about suppression. A Crohn&#x27;s user with very limited activity capacity doesn&#x27;t get the message silenced by default, the tool modifies it into a gentler option first, and reserves full suppression for when limited capacity compounds with high symptom burden. That rule came directly from a negative case in the qualitative data: users who explicitly rejected blanket suppression based on diagnosis alone.</p><p>I closed the case study with four experiments I&#x27;d run before trusting any of this in production: actionable framing against descriptive-only messages, context-aware delivery against fixed scheduling, notification restraint against standard volume, and modified activity nudges against generic ones for users reporting limited function. Synthetic findings generate hypotheses. They don&#x27;t validate a product rule.</p><p>Data told me what happened in 7,487 events. Judgment decided what the product should do next.</p></div></section><section class="sec sec--more">
+  <h2 class="d-section">More case studies</h2>
+  <div class="grid"><a class="card" href="../work/concierj.html">
+  <div class="card__media"><div class="collage collage--4"><img class="collage__item" src="../assets/img/home-01.webp" alt="Concierj — interface detail 1" loading="lazy" decoding="async"><img class="collage__item" src="../assets/img/home-02.webp" alt="Concierj — interface detail 2" loading="lazy" decoding="async"><img class="collage__item" src="../assets/img/home-03.webp" alt="Concierj — interface detail 3" loading="lazy" decoding="async"><img class="collage__item" src="../assets/img/home-04.webp" alt="Concierj — interface detail 4" loading="lazy" decoding="async"></div></div>
+  <div class="card__body">
+    <div class="pills"><span class="pill">UX Research</span><span class="pill">Activation &amp; Retention</span><span class="pill">0 → 1 AI Build</span></div>
+    <h3 class="d-card">An AI activation layer that recovers boutique-hotel guests lost to pre-booking drop-off</h3>
+    <p class="card__meta">Independent Venture · 2026</p>
+  </div>
+</a><a class="card" href="../work/safe-water-network.html">
+  <div class="card__media"><div class="collage collage--2"><img class="collage__item" src="../assets/img/home-05.webp" alt="Safe Water Network — interface detail 1" loading="lazy" decoding="async"><img class="collage__item" src="../assets/img/home-06.webp" alt="Safe Water Network — interface detail 2" loading="lazy" decoding="async"></div></div>
+  <div class="card__body">
+    <div class="pills"><span class="pill">Lifecycle &amp; Retention</span><span class="pill">Funnel Redesign</span><span class="pill">Mixed-Method Analysis</span></div>
+    <h3 class="d-card">Rebuilt the donor funnel to cut abandonment by 63% and grew 2 new cohort channels</h3>
+    <p class="card__meta">Safe Water Network</p>
+  </div>
+</a></div>
+</section></div></main>
+<footer class="connect" id="connect">
+  <div class="shell connect__inner">
+    <h2 class="d-section">Let&#x27;s connect!</h2>
+    <p class="lede">I&#x27;m looking for UX research, product strategy, or growth and lifecycle roles in consumer health. Currently based in San Francisco Bay Area, open to relocating to SoCal. Prefer in-person, open to remote.</p>
+    <div class="connect__links">
+      <a class="mailto" href="mailto:janna.safran@gmail.com">janna.safran@gmail.com</a>
+      <a class="mailto" href="https://www.linkedin.com/in/janna-safran/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var steps = Array.prototype.slice.call(document.querySelectorAll(".step"));
+  var fill = document.querySelector("[data-progress-fill]");
+  var sections = steps.map(function(s){
+    var href = s.querySelector(".step__link").getAttribute("href");
+    return document.getElementById(href.slice(1));
+  }).filter(Boolean);
+
+  function setActive(id){
+    steps.forEach(function(s){
+      var href = s.querySelector(".step__link").getAttribute("href");
+      s.classList.toggle("is-active", href === "#" + id);
+    });
+  }
+
+  if ("IntersectionObserver" in window && sections.length){
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    }, { rootMargin: "-40% 0px -55% 0px", threshold: 0 });
+    sections.forEach(function(s){ observer.observe(s); });
+  }
+
+  function updateProgress(){
+    if (!fill) return;
+    var doc = document.documentElement;
+    var scrollTop = doc.scrollTop || document.body.scrollTop;
+    var scrollHeight = (doc.scrollHeight || document.body.scrollHeight) - doc.clientHeight;
+    var pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+    fill.style.width = pct + "%";
+  }
+  document.addEventListener("scroll", updateProgress, { passive: true });
+  updateProgress();
+})();
+</script>
+</body>
+</html>

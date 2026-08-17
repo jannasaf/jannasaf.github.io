@@ -29,6 +29,19 @@
   },
   "projects": [
     {
+      "slug": "signal-to-action",
+      "href": "work/signal-to-action.html",
+      "name": "Signal to Action",
+      "title": "An interactive decision tool for when to surface, adapt, delay, or suppress a wearable insight",
+      "subtitle": "Independent Research & Build · 2026",
+      "labels": ["AI-Assisted Research", "Mixed-Methods Analysis", "Product Strategy"],
+      "thumbs": [
+        "assets/img/signal-to-action-01.png",
+        "assets/img/signal-to-action-04.png"
+      ],
+      "cta": { "label": "Launch the dashboard", "href": "work/signal-to-action-dashboard.html" }
+    },
+    {
       "slug": "concierj",
       "href": "work/concierj.html",
       "name": "Concierj",
