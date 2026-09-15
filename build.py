@@ -35,6 +35,8 @@ def e(s):
 
 def up(path, depth):
     """Rewrite a root-relative asset path for a page nested `depth` levels down."""
+    if re.match(r"^(https?:|mailto:|tel:)", path):
+        return path
     return ("../" * depth) + path
 
 

@@ -54,7 +54,7 @@
         "assets/img/home-03.webp",
         "assets/img/home-04.webp"
       ],
-      "cta": { "label": "Explore the demo", "href": "" }
+      "cta": { "label": "Visit Concierj", "href": "https://concierj.co/" }
     },
     {
       "slug": "safe-water-network",
