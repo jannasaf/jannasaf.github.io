@@ -161,12 +161,12 @@ def project_card(p, depth):
     thumbs = "".join(img(t, f'{p["name"]} — interface detail {i + 1}', depth, "collage__item")
                      for i, t in enumerate(p["thumbs"]))
     return f"""<a class="card" href="{e(up(p['href'], depth))}">
-  <div class="card__media"><div class="collage collage--{len(p['thumbs'])}">{thumbs}</div></div>
   <div class="card__body">
-    <div class="pills">{labels}</div>
     <h3 class="d-card">{e(p['title'])}</h3>
+    <div class="pills">{labels}</div>
     <p class="card__meta">{e(p['subtitle'])}</p>
   </div>
+  <div class="card__media"><div class="collage collage--{len(p['thumbs'])}">{thumbs}</div></div>
 </a>"""
 
 
@@ -582,7 +582,7 @@ section[id]{{scroll-margin-top:calc(var(--topbar-h) + var(--procnav-h))}}
 .card{{text-decoration:none;display:flex;flex-direction:column;background:var(--panel);
   border-radius:2px;overflow:hidden;transition:transform .2s ease,box-shadow .2s ease}}
 .card:hover{{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.14)}}
-.card__media{{padding:clamp(1rem,2vw,1.75rem)}}
+.card__media{{padding:0 clamp(1rem,2vw,1.75rem) clamp(1.25rem,2.4vw,1.75rem)}}
 .collage{{display:grid;gap:.5rem;align-items:center}}
 .collage--1{{grid-template-columns:1fr}}
 .collage--2{{grid-template-columns:repeat(2,1fr)}}
@@ -590,7 +590,7 @@ section[id]{{scroll-margin-top:calc(var(--topbar-h) + var(--procnav-h))}}
 .collage__item{{border-radius:2px;background:var(--surface);
   box-shadow:0 2px 10px rgba(0,0,0,.10);width:100%;object-fit:cover;aspect-ratio:3/4}}
 .collage--1 .collage__item,.collage--2 .collage__item{{aspect-ratio:auto}}
-.card__body{{padding:0 clamp(1rem,2vw,1.75rem) clamp(1.25rem,2.4vw,1.75rem)}}
+.card__body{{padding:clamp(1.25rem,2.4vw,1.75rem) clamp(1rem,2vw,1.75rem) 1rem}}
 .pills{{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.85rem}}
 .pill{{background:var(--ink);color:var(--page);border-radius:999px;
   padding:.28rem .7rem;font-size:.75rem;line-height:1.4}}
