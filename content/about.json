@@ -14,17 +14,22 @@
         {
           "kind": "p",
           "level": null,
-          "text": "I use mixed-methods data to understand user behavior and turn insights into better products, experiences, and growth strategies."
+          "text": "My philosophy is simple: people first, build second, iterate frequently."
         },
         {
           "kind": "p",
           "level": null,
-          "text": "My background in public health shapes how I approach problems: looking beyond individual pain points to understand the behavioral and systemic factors driving what people do. I pair that lens with a hands-on approach to building, using AI tools to analyze data, prototype ideas, and test solutions quickly."
+          "text": "I'm an AI Conversation Designer working at the intersection of healthcare, human behavior, communication, systems, and AI. I'm currently at Anonymous Health, a behavioral health technology startup, where I design the conversations and decision logic behind our AI systems."
         },
         {
           "kind": "p",
           "level": null,
-          "text": "I'm especially interested in consumer health products that help people better understand their health and turn that knowledge into action."
+          "text": "My undergraduate sociology work looked at how the language around health and disease shapes stigma, self-perception, and whether people seek care. My MPH at Columbia went deeper into population health, health systems strengthening, behavioral science, and health communications, and into how people access and engage with care in the first place."
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "Since then, the work has followed the same pattern regardless of title: research how people actually behave, find the friction and the opportunity, translate that into a change to a system or a conversation, watch what happens, then iterate. AI conversation design is not a departure from that work. It's a new medium for it."
         }
       ],
       "images": [
@@ -35,7 +40,7 @@
       ]
     },
     {
-      "type": "tags",
+      "type": "skillgroups",
       "text": [
         {
           "kind": "heading",
@@ -43,71 +48,68 @@
           "text": "What I do"
         }
       ],
-      "tags": [
-        "Mixed-methods analysis",
-        "Behavioral insights",
-        "Product strategy",
-        "A/B testing",
-        "Growth & lifecycle",
-        "AI-applied research synthesis",
-        "AI prototyping"
-      ]
-    },
-    {
-      "type": "text",
-      "text": [
+      "groups": [
         {
-          "kind": "heading",
-          "level": 3,
-          "text": "Methods & tools"
+          "title": "Conversation design",
+          "items": [
+            "Conversational workflows",
+            "Conversation architecture",
+            "Prompt & instruction design",
+            "Intent & routing logic",
+            "Fallback & recovery design",
+            "Escalation & human handoff",
+            "Knowledge-base design",
+            "Conversation testing & iteration"
+          ]
         },
         {
-          "kind": "heading",
-          "level": 4,
-          "text": "Quantitative"
+          "title": "Behavior & communication",
+          "items": [
+            "Motivational Interviewing",
+            "Stages of Change",
+            "Trauma-informed care",
+            "Health literacy",
+            "Behavioral motivation",
+            "Information & cognitive burden"
+          ]
         },
         {
-          "kind": "p",
-          "level": null,
-          "text": "Survey analysis · Statistical analysis · Regression · ANOVA · T-tests"
+          "title": "Research",
+          "items": [
+            "Mixed-methods research",
+            "User interviews",
+            "Survey design",
+            "Thematic analysis",
+            "Usability & concept testing",
+            "Research synthesis"
+          ]
         },
         {
-          "kind": "heading",
-          "level": 4,
-          "text": "Qualitative"
+          "title": "Systems & product",
+          "items": [
+            "Journey mapping",
+            "Decision logic",
+            "AI prototyping",
+            "Experiment design",
+            "Cross-functional translation"
+          ]
         },
         {
-          "kind": "p",
-          "level": null,
-          "text": "Interviews · Concept testing · Usability testing · Thematic analysis"
-        },
-        {
-          "kind": "heading",
-          "level": 4,
-          "text": "AI"
-        },
-        {
-          "kind": "p",
-          "level": null,
-          "text": "Claude · GPT · Perplexity for research synthesis, pattern identification, and rapid analysis, paired with human judgment to interpret subgroup and population-level findings in context."
-        },
-        {
-          "kind": "heading",
-          "level": 4,
-          "text": "Tools"
-        },
-        {
-          "kind": "p",
-          "level": null,
-          "text": "SPSS · Excel · Qualtrics · Salesforce · Coda · Claude Code · Tableau · ArcGIS · Dedoose"
-        },
-        {
-          "kind": "aside",
-          "level": null,
-          "text": "I'm a quick learner, enjoy learning new software, and learn best by getting hands-on and building with it."
+          "title": "Tools",
+          "items": [
+            "Botpress",
+            "Claude / Claude Code",
+            "GPT",
+            "Figma",
+            "Qualtrics",
+            "SPSS",
+            "Excel",
+            "Coda",
+            "Salesforce"
+          ]
         }
       ],
-      "images": []
+      "aside": "I learn best hands-on: I'd rather build with a new tool than read about it first."
     },
     {
       "type": "text",
@@ -141,7 +143,7 @@
         {
           "kind": "p",
           "level": null,
-          "text": "Interested in product insights & strategy, UX research, and activation/growth roles where I can turn mixed-methods evidence into decisions that shape user behavior. Based in the San Francisco Bay Area and open to relocation. Strongly prefer in-person/hybrid teams; open to select remote roles."
+          "text": "I'm always interested in conversations about conversational AI, human behavior, trust, healthcare, and how we design language-driven systems people can actually use."
         },
         {
           "kind": "p",

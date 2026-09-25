@@ -14,7 +14,7 @@
         {
           "kind": "p",
           "level": null,
-          "text": "A synthetic mixed-method case study exploring when wearable-generated insights lead to action—and when a product should surface, modify, delay, or suppress an intervention."
+          "text": "A synthetic mixed-method case study exploring when wearable-generated insights lead to action, and when a product should surface, modify, delay, or suppress a message."
         }
       ],
       "images": [
@@ -434,6 +434,11 @@
           "kind": "heading",
           "level": 3,
           "text": "05 - Product judgment and what's next"
+        },
+        {
+          "kind": "p",
+          "level": null,
+          "text": "The deeper question underneath the data wasn't only what a person would do. It was whether telling them anything at all, and how, would actually help, or just add to what they already have to process. Communication is itself an intervention: a system has to decide not only what it knows, but whether, when, and how to say it."
         },
         {
           "kind": "p",

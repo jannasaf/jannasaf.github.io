@@ -34,6 +34,7 @@ a{color:inherit}
 .eyebrow{font-size:1.125rem;font-weight:700;margin:0 0 1.25rem}
 .lede{color:var(--muted);max-width:62ch;margin:0 0 1rem}
 .hero__lede{max-width:none}
+.hero__current{color:var(--muted);font-size:1rem;margin:.25rem 0 0}
 .muted{color:var(--muted)}
 p{margin:0 0 1rem;max-width:74ch}
 .aside{font-style:italic;color:var(--muted);margin-top:1.25rem}
@@ -134,11 +135,21 @@ section[id]{scroll-margin-top:calc(var(--topbar-h) + var(--procnav-h))}
   padding:.28rem .7rem;font-size:.75rem;line-height:1.4}
 .pills--lg{gap:.6rem;margin-bottom:0}
 .pills--lg .pill{font-size:.9rem;padding:.45rem .95rem}
+.pill--outline{background:transparent;color:var(--ink);
+  border:1px solid color-mix(in srgb,var(--ink) 30%,transparent)}
 .card__meta{color:var(--muted);font-size:1rem;margin:0}
 .sec--more{border-top:1px solid color-mix(in srgb,var(--ink) 14%,transparent)}
 
 /* about */
 .portrait{border-radius:2px;width:100%;object-fit:cover;aspect-ratio:1}
+.skillgroups{display:grid;gap:1.5rem}
+.skillgroup__title{font-family:var(--body);font-weight:600;font-size:.95rem;margin:0 0 .5rem}
+
+/* notes */
+.notes-list{display:grid;gap:var(--gap);margin-top:1rem}
+.note-card{text-decoration:none;display:block;padding:clamp(1rem,2vw,1.5rem);
+  background:var(--panel);border-radius:2px;transition:transform .2s ease,box-shadow .2s ease}
+.note-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.14)}
 
 /* footer */
 .connect{background:var(--panel);margin-top:clamp(2rem,5vw,4rem)}
@@ -155,5 +166,5 @@ section[id]{scroll-margin-top:calc(var(--topbar-h) + var(--procnav-h))}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *{transition:none!important;animation:none!important}
-  .card:hover{transform:none}
+  .card:hover,.note-card:hover{transform:none}
 }

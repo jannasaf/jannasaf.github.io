@@ -28,6 +28,9 @@ T = SITE["tokens"]
 
 CASES = [p["slug"] for p in SITE["projects"]]
 
+NOTES = json.load(open(f"{ROOT}/content/notes.json"))
+NOTE_SLUGS = [p["slug"] for p in NOTES.get("posts", [])]
+
 
 def e(s):
     return html.escape(s or "", quote=True)
@@ -327,10 +330,12 @@ def build_home():
     h = SITE["hero"]
     pi = SITE["projects_intro"]
     cards = "".join(project_card(p, 0) for p in SITE["projects"])
+    current = f'<p class="hero__current">{e(h["current"])}</p>' if h.get("current") else ""
     body = f"""<section class="sec hero">
   <p class="eyebrow">{e(h['eyebrow'])}</p>
   <h1 class="d-hero">{rich(h['headline'])}</h1>
   <p class="lede hero__lede">{e(h['subhead'])}</p>
+  {current}
 </section>
 <section class="sec">
   <h2 class="d-section">{e(pi['heading'])}</h2>
@@ -345,15 +350,13 @@ def build_home():
 def build_about():
     a = SITE["about"]
     doc = json.load(open(f"{ROOT}/content/about.json"))
-    prose_runs, edu_runs, tags, methods_runs = [], [], None, None
+    prose_runs, edu_runs, skillgroups_block = [], [], None
     for b in doc["blocks"]:
         heads = [r["text"] for r in b["text"] if r["kind"] == "heading"]
         if "Education" in heads:
             edu_runs = [r for r in b["text"] if r["kind"] != "heading"]
-        elif "What I do" in heads:
-            tags = b.get("tags", [])
-        elif "Methods & tools" in heads:
-            methods_runs = b["text"]
+        elif b["type"] == "skillgroups":
+            skillgroups_block = b
         elif SITE["footer"]["heading"].replace("'", "’") in " ".join(heads) or "connect" in " ".join(heads).lower():
             continue
         else:
@@ -362,25 +365,25 @@ def build_about():
     prose = render_text(prose_runs, 0, "d-hero", min_level=1)
     edu = "".join(f'<li>{e(r["text"])}</li>' for r in edu_runs) or \
           "".join(f"<li>{e(x)}</li>" for x in a["education"])
-    tags_section = ""
-    if tags:
-        pills = "".join(f'<span class="pill">{e(t)}</span>' for t in tags)
-        tags_section = f"""<section class="sec">
-  <h2 class="d-section">What I do</h2>
-  <div class="pills pills--lg">{pills}</div>
-</section>
-"""
-    methods_section = ""
-    if methods_runs:
-        methods_section = f"""<section class="sec">
-  <div class="prose">{render_text(methods_runs, 0, "d-section")}</div>
+    skills_section = ""
+    if skillgroups_block:
+        heading = next(r["text"] for r in skillgroups_block["text"] if r["kind"] == "heading")
+        groups = "".join(f"""<div class="skillgroup">
+    <h3 class="skillgroup__title">{e(g['title'])}</h3>
+    <div class="pills">{''.join(f'<span class="pill pill--outline">{e(i)}</span>' for i in g['items'])}</div>
+  </div>""" for g in skillgroups_block["groups"])
+        aside = f'<p class="aside">{e(skillgroups_block["aside"])}</p>' if skillgroups_block.get("aside") else ""
+        skills_section = f"""<section class="sec">
+  <h2 class="d-section">{e(heading)}</h2>
+  <div class="skillgroups">{groups}</div>
+  {aside}
 </section>
 """
     body = f"""<section class="sec sec--split">
   <div class="prose">{prose}</div>
   <div class="figure"><img class="portrait" src="{e(a['portrait'])}" alt="Portrait of {e(SITE['profile']['name'])}" loading="lazy" decoding="async"></div>
 </section>
-{tags_section}{methods_section}<section class="sec">
+{skills_section}<section class="sec">
   <h2 class="d-section">Education</h2>
   <ul class="rows">{edu}</ul>
 </section>"""
@@ -422,6 +425,37 @@ def build_case(slug):
             + footer(1, PROCNAV_SCRIPT if has_procnav else ""))
 
 
+def note_card(p, depth):
+    return f"""<a class="note-card" href="{e(up(f'notes/{p["slug"]}.html', depth))}">
+  <h3 class="d-card">{e(p['title'])}</h3>
+  <p class="card__meta">{e(p['dek'])}</p>
+</a>"""
+
+
+def build_notes():
+    posts = NOTES.get("posts", [])
+    list_html = ""
+    if posts:
+        cards = "".join(note_card(p, 0) for p in posts)
+        list_html = f'<div class="notes-list">{cards}</div>'
+    body = f"""<section class="sec">
+  <h1 class="d-hero">{e(NOTES['heading'])}</h1>
+  <p class="lede">{e(NOTES['intro'])}</p>
+</section>
+<section class="sec">{list_html}</section>"""
+    return (head(f"Notes — {SITE['profile']['name']}", NOTES["intro"], 0)
+            + nav(0, "Notes") + f'<div class="shell">{body}</div>' + footer(0))
+
+
+def build_note(slug):
+    meta = next(p for p in NOTES["posts"] if p["slug"] == slug)
+    doc = json.load(open(f"{ROOT}/content/notes/{slug}.json"))
+    body = "".join(render_block(b, 1) for b in doc["blocks"])
+    back = f"""<section class="sec"><a class="btn" href="{e(up('notes.html', 1))}">← All notes</a></section>"""
+    return (head(f"{meta['title']} — {SITE['profile']['name']}", meta.get("dek", ""), 1)
+            + nav(1, "Notes") + f'<div class="shell">{body}{back}</div>' + footer(1))
+
+
 # ---------------------------------------------------------------- css
 
 CSS = f""":root {{
@@ -460,6 +494,7 @@ a{{color:inherit}}
 .eyebrow{{font-size:1.125rem;font-weight:700;margin:0 0 1.25rem}}
 .lede{{color:var(--muted);max-width:62ch;margin:0 0 1rem}}
 .hero__lede{{max-width:none}}
+.hero__current{{color:var(--muted);font-size:1rem;margin:.25rem 0 0}}
 .muted{{color:var(--muted)}}
 p{{margin:0 0 1rem;max-width:74ch}}
 .aside{{font-style:italic;color:var(--muted);margin-top:1.25rem}}
@@ -560,11 +595,21 @@ section[id]{{scroll-margin-top:calc(var(--topbar-h) + var(--procnav-h))}}
   padding:.28rem .7rem;font-size:.75rem;line-height:1.4}}
 .pills--lg{{gap:.6rem;margin-bottom:0}}
 .pills--lg .pill{{font-size:.9rem;padding:.45rem .95rem}}
+.pill--outline{{background:transparent;color:var(--ink);
+  border:1px solid color-mix(in srgb,var(--ink) 30%,transparent)}}
 .card__meta{{color:var(--muted);font-size:1rem;margin:0}}
 .sec--more{{border-top:1px solid color-mix(in srgb,var(--ink) 14%,transparent)}}
 
 /* about */
 .portrait{{border-radius:2px;width:100%;object-fit:cover;aspect-ratio:1}}
+.skillgroups{{display:grid;gap:1.5rem}}
+.skillgroup__title{{font-family:var(--body);font-weight:600;font-size:.95rem;margin:0 0 .5rem}}
+
+/* notes */
+.notes-list{{display:grid;gap:var(--gap);margin-top:1rem}}
+.note-card{{text-decoration:none;display:block;padding:clamp(1rem,2vw,1.5rem);
+  background:var(--panel);border-radius:2px;transition:transform .2s ease,box-shadow .2s ease}}
+.note-card:hover{{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.14)}}
 
 /* footer */
 .connect{{background:var(--panel);margin-top:clamp(2rem,5vw,4rem)}}
@@ -581,7 +626,7 @@ section[id]{{scroll-margin-top:calc(var(--topbar-h) + var(--procnav-h))}}
 @media (prefers-reduced-motion:reduce){{
   html{{scroll-behavior:auto}}
   *{{transition:none!important;animation:none!important}}
-  .card:hover{{transform:none}}
+  .card:hover,.note-card:hover{{transform:none}}
 }}
 """
 
@@ -589,8 +634,9 @@ section[id]{{scroll-margin-top:calc(var(--topbar-h) + var(--procnav-h))}}
 # ---------------------------------------------------------------- main
 
 def main():
-    generated = ["index.html", "about.html", "assets/css/site.css"] + \
-                [f"work/{s}.html" for s in CASES]
+    generated = ["index.html", "about.html", "notes.html", "assets/css/site.css"] + \
+                [f"work/{s}.html" for s in CASES] + \
+                [f"notes/{s}.html" for s in NOTE_SLUGS]
 
     if IN_PLACE:
         # Never rmtree the repo root — remove only what a previous run wrote.
@@ -606,12 +652,16 @@ def main():
 
     os.makedirs(f"{OUT}/assets/css", exist_ok=True)
     os.makedirs(f"{OUT}/work", exist_ok=True)
+    os.makedirs(f"{OUT}/notes", exist_ok=True)
 
     open(f"{OUT}/assets/css/site.css", "w").write(CSS)
     open(f"{OUT}/index.html", "w").write(build_home())
     open(f"{OUT}/about.html", "w").write(build_about())
+    open(f"{OUT}/notes.html", "w").write(build_notes())
     for slug in CASES:
         open(f"{OUT}/work/{slug}.html", "w").write(build_case(slug))
+    for slug in NOTE_SLUGS:
+        open(f"{OUT}/notes/{slug}.html", "w").write(build_note(slug))
 
     # Pages runs Jekyll unless told not to; that would skip files it does not expect.
     open(f"{OUT}/.nojekyll", "w").write("")

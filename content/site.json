@@ -7,64 +7,82 @@
   },
   "profile": {
     "name": "Janna Safran",
-    "role": "Product Strategist & Researcher",
-    "meta_description": "Product strategist and researcher who turns mixed-methods data into insights that drive behavior change, across UX research, growth and lifecycle, and product strategy.",
+    "role": "AI Conversation Designer",
+    "meta_description": "AI Conversation Designer working at the intersection of healthcare, human behavior, and AI systems. I design the conversations, decision logic, and safeguards behind conversational AI, grounded in behavioral science, public health, and mixed-methods research.",
     "email": "janna.safran@gmail.com",
-    "location": "the San Francisco Bay Area, open to relocating",
+    "location": "California",
     "linkedin": "https://www.linkedin.com/in/janna-safran/"
   },
   "nav": [
-    { "label": "Home", "href": "index.html" },
-    { "label": "About", "href": "about.html" },
-    { "label": "Contact", "href": "#connect" }
+    {
+      "label": "Home",
+      "href": "index.html"
+    },
+    {
+      "label": "About",
+      "href": "about.html"
+    },
+    {
+      "label": "Notes",
+      "href": "notes.html"
+    },
+    {
+      "label": "Contact",
+      "href": "#connect"
+    }
   ],
   "hero": {
     "eyebrow": "Hello, I'm Janna!",
-    "headline": "I turn mixed-methods data into product insights that drive behavior change.",
-    "subhead": "I apply that across UX research, product strategy, and growth and lifecycle work, from early discovery through activation, retention, and long-term product direction."
+    "headline": "I design the behavior behind AI conversations: what the system asks, how it responds, what it needs to know, and when a human should take over.",
+    "subhead": "My philosophy is simple: people first, build second, iterate frequently. I combine research, behavioral science, and systems thinking to design conversational AI around how people actually think, decide, and act, not how we assume they will.",
+    "current": "Currently: AI Conversation Designer at Anonymous Health"
   },
   "projects_intro": {
-    "heading": "Selected projects",
-    "body": "Selected work spanning UX research, product strategy, and growth, using mixed-methods data to shape product direction."
+    "heading": "Selected work",
+    "body": "Two projects, two layers of the same problem: how a system should behave in conversation, and how it should decide what to communicate, and when."
   },
   "projects": [
-    {
-      "slug": "signal-to-action",
-      "href": "work/signal-to-action.html",
-      "name": "Signal to Action",
-      "title": "An interactive decision tool for when to surface, adapt, delay, or suppress a wearable insight",
-      "subtitle": "Independent Research & Build · 2026",
-      "labels": ["AI-Assisted Research", "Mixed-Methods Analysis", "Product Strategy"],
-      "thumbs": [
-        "assets/img/signal-to-action-01.png",
-        "assets/img/signal-to-action-04.png"
-      ],
-      "cta": { "label": "Launch the dashboard", "href": "work/signal-to-action-dashboard.html" }
-    },
     {
       "slug": "concierj",
       "href": "work/concierj.html",
       "name": "Concierj",
-      "title": "An AI activation layer that recovers boutique-hotel guests lost to pre-booking drop-off",
+      "title": "A conversational AI system that guides boutique-hotel guests from question to booking decision, 0 → 1",
       "subtitle": "Independent Project · 2026",
-      "labels": ["UX Research", "Activation & Retention", "0 → 1 AI Build"],
+      "labels": [
+        "Conversational AI",
+        "Conversation Architecture",
+        "Prompt & Flow Design"
+      ],
       "thumbs": [
         "assets/img/home-01.webp",
         "assets/img/home-02.webp",
         "assets/img/home-03.webp",
         "assets/img/home-04.webp"
       ],
-      "cta": { "label": "Visit Concierj", "href": "https://concierj.co/" }
+      "cta": {
+        "label": "Visit Concierj",
+        "href": "https://concierj.co/"
+      }
     },
     {
-      "slug": "safe-water-network",
-      "href": "work/safe-water-network.html",
-      "name": "Safe Water Network",
-      "title": "Rebuilt the donor funnel to cut abandonment by 63% and grew 2 new cohort channels",
-      "subtitle": "Safe Water Network",
-      "labels": ["Lifecycle & Retention", "Funnel Redesign", "Mixed-Method Analysis"],
-      "thumbs": ["assets/img/home-05.webp", "assets/img/home-06.webp"],
-      "cta": { "label": "See the live site", "href": "" }
+      "slug": "signal-to-action",
+      "href": "work/signal-to-action.html",
+      "name": "Signal to Action",
+      "title": "A decision layer that decides when a wearable insight should reach a person, and when it shouldn't",
+      "subtitle": "Independent Research & Build · 2026",
+      "labels": [
+        "Behavioral AI",
+        "Decision Logic",
+        "Research Translation"
+      ],
+      "thumbs": [
+        "assets/img/signal-to-action-01.png",
+        "assets/img/signal-to-action-04.png"
+      ],
+      "cta": {
+        "label": "Launch the dashboard",
+        "href": "work/signal-to-action-dashboard.html"
+      }
     }
   ],
   "about": {
@@ -76,8 +94,8 @@
     ]
   },
   "footer": {
-    "heading": "Let's connect!",
-    "body": "Interested in product insights & strategy, UX research, and activation/growth roles where I can turn mixed-methods evidence into decisions that shape user behavior. Based in the San Francisco Bay Area and open to relocation. Strongly prefer in-person/hybrid teams; open to select remote roles."
+    "heading": "Let's connect",
+    "body": "I'm always interested in conversations about conversational AI, human behavior, trust, healthcare, and how we design language-driven systems people can actually use."
   },
   "tokens": {
     "_note": "Computed from the live site at 1440px via Playwright.",
@@ -91,10 +109,20 @@
     "type": {
       "display": "\"Instrument Serif\", Georgia, serif",
       "body": "\"Inter Tight\", system-ui, sans-serif",
-      "display_sizes": { "hero": "56px", "section": "32px", "card": "28px" },
-      "body_sizes": { "base": "18px", "small": "16px", "label": "12px" },
+      "display_sizes": {
+        "hero": "56px",
+        "section": "32px",
+        "card": "28px"
+      },
+      "body_sizes": {
+        "base": "18px",
+        "small": "16px",
+        "label": "12px"
+      },
       "body_weight": 300
     },
-    "layout": { "max_width": "1440px" }
+    "layout": {
+      "max_width": "1440px"
+    }
   }
 }

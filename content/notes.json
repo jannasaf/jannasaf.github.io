@@ -1,0 +1,6 @@
+{
+  "_note": "Index for Notes on AI & Human Behavior. To publish a post: create content/notes/<slug>.json using the same block schema as the case-study files (content/concierj.json etc.), then add {\"slug\": \"...\", \"title\": \"...\", \"dek\": \"...\", \"date\": \"YYYY-MM-DD\"} to posts below. build.py generates notes/<slug>.html automatically. date is kept for ordering only — it is not displayed prominently.",
+  "heading": "Notes on AI & human behavior",
+  "intro": "Short, occasional writing on conversational AI, behavioral science, trust, and the systems people and AI build together.",
+  "posts": []
+}

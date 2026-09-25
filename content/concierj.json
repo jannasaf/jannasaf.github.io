@@ -14,7 +14,7 @@
         {
           "kind": "p",
           "level": null,
-          "text": "An AI activation layer that recovers boutique-hotel guests lost in the pre-booking funnel, built solo 0 → 1 in 12 weeks"
+          "text": "A conversational AI system that recovers boutique-hotel guests lost in the pre-booking funnel, designed and built solo, 0 → 1, in 12 weeks."
         }
       ],
       "images": [
@@ -37,17 +37,17 @@
             {
               "kind": "p",
               "level": null,
-              "text": "Boutique hotels lose guests before they ever book. The drop-off has nothing to do with price or availability: there's no consideration stage in the funnel, no system to answer questions in real time, qualify fit, or move an interested guest toward a booking decision. I built Concierj to close that gap and act as a property's activation layer, capturing interested guests during consideration and converting them to bookings."
+              "text": "Boutique hotels lose guests before they ever book, and it rarely comes down to price or availability. There's no one to answer a question in real time, read what a guest actually needs, or move them from curious to confident. I built Concierj to close that gap: a conversational system that reads guest intent, guides different types of travelers toward a decision, and knows when to bring a person in."
             },
             {
               "kind": "p",
               "level": null,
-              "text": "The result: an AI-powered guest communication and intelligence layer, built solo in 12 weeks from concept to live launch."
+              "text": "The result is a 0 → 1 conversational AI system, designed and built solo in 12 weeks from concept to live launch and tested across 200+ conversations: it reads intent, personalizes guidance, recovers when a guest goes off script, and escalates to staff when it should."
             },
             {
               "kind": "p",
               "level": null,
-              "text": "Building it was also how I taught myself to design, build, and ship an AI product end to end, not only close a market gap."
+              "text": "Building it was also how I taught myself to design, test, and ship a conversational AI system end to end, not only close a business gap."
             }
           ],
           "images": []
@@ -106,27 +106,27 @@
       "steps": [
         {
           "n": 1,
-          "label": "Research",
+          "label": "Understanding the people",
           "anchor": "research"
         },
         {
           "n": 2,
-          "label": "Funnel & Journey Design",
+          "label": "Designing the conversation",
           "anchor": "funnel-journey-design"
         },
         {
           "n": 3,
-          "label": "What I Built & Why",
+          "label": "Building the system",
           "anchor": "what-i-built"
         },
         {
           "n": 4,
-          "label": "Testing & Iteration",
+          "label": "Testing what breaks",
           "anchor": "testing-iteration"
         },
         {
           "n": 5,
-          "label": "Prototype & Results",
+          "label": "Results & what's next",
           "anchor": "prototype-results"
         }
       ],
@@ -140,7 +140,7 @@
         {
           "kind": "heading",
           "level": 3,
-          "text": "01 - Research"
+          "text": "01 — Understanding the people"
         },
         {
           "kind": "p",
@@ -150,7 +150,7 @@
         {
           "kind": "p",
           "level": null,
-          "text": "Alongside the interviews, I sized the market for AI-powered hospitality tools, mapped the competitive landscape, and defined which data points the chatbot and guest intelligence report needed to track to make the funnel measurable."
+          "text": "Alongside the interviews, I mapped the competitive landscape and defined what a conversation would need to understand about a guest, and what it would need to track, to make the funnel measurable."
         }
       ],
       "images": []
@@ -161,26 +161,58 @@
       "items": [
         {
           "text": [
-            { "kind": "p", "level": null, "text": "Key insight 1: Hotel Owners" },
-            { "kind": "heading", "level": 4, "text": "Owners wanted it handled for them — no more tools to manage. Overwhelmed by repetitive queries and after-hour inquiries." }
+            {
+              "kind": "p",
+              "level": null,
+              "text": "Key insight 1: Hotel Owners"
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "text": "Owners wanted it handled for them — no more tools to manage. Overwhelmed by repetitive queries and after-hour inquiries."
+            }
           ]
         },
         {
           "text": [
-            { "kind": "p", "level": null, "text": "Key insight 2: Front Desk Staff" },
-            { "kind": "heading", "level": 4, "text": "Missed and duplicated responses across shifts were a systemic problem, not a staffing one. Overwhelmed by repetitive queries, wanted lead capture segmentation." }
+            {
+              "kind": "p",
+              "level": null,
+              "text": "Key insight 2: Front Desk Staff"
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "text": "Missed and duplicated responses across shifts were a systemic problem, not a staffing one. Overwhelmed by repetitive queries, wanted lead capture segmentation."
+            }
           ]
         },
         {
           "text": [
-            { "kind": "p", "level": null, "text": "Key insight 3: Guests" },
-            { "kind": "heading", "level": 4, "text": "Unanswered pre-booking questions led to a different property. Wanted instant pre-booking answers and trip guidance." }
+            {
+              "kind": "p",
+              "level": null,
+              "text": "Key insight 3: Guests"
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "text": "Unanswered pre-booking questions led to a different property. Wanted instant pre-booking answers and trip guidance."
+            }
           ]
         },
         {
           "text": [
-            { "kind": "p", "level": null, "text": "Key insight 4: Travel Agents" },
-            { "kind": "heading", "level": 4, "text": "Needed more information on property qualifications and policies for group trip planning. Can't always rely on 1:1 relationships to grow business." }
+            {
+              "kind": "p",
+              "level": null,
+              "text": "Key insight 4: Travel Agents"
+            },
+            {
+              "kind": "heading",
+              "level": 4,
+              "text": "Needed more information on property qualifications and policies for group trip planning. Can't always rely on 1:1 relationships to grow business."
+            }
           ]
         }
       ],
@@ -193,12 +225,12 @@
         {
           "kind": "heading",
           "level": 3,
-          "text": "02 - Funnel & journey design"
+          "text": "02 — Designing the conversation"
         },
         {
           "kind": "p",
           "level": null,
-          "text": "Research surfaced a missing consideration stage between website visit and booking. The next step was defining how guests would move through it, what data to collect at each point, and when a human needed to step in."
+          "text": "Research surfaced a missing consideration stage between website visit and booking. The next step was designing how a conversation would carry a guest through it: what the system needed to know at each point, and when a person needed to step in instead."
         },
         {
           "kind": "p",
@@ -298,7 +330,7 @@
         {
           "kind": "heading",
           "level": 3,
-          "text": "03 - What I built and why"
+          "text": "03 — Building the system"
         },
         {
           "kind": "p",
@@ -314,29 +346,89 @@
       "items": [
         {
           "text": [
-            { "kind": "heading", "level": 3, "text": "Guests" },
-            { "kind": "p", "level": null, "text": "Confident booking decisions:" },
-            { "kind": "li", "level": null, "text": "Personalized recommendations" },
-            { "kind": "li", "level": null, "text": "Reduced decision fatigue" },
-            { "kind": "li", "level": null, "text": "Guided trip planning" }
+            {
+              "kind": "heading",
+              "level": 3,
+              "text": "Guests"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "Confident booking decisions:"
+            },
+            {
+              "kind": "li",
+              "level": null,
+              "text": "Personalized recommendations"
+            },
+            {
+              "kind": "li",
+              "level": null,
+              "text": "Reduced decision fatigue"
+            },
+            {
+              "kind": "li",
+              "level": null,
+              "text": "Guided trip planning"
+            }
           ]
         },
         {
           "text": [
-            { "kind": "heading", "level": 3, "text": "Staff" },
-            { "kind": "p", "level": null, "text": "Human attention where it matters:" },
-            { "kind": "li", "level": null, "text": "Lead capture" },
-            { "kind": "li", "level": null, "text": "Smart escalations" },
-            { "kind": "li", "level": null, "text": "Conversation summaries" }
+            {
+              "kind": "heading",
+              "level": 3,
+              "text": "Staff"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "Human attention where it matters:"
+            },
+            {
+              "kind": "li",
+              "level": null,
+              "text": "Lead capture"
+            },
+            {
+              "kind": "li",
+              "level": null,
+              "text": "Smart escalations"
+            },
+            {
+              "kind": "li",
+              "level": null,
+              "text": "Conversation summaries"
+            }
           ]
         },
         {
           "text": [
-            { "kind": "heading", "level": 3, "text": "Hotel Leadership" },
-            { "kind": "p", "level": null, "text": "Actionable guest intelligence:" },
-            { "kind": "li", "level": null, "text": "Inquiry trends" },
-            { "kind": "li", "level": null, "text": "Guest preferences" },
-            { "kind": "li", "level": null, "text": "Operational insights" }
+            {
+              "kind": "heading",
+              "level": 3,
+              "text": "Hotel Leadership"
+            },
+            {
+              "kind": "p",
+              "level": null,
+              "text": "Actionable guest intelligence:"
+            },
+            {
+              "kind": "li",
+              "level": null,
+              "text": "Inquiry trends"
+            },
+            {
+              "kind": "li",
+              "level": null,
+              "text": "Guest preferences"
+            },
+            {
+              "kind": "li",
+              "level": null,
+              "text": "Operational insights"
+            }
           ]
         }
       ],
@@ -463,12 +555,12 @@
         {
           "kind": "heading",
           "level": 3,
-          "text": "04 - Testing and iteration"
+          "text": "04 — Testing what breaks"
         },
         {
           "kind": "p",
           "level": null,
-          "text": "I built a fully functional, high-fidelity prototype of Concierj in Botpress and tested it through hundreds of real conversations and simulated guest scenarios with family, friends, advisors, and prospective users. Testing ranged from structured booking scenarios to open-ended sessions built to surface edge cases and failure points."
+          "text": "I built a fully functional, high-fidelity prototype of Concierj in Botpress and tested it across 200+ real and simulated conversations with family, friends, advisors, and prospective guests. Testing ranged from structured booking scenarios to open-ended sessions built to surface edge cases and failure points."
         },
         {
           "kind": "heading",
@@ -668,17 +760,17 @@
         {
           "kind": "heading",
           "level": 3,
-          "text": "05 - Prototype and results"
+          "text": "05 — Results & what's next"
         },
         {
           "kind": "p",
           "level": null,
-          "text": "The workflows and user journeys were first designed in Figma, then built as a fully functional prototype in Botpress. I used Claude to generate and refine the custom code throughout development, which let me iterate and test quickly. The prototype went through hundreds of conversational interactions and usability sessions, letting me continuously refine the guest experience, staff workflows, AI instructions, and routing logic."
+          "text": "The workflows and user journeys were first designed in Figma, then built as a fully functional prototype in Botpress. I used Claude to generate and refine the custom code throughout development, which let me iterate and test quickly. The prototype went through 200+ conversational interactions and usability sessions, letting me continuously refine the guest experience, staff workflows, AI instructions, and routing logic."
         },
         {
           "kind": "p",
           "level": null,
-          "text": "The result is a fully functional AI-powered guest communication system that guides guests through consideration, escalates high-value opportunities to staff, and turns every conversation into funnel intelligence."
+          "text": "The result is a fully functional conversational AI system that reads guest intent, guides different types of travelers toward a decision, escalates high-value moments to staff, and turns every conversation into guest intelligence."
         }
       ],
       "images": []
