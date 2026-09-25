@@ -33,8 +33,8 @@
   ],
   "hero": {
     "eyebrow": "Hello, I'm Janna!",
-    "headline": "I design the behavior behind AI conversations: what the system asks, how it responds, what it needs to know, and when a human should take over.",
-    "subhead": "My philosophy is simple: people first, build second, iterate frequently. I combine research, behavioral science, and systems thinking to design conversational AI around how people actually think, decide, and act, not how we assume they will.",
+    "headline": "I design the behavior behind AI conversations, from how a system responds to the boundaries that shape what it should and shouldn't do.",
+    "subhead": "My philosophy is simple: people first, build second, iterate frequently. I combine research, behavioral science, and systems thinking to design around how people think, decide, and act.",
     "current": "Currently: AI Conversation Designer at Anonymous Health"
   },
   "projects_intro": {
