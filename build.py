@@ -331,6 +331,7 @@ def build_home():
     pi = SITE["projects_intro"]
     cards = "".join(project_card(p, 0) for p in SITE["projects"])
     current = f'<p class="hero__current">{e(h["current"])}</p>' if h.get("current") else ""
+    intro_body = f'<p class="lede">{e(pi["body"])}</p>' if pi.get("body") else ""
     body = f"""<section class="sec hero">
   <p class="eyebrow">{e(h['eyebrow'])}</p>
   <h1 class="d-hero">{rich(h['headline'])}</h1>
@@ -339,7 +340,7 @@ def build_home():
 </section>
 <section class="sec">
   <h2 class="d-section">{e(pi['heading'])}</h2>
-  <p class="lede">{e(pi['body'])}</p>
+  {intro_body}
   <div class="grid">{cards}</div>
 </section>"""
     return (head(f"{SITE['profile']['name']} — {SITE['profile']['role']}",
