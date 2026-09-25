@@ -14,22 +14,22 @@
         {
           "kind": "p",
           "level": null,
-          "text": "My philosophy is simple: people first, build second, iterate frequently."
+          "text": "For the past decade, my work has centered on a set of questions that sit at the intersection of health, behavior, and communication: Who do people trust with their health? How are health beliefs formed? How does the way information is communicated shape behavior? What makes someone engage with a system, disengage from it, or feel that it was never designed for them in the first place?"
         },
         {
           "kind": "p",
           "level": null,
-          "text": "I'm an AI Conversation Designer working at the intersection of healthcare, human behavior, communication, systems, and AI. I'm currently at Anonymous Health, a behavioral health technology startup, where I design the conversations and decision logic behind our AI systems."
+          "text": "I’ve explored those questions across very different environments—from community-led water enterprises in Ghana and India to statewide adolescent health initiatives in the United States. Across those settings, I’ve seen the same pattern: the way information is communicated—and the language used to communicate it—shapes whether people understand a system, trust it, engage with it, and ultimately benefit from it."
         },
         {
           "kind": "p",
           "level": null,
-          "text": "My undergraduate sociology work looked at how the language around health and disease shapes stigma, self-perception, and whether people seek care. My MPH at Columbia went deeper into population health, health systems strengthening, behavioral science, and health communications, and into how people access and engage with care in the first place."
+          "text": "Today, I bring my background in public health, behavioral science, sociology, and health communication into AI conversation design. I’m interested in how LLM-based systems interpret context and respond to people—and in the judgment required to determine when they should ask more, adapt, act, or stop."
         },
         {
           "kind": "p",
           "level": null,
-          "text": "Since then, the work has followed the same pattern regardless of title: research how people actually behave, find the friction and the opportunity, translate that into a change to a system or a conversation, watch what happens, then iterate. AI conversation design is not a departure from that work. It's a new medium for it."
+          "text": "I’m excited to bring these disciplines together to shape AI systems that respond not only to what people say, but to the context, behavior, and needs behind it."
         }
       ],
       "images": [
